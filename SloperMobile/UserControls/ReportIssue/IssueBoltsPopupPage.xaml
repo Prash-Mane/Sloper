@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pages:PopupPage
+    x:Class="SloperMobile.UserControls.ReportIssue.IssueBoltsPopupPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:syncf="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    xmlns:userControls="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8" />
+    </pages:PopupPage.Animation>
+    <StackLayout
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand"
+        BackgroundColor="White"
+        Margin="50">
+        <Label
+            HorizontalOptions="Center"
+            FontAttributes="Bold"
+            FontSize="Medium"
+            Text="SELECT BOLT(S)"
+            TextColor="#333333" />
+        <syncf:SfListView
+            x:Name="synf_listView"
+            Margin="0"
+            ItemsSource="{Binding Path=IssueBolts,
+                                  Mode=TwoWay}"
+            Padding="0"
+            SelectionChanged="synf_listView_SelectionChanged"
+            SelectionMode="Multiple">
+            <syncf:SfListView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout
+                        Margin="0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        BackgroundColor="{Binding BackgroundItemColor}"
+                        Padding="0">
+                        <Label
+                            Grid.Row="0"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"
+                            BackgroundColor="{Binding BackgroundItemColor}"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding Path=Bolt}"
+                            TextColor="{Binding Path=Color, Mode=TwoWay}"
+                            VerticalTextAlignment="Center" />
+                    </StackLayout>
+                </DataTemplate>
+            </syncf:SfListView.ItemTemplate>
+        </syncf:SfListView>
+        <Grid Padding="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button
+                Grid.Column="0"
+                Margin="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Start"
+                BorderRadius="0"
+                Clicked="Ok_Clicked"
+                Style="{StaticResource GeneralButtonStyle}"
+                Text="OK"
+                TextColor="White" />
+            <Button
+                Grid.Column="1"
+                Margin="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Start"
+                BorderRadius="0"
+                Clicked="OnClose"
+                Style="{StaticResource GeneralButtonStyle}"
+                Text="CANCEL"
+                TextColor="White" />
+        </Grid>
+    </StackLayout>
+</pages:PopupPage>

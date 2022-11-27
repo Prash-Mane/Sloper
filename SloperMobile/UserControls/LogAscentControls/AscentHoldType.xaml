@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<StackLayout
+	x:Class="SloperMobile.UserControls.AscentHoldType"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+	BackgroundColor="Black">
+	<Grid
+		Margin="20,0"
+		HorizontalOptions="FillAndExpand"
+		VerticalOptions="FillAndExpand">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="100" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid
+			Grid.ColumnSpan="2"
+			HorizontalOptions="FillAndExpand"
+			VerticalOptions="FillAndExpand">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="35*" />
+				<RowDefinition Height="20*" />
+				<RowDefinition Height="1" />
+				<RowDefinition Height="20*" />
+				<RowDefinition Height="1" />
+				<RowDefinition Height="20*" />
+				<RowDefinition Height="5*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1*" />
+				<ColumnDefinition Width="1" />
+				<ColumnDefinition Width="1*" />
+			</Grid.ColumnDefinitions>
+			<StackLayout
+				Grid.Row="0"
+				Grid.ColumnSpan="3"
+				VerticalOptions="Center">
+				<Label
+					FontSize="24"
+					HorizontalOptions="Center"
+					Text="What style of holds"
+					TextColor="White" />
+				<Label
+					FontSize="24"
+					HorizontalOptions="Center"
+					Text="are at the crux?"
+					TextColor="White" />
+			</StackLayout>
+			<BoxView
+				Grid.Row="1"
+				Grid.RowSpan="5"
+				Grid.Column="1"
+				BackgroundColor="#676767"
+				HorizontalOptions="End"
+				VerticalOptions="FillAndExpand"
+				WidthRequest="1" />
+			<BoxView
+				Grid.Row="2"
+				Grid.Column="0"
+				Grid.ColumnSpan="3"
+				BackgroundColor="#676767"
+				HeightRequest="1"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="End" />
+			<BoxView
+				Grid.Row="4"
+				Grid.Column="0"
+				Grid.ColumnSpan="3"
+				BackgroundColor="#676767"
+				HeightRequest="1"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="End" />
+
+			<Frame
+				Grid.Row="1"
+				Grid.Column="0"
+				Padding="10"
+				BackgroundColor="Black"
+				BorderColor="Black"
+				HorizontalOptions="Fill"
+				VerticalOptions="Fill">
+				<Frame.GestureRecognizers>
+					<TapGestureRecognizer
+						Command="{Binding SendTypeHoldCommand, Mode=TwoWay}"
+						CommandParameter="1"
+						Tapped="SetFrameColor" />
+				</Frame.GestureRecognizers>
+				<Image
+					Aspect="AspectFit"
+					HorizontalOptions="Fill"
+					Source="icon_hold_type_1_slopers_text_58x92"
+					VerticalOptions="Fill" />
+			</Frame>
+
+			<Frame
+				Grid.Row="1"
+				Grid.Column="2"
+				Padding="10"
+				BackgroundColor="Black"
+				BorderColor="Black"
+				HorizontalOptions="Fill"
+				VerticalOptions="Fill">
+				<Frame.GestureRecognizers>
+					<TapGestureRecognizer
+						Command="{Binding SendTypeHoldCommand, Mode=TwoWay}"
+						CommandParameter="2"
+						Tapped="SetFrameColor" />
+				</Frame.GestureRecognizers>
+				<Image
+					Aspect="AspectFit"
+					HorizontalOptions="Fill"
+					Source="icon_hold_type_2_crimps_text_41x68"
+					VerticalOptions="Fill" />
+			</Frame>
+
+			<Frame
+				Grid.Row="3"
+				Grid.Column="0"
+				Padding="10"
+				BackgroundColor="Black"
+				BorderColor="Black"
+				HorizontalOptions="Fill"
+				VerticalOptions="Fill">
+				<Frame.GestureRecognizers>
+					<TapGestureRecognizer
+						Command="{Binding SendTypeHoldCommand, Mode=TwoWay}"
+						CommandParameter="4"
+						Tapped="SetFrameColor" />
+				</Frame.GestureRecognizers>
+				<Image
+					Aspect="AspectFit"
+					HorizontalOptions="Fill"
+					Source="icon_hold_type_4_jugs_text_58x74"
+					VerticalOptions="Fill" />
+			</Frame>
+
+			<Frame
+				Grid.Row="3"
+				Grid.Column="2"
+				Padding="10"
+				BackgroundColor="Black"
+				BorderColor="Black"
+				HorizontalOptions="Fill"
+				VerticalOptions="Fill">
+				<Frame.GestureRecognizers>
+					<TapGestureRecognizer
+						Command="{Binding SendTypeHoldCommand, Mode=TwoWay}"
+						CommandParameter="8"
+						Tapped="SetFrameColor" />
+				</Frame.GestureRecognizers>
+				<Image
+					Aspect="AspectFit"
+					HorizontalOptions="Fill"
+					Source="icon_hold_type_8_pockets_text_63x94"
+					VerticalOptions="Fill" />
+			</Frame>
+
+			<Frame
+				Grid.Row="5"
+				Grid.Column="0"
+				Padding="10"
+				BackgroundColor="Black"
+				BorderColor="Black"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="FillAndExpand">
+				<Frame.GestureRecognizers>
+					<TapGestureRecognizer
+						Command="{Binding SendTypeHoldCommand, Mode=TwoWay}"
+						CommandParameter="16"
+						Tapped="SetFrameColor" />
+				</Frame.GestureRecognizers>
+				<Image
+					Aspect="AspectFit"
+					HorizontalOptions="Fill"
+					Source="icon_hold_type_16_pinches_text_73x83"
+					VerticalOptions="Fill" />
+			</Frame>
+
+			<Frame
+				Grid.Row="5"
+				Grid.Column="2"
+				Padding="10"
+				BackgroundColor="Black"
+				BorderColor="Black"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="FillAndExpand">
+				<Frame.GestureRecognizers>
+					<TapGestureRecognizer
+						Command="{Binding SendTypeHoldCommand, Mode=TwoWay}"
+						CommandParameter="32"
+						Tapped="SetFrameColor" />
+				</Frame.GestureRecognizers>
+				<Image
+					Aspect="AspectFit"
+					HorizontalOptions="Fill"
+					Source="icon_hold_type_32_jams_text_57x86"
+					VerticalOptions="Fill" />
+			</Frame>
+		</Grid>
+
+		<StackLayout
+			x:Name="ImgAscentHoldTypePrv"
+			Grid.Row="1"
+			Grid.Column="0"
+			Orientation="Horizontal">
+			<Image
+				Grid.Row="1"
+				Grid.Column="0"
+				HeightRequest="20"
+				HorizontalOptions="CenterAndExpand"
+				Source="arrowLeftWhite"
+				VerticalOptions="CenterAndExpand" />
+		</StackLayout>
+		<StackLayout
+			x:Name="ImgAscentHoldTypeNxt"
+			Grid.Row="1"
+			Grid.Column="1"
+			Orientation="Horizontal">
+			<Image
+				Grid.Row="1"
+				Grid.Column="1"
+				HeightRequest="20"
+				HorizontalOptions="CenterAndExpand"
+				Rotation="180"
+				Source="arrowLeftWhite"
+				VerticalOptions="CenterAndExpand" />
+		</StackLayout>
+	</Grid>
+</StackLayout>

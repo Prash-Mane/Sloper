@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<StackLayout
+	x:Class="SloperMobile.UserControls.AscentRouteStyle"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+	BackgroundColor="Black">
+	<Grid
+		Margin="20,0"
+		HorizontalOptions="FillAndExpand"
+		VerticalOptions="FillAndExpand">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="100" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid
+			Grid.ColumnSpan="2"
+			HorizontalOptions="FillAndExpand"
+			VerticalOptions="FillAndExpand">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="35*" />
+				<RowDefinition Height="20*" />
+				<RowDefinition Height="1" />
+				<RowDefinition Height="20*" />
+				<RowDefinition Height="1" />
+				<RowDefinition Height="20*" />
+				<RowDefinition Height="5*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1*" />
+				<ColumnDefinition Width="1" />
+				<ColumnDefinition Width="1*" />
+			</Grid.ColumnDefinitions>
+			<StackLayout
+				Grid.Row="0"
+				Grid.ColumnSpan="3"
+				VerticalOptions="Center">
+				<Label
+					FontSize="24"
+					HorizontalOptions="Center"
+					Text="What is the"
+					TextColor="White" />
+				<Label
+					FontSize="24"
+					HorizontalOptions="Center"
+					Text="climbing style?"
+					TextColor="White" />
+			</StackLayout>
+			<BoxView
+				Grid.Row="1"
+				Grid.RowSpan="5"
+				Grid.Column="1"
+				BackgroundColor="#676767"
+				HorizontalOptions="End"
+				VerticalOptions="FillAndExpand"
+				WidthRequest="1" />
+			<BoxView
+				Grid.Row="2"
+				Grid.Column="0"
+				Grid.ColumnSpan="3"
+				BackgroundColor="#676767"
+				HeightRequest="1"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="End" />
+			<BoxView
+				Grid.Row="4"
+				Grid.Column="0"
+				Grid.ColumnSpan="3"
+				BackgroundColor="#676767"
+				HeightRequest="1"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="End" />
+			<Frame
+				x:Name="Technical"
+				Grid.Row="1"
+				Grid.Column="0"
+				Padding="10"
+				AutomationId="technical"
+				BackgroundColor="Black"
+				BorderColor="Black"
+				HorizontalOptions="Fill"
+				VerticalOptions="Fill">
+				<Frame.GestureRecognizers>
+					<TapGestureRecognizer
+						Command="{Binding SendRouteCharaterCommand, Mode=TwoWay}"
+						CommandParameter="1"
+						Tapped="SetFrameColor" />
+				</Frame.GestureRecognizers>
+				<Image
+					Aspect="AspectFit"
+					HorizontalOptions="Fill"
+					Source="icon_route_style_1_technical_text_80h"
+					VerticalOptions="Fill" />
+			</Frame>
+			<Frame
+				x:Name="Sequential"
+				Grid.Row="1"
+				Grid.Column="2"
+				Padding="10"
+				AutomationId="sequential"
+				BackgroundColor="Black"
+				BorderColor="Black"
+				HorizontalOptions="Fill"
+				VerticalOptions="Fill">
+				<Frame.GestureRecognizers>
+					<TapGestureRecognizer
+						Command="{Binding SendRouteCharaterCommand, Mode=TwoWay}"
+						CommandParameter="2"
+						Tapped="SetFrameColor" />
+				</Frame.GestureRecognizers>
+				<Image
+					Aspect="AspectFit"
+					HorizontalOptions="Fill"
+					Source="icon_route_style_2_sequential_text_80h"
+					VerticalOptions="Fill" />
+			</Frame>
+			<Frame
+				x:Name="Powerful"
+				Grid.Row="3"
+				Grid.Column="0"
+				Padding="10"
+				AutomationId="powerful"
+				BackgroundColor="Black"
+				BorderColor="Black"
+				HorizontalOptions="Fill"
+				VerticalOptions="Fill">
+				<Frame.GestureRecognizers>
+					<TapGestureRecognizer
+						Command="{Binding SendRouteCharaterCommand, Mode=TwoWay}"
+						CommandParameter="4"
+						Tapped="SetFrameColor" />
+				</Frame.GestureRecognizers>
+				<Image
+					HorizontalOptions="Fill"
+					Source="icon_route_style_4_powerful_text_80h"
+					VerticalOptions="Fill" />
+			</Frame>
+			<Frame
+				x:Name="Sustained"
+				Grid.Row="3"
+				Grid.Column="2"
+				Padding="10"
+				AutomationId="sustained"
+				BackgroundColor="Black"
+				BorderColor="Black"
+				HorizontalOptions="Fill"
+				VerticalOptions="Fill">
+				<Frame.GestureRecognizers>
+					<TapGestureRecognizer
+						Command="{Binding SendRouteCharaterCommand, Mode=TwoWay}"
+						CommandParameter="8"
+						Tapped="SetFrameColor" />
+				</Frame.GestureRecognizers>
+				<Image
+					HorizontalOptions="Fill"
+					Source="icon_route_style_8_sustained_text_80h"
+					VerticalOptions="Fill" />
+			</Frame>
+			<Frame
+				x:Name="Onemove"
+				Grid.Row="5"
+				Grid.Column="0"
+				Padding="10"
+				AutomationId="onemove"
+				BackgroundColor="Black"
+				BorderColor="Black"
+				HorizontalOptions="Fill"
+				VerticalOptions="Fill">
+				<Frame.GestureRecognizers>
+					<TapGestureRecognizer
+						Command="{Binding SendRouteCharaterCommand, Mode=TwoWay}"
+						CommandParameter="16"
+						Tapped="SetFrameColor" />
+				</Frame.GestureRecognizers>
+				<Image
+					HorizontalOptions="Fill"
+					Source="icon_route_style_16_one_move_text_80h"
+					VerticalOptions="Fill" />
+			</Frame>
+			<Frame
+				x:Name="Everything"
+				Grid.Row="5"
+				Grid.Column="2"
+				Padding="10"
+				AutomationId="exposed"
+				BackgroundColor="Black"
+				BorderColor="Black"
+				HorizontalOptions="Fill"
+				VerticalOptions="Fill">
+				<Frame.GestureRecognizers>
+					<TapGestureRecognizer
+						Command="{Binding SendRouteCharaterCommand, Mode=TwoWay}"
+						CommandParameter="32"
+						Tapped="SetFrameColor" />
+				</Frame.GestureRecognizers>
+				<Image
+					HorizontalOptions="Fill"
+					Source="icon_route_style_32_exposed_text_80h"
+					VerticalOptions="Fill" />
+			</Frame>
+		</Grid>
+		<Button
+			Grid.Row="1"
+			Grid.Column="0"
+			Grid.ColumnSpan="2"
+			Margin="30,0,30,30"
+			Command="{Binding SendSummaryCommand}"
+			HorizontalOptions="Fill"
+			IsEnabled="{Binding IsButtonEnable}"
+			Style="{StaticResource GeneralButtonStyle}"
+			Text="{Binding CommandText, Mode=TwoWay}"
+			VerticalOptions="End"
+			WidthRequest="100" />
+	</Grid>
+</StackLayout>

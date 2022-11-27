@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<StackLayout
+	x:Class="SloperMobile.UserControls.AscentDate"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:Controls="clr-namespace:SloperMobile.CustomControls;assembly=SloperMobile"
+	xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+	BackgroundColor="Black">
+	<Grid
+		Margin="20,0"
+		HorizontalOptions="FillAndExpand"
+		VerticalOptions="FillAndExpand">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="100" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid
+			Grid.ColumnSpan="2"
+			HorizontalOptions="FillAndExpand"
+			VerticalOptions="FillAndExpand">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="35*" />
+				<RowDefinition Height="30*" />
+				<RowDefinition Height="30*" />
+				<RowDefinition Height="5*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1*" />
+				<ColumnDefinition Width="1*" />
+				<ColumnDefinition Width="1*" />
+			</Grid.ColumnDefinitions>
+			<StackLayout
+				Grid.Row="0"
+				Grid.ColumnSpan="3"
+				HorizontalOptions="Center"
+				VerticalOptions="Center">
+				<Label
+					FontSize="24"
+					HorizontalOptions="Center"
+					Text="What date did you"
+					TextColor="White" />
+				<Label
+					FontSize="24"
+					HorizontalOptions="Center"
+					Text="send this route?"
+					TextColor="White" />
+			</StackLayout>
+			<StackLayout
+				Grid.Row="1"
+				Grid.ColumnSpan="3"
+				HorizontalOptions="Center"
+				VerticalOptions="Center">
+				<Label
+					FontSize="20"
+					HorizontalOptions="Center"
+					Text="Date Climbed?"
+					TextColor="White" />
+				<DatePicker
+					BackgroundColor="White"
+					Date="{Binding SendsDate, Mode=TwoWay}"
+					HorizontalOptions="CenterAndExpand"
+					WidthRequest="120" />
+			</StackLayout>
+			<StackLayout
+				Grid.Row="2"
+				Grid.ColumnSpan="3"
+				HorizontalOptions="Center"
+				VerticalOptions="Center">
+				<Label
+					FontSize="20"
+					HorizontalOptions="Center"
+					Text="Grade Thoughts?"
+					TextColor="White" />
+				<Controls:BindablePicker
+					BackgroundColor="White"
+					HorizontalOptions="CenterAndExpand"
+					ItemsSource="{Binding Path=AscentGrades}"
+					SelectedItem="{Binding Path=SendsGrade, Mode=TwoWay}"
+					WidthRequest="120" />
+			</StackLayout>
+		</Grid>
+		<StackLayout
+			x:Name="ImgAcentDatePrv"
+			Grid.Row="1"
+			Grid.Column="0"
+			Orientation="Horizontal">
+			<Image
+				Grid.Row="1"
+				Grid.Column="0"
+				HeightRequest="20"
+				HorizontalOptions="CenterAndExpand"
+				Source="arrowLeftWhite"
+				VerticalOptions="CenterAndExpand" />
+		</StackLayout>
+
+		<StackLayout
+			x:Name="ImgAcentDateNxt"
+			Grid.Row="1"
+			Grid.Column="1"
+			Orientation="Horizontal">
+			<Image
+				Grid.Row="1"
+				Grid.Column="1"
+				HeightRequest="20"
+				HorizontalOptions="CenterAndExpand"
+				Rotation="180"
+				Source="arrowLeftWhite"
+				VerticalOptions="CenterAndExpand" />
+		</StackLayout>
+	</Grid>
+</StackLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="SloperMobile.UserControls.ReportIssue.IssueBoltsToReports"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Controls="clr-namespace:SloperMobile.CustomControls;assembly=SloperMobile"
+    xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+    xmlns:syncf="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    ControlTemplate="{StaticResource HeaderFooterPageTemplate}">
+    <ContentView.Content>
+        <Grid
+            Margin="20,0"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid
+                Grid.ColumnSpan="2"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40*" />
+                    <RowDefinition Height="20*" />
+                    <RowDefinition Height="40*" />
+                </Grid.RowDefinitions>
+                <Label
+                    Grid.Row="0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontSize="24"
+                    Text="What bolt(s) is the issue?"
+                    TextColor="White" />
+                <Label
+                    Grid.Row="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    FontSize="Small"
+                    Text="Count from the bottom"
+                    TextColor="White" />
+                <Button
+                    Grid.Row="2"
+                    Margin="0"
+                    WidthRequest="200"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Start"
+                    BorderRadius="0"
+                    Command="{Binding SelectBoltCommand}"
+                    Style="{StaticResource GeneralButtonStyle}"
+                    Text="PLEASE SELECT"
+                    TextColor="White" />
+            </Grid>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

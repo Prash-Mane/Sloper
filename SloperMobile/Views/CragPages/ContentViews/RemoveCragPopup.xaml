@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:customControl="clr-namespace:SloperMobile.UserControls.CustomControls"
+    x:Class="SloperMobile.Views.CragPages.RemoveCragPopup"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:ffimageLoading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:transformations1="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    HasSystemPadding="false"
+    BackgroundColor="Black">
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="TitleLableStyle" BasedOn="{StaticResource CenteredLabel}">
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="TextColor" Value="#fff" />
+            </Style>
+            
+            <Style TargetType="Label" x:Key="InfoLabelStyle" BasedOn="{StaticResource CenteredLabel}">
+                <Setter Property="FontSize" Value="10" />
+                <Setter Property="TextColor" Value="#fff" />
+            </Style>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+    <Grid>  
+          <ffimageLoading:CachedImage
+                Aspect="AspectFill"
+                HorizontalOptions="FillAndExpand"
+                Source="{Binding CragImage}"
+                VerticalOptions="FillAndExpand">
+                <ffimageLoading:CachedImage.Transformations>
+                    <transformations1:GrayscaleTransformation />
+                </ffimageLoading:CachedImage.Transformations>
+            </ffimageLoading:CachedImage>
+        
+            <BoxView VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand"
+                     BackgroundColor="Black" Opacity="0.85"/>
+           <StackLayout
+                VerticalOptions="CenterAndExpand"
+                Padding="60, 0">
+                <Label
+                    Text="ARE YOU SURE"
+                    Style="{StaticResource TitleLableStyle}"/>
+                <Label
+                    Text="YOU WANT TO"
+                    Style="{StaticResource TitleLableStyle}"/>
+                <Label
+                    Text="REMOVE THE"
+                    Style="{StaticResource TitleLableStyle}"/>
+                <Label
+                    Text="{Binding CragName}"
+                    Style="{StaticResource TitleLableStyle}"/>
+                <Label
+                    Text="GUIDE?"
+                    Style="{StaticResource TitleLableStyle}"/>
+                <customControl:MultilineTextTransparentButton
+                    FirstLineText="TOTALLY"
+                    TapCommand="{Binding RemoveCommand}"
+                    HeightRequest="40"/>
+                <customControl:MultilineTextTransparentButton
+                    FirstLineText="LATER"
+                    TapCommand="{Binding CancelRemoveCommand}"
+                    HeightRequest="40"/>      
+            <StackLayout>
+                <Label
+                    Style="{StaticResource InfoLabelStyle}"
+                    Text="Our App works offline, but you will need either a"/>
+                <Label
+                    Style="{StaticResource InfoLabelStyle}"
+                    Text="Wi-Fi connection or a data pian to download"/>
+                <Label
+                    Style="{StaticResource InfoLabelStyle}"
+                    Text="updates and use the maps."/>
+            </StackLayout>
+        </StackLayout>
+    </Grid> 
+</pages:PopupPage>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Grid 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SloperMobile.ProfileHeader"
+    VerticalOptions="FillAndExpand"
+    HorizontalOptions="FillAndExpand"
+    x:Name="Root">
+        <Label
+            Text="{Binding HeaderText, Source={x:Reference Root}}"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            VerticalTextAlignment="Center"
+            TextColor="{Binding HeaderColor, Source={x:Reference Root}}"
+            FontSize="{Binding HeaderSize, Source={x:Reference Root}}"/>
+        <BoxView 
+            x:Name="Selector"
+            BackgroundColor="{Binding UnselectedColor, Source={x:Reference Root}}"
+            VerticalOptions="End" 
+            HorizontalOptions="FillAndExpand" 
+            HeightRequest="5" />
+</Grid>

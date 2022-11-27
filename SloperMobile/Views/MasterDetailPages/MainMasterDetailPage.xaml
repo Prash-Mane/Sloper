@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage
+	x:Class="SloperMobile.Views.FlyoutPages.MainFlyoutPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+	prism:ViewModelLocator.AutowireViewModel="True"
+	IsGestureEnabled="{Binding IsGestureEnabled}"
+	IsPresented="{Binding IsPresentedMenu}">
+	<FlyoutPage>
+		<ContentPage
+			Title="Sloper"
+			prism:ViewModelLocator.AutowireViewModel="True"
+			BackgroundColor="#0C0C0C">
+			<Grid
+                Margin="0,20,0,0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="40" />
+					<RowDefinition Height="120" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+
+				<!--  Back Button  -->
+				<Grid
+					Grid.Row="0"
+					HeightRequest="40"
+					HorizontalOptions="Start"
+					IsVisible="{Binding IsBackButtonVisible}"
+					VerticalOptions="Center"
+					WidthRequest="40">
+					<Grid.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding TapBackCommand}" />
+					</Grid.GestureRecognizers>
+					<Image
+						Margin="8,0,0,0"
+						Aspect="AspectFit"
+						HorizontalOptions="Start"
+						Source="icon_arrow_left_12x21"
+						VerticalOptions="Center" />
+				</Grid>
+
+
+				<Image
+					Grid.Row="1"
+					HeightRequest="100"
+					Source="logo_170w"
+					WidthRequest="100"
+                    Margin="0,0,0,20">
+					<Image.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding HeaderCommand}" />
+					</Image.GestureRecognizers>
+				</Image>
+
+				<ListView
+					x:Name="listView"
+					Grid.Row="2"
+					BackgroundColor="Transparent"
+					HasUnevenRows="True"
+					ItemsSource="{Binding MenuList}"
+					SelectedItem="{Binding SelectedMenuItem}"
+					SeparatorVisibility="None"
+                    VerticalOptions="FillAndExpand">
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell>
+								<StackLayout
+									Margin="0"
+									Padding="0"
+									HeightRequest="50"
+									MinimumHeightRequest="50"
+									Spacing="0">
+									<StackLayout.GestureRecognizers>
+										<TapGestureRecognizer Command="{Binding Path=BindingContext.MenuSelectedItemCommand, Source={x:Reference listView}}" CommandParameter="{Binding .}" />
+									</StackLayout.GestureRecognizers>
+									<StackLayout
+										Margin="0,0,0,2"
+										Padding="0"
+										Spacing="0"
+										VerticalOptions="CenterAndExpand">
+										<Label
+											FontSize="Medium"
+											HorizontalOptions="CenterAndExpand"
+											LineBreakMode="TailTruncation"
+											Style="{StaticResource GeneralLabelStyle}"
+											Text="{Binding Title}"
+											TextColor="{Binding ActiveTextColor, Mode=TwoWay}"
+											VerticalOptions="EndAndExpand"
+											VerticalTextAlignment="End" />
+									</StackLayout>
+									<StackLayout
+										Margin="0,-2,0,0"
+										Padding="0"
+										HeightRequest="{Binding ContentHeight}"
+										IsEnabled="{Binding IsContentVisible, Mode=TwoWay}"
+										IsVisible="{Binding IsContentVisible, Mode=TwoWay}"
+										Spacing="0"
+										VerticalOptions="StartAndExpand">
+										<Label
+											FontSize="Micro"
+											HorizontalOptions="CenterAndExpand"
+											IsVisible="{Binding IsCragVisible, Mode=TwoWay}"
+											Style="{StaticResource GeneralLabelStyle}"
+											Text="{Binding Contents}"
+											TextColor="{Binding ActiveTextColor, Mode=TwoWay}"
+											VerticalTextAlignment="Center" />
+									</StackLayout>
+									<BoxView BackgroundColor="#3F3F3F" HeightRequest="1" />
+								</StackLayout>
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+			</Grid>
+		</ContentPage>
+	</FlyoutPage>
+</FlyoutPage>

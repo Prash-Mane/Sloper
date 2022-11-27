@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Grid
+    x:Class="SloperMobile.CustomControls.ImageButton"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    x:Name="RootItem">
+    <Grid.GestureRecognizers>
+        <TapGestureRecognizer
+            Command="{Binding TapCommand, Source={x:Reference RootItem}}"
+            CommandParameter="{Binding CommandParameter, Source={x:Reference RootItem}}"/>
+    </Grid.GestureRecognizers>
+    <ffimageloading:CachedImage
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        HeightRequest="{Binding ImageSize, Source={x:Reference RootItem}}"
+        WidthRequest="{Binding ImageSize, Source={x:Reference RootItem}}"
+        Aspect="AspectFit"
+        Source="{Binding ImageSource, Source={x:Reference RootItem}}" />
+</Grid>

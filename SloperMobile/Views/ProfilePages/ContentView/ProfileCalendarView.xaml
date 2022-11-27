@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="SloperMobile.ProfileCalendarView" 
+             xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+    xmlns:calendar="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms"
+    xmlns:effects="clr-namespace:SloperMobile.Effects;assebmly=SloperMobile"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+        xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms">
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid
+            Grid.Row="1"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20*" />
+                <RowDefinition Height="80*" />
+            </Grid.RowDefinitions>
+            <Label
+                x:Name="CalendarHeader"
+                FontSize="Large"
+                HorizontalOptions="CenterAndExpand"
+                TextColor="White"
+                VerticalOptions="CenterAndExpand" />
+            <calendar:SfCalendar
+                x:Name="calendar"
+                Grid.Row="1"
+                BackgroundColor="Transparent"
+                DataSource="{Binding ShowDates}"
+                HorizontalOptions="CenterAndExpand"
+                MonthChanged="OnMonthChanged"
+                OnCalendarTapped="OnCalendarTapped"
+                SelectionChanged="OnCalendarSelectionChanged"
+                ShowHeader="False"
+                ShowInlineEvents="False"
+                VerticalOptions="FillAndExpand"
+                ViewMode="MonthView">
+                <calendar:SfCalendar.Effects>
+                    <effects:ControlSizeEffect />
+                </calendar:SfCalendar.Effects>
+            </calendar:SfCalendar>
+        </Grid>
+    </Grid>
+</ContentView>

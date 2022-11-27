@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+	x:Class="SloperMobile.UserControls.CustomControls.MultilineTextTransparentButton"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:customControls="clr-namespace:SloperMobile.UserControls.CustomControls;assembly=SloperMobile"
+	xmlns:effect="clr-namespace:SloperMobile.Effects;assembly=SloperMobile"
+	BackgroundColor="Transparent">
+	<ContentView.Content>
+		<Grid
+			Margin="5"
+			Padding="0"
+			RowSpacing="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="1" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="1" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1" />
+				<ColumnDefinition />
+				<ColumnDefinition Width="1" />
+			</Grid.ColumnDefinitions>
+			<Grid
+				Grid.Row="0"
+				Grid.RowSpan="3"
+				Grid.Column="0"
+				Grid.ColumnSpan="3"
+				BackgroundColor="Black"
+				Opacity="0.5" />
+			<BoxView
+				Grid.Row="0"
+				Grid.Column="0"
+				Grid.ColumnSpan="3"
+				BackgroundColor="{StaticResource AppOrange}" />
+			<BoxView
+				Grid.Row="2"
+				Grid.Column="0"
+				Grid.ColumnSpan="3"
+				BackgroundColor="{StaticResource AppOrange}" />
+			<BoxView
+				Grid.Row="0"
+				Grid.RowSpan="3"
+				Grid.Column="0"
+				BackgroundColor="{StaticResource AppOrange}" />
+			<BoxView
+				Grid.Row="0"
+				Grid.RowSpan="3"
+				Grid.Column="2"
+				BackgroundColor="{StaticResource AppOrange}" />
+			<Grid
+				Grid.Row="1"
+				Grid.Column="1"
+				Margin="0,5"
+				RowSpacing="0"
+				VerticalOptions="CenterAndExpand">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+				<customControls:LabelWithShadowEffect
+					x:Name="firstLineText"
+					Grid.Row="0"
+					Margin="0"
+					HorizontalOptions="Center"
+					HorizontalTextAlignment="Center"
+					LineBreakMode="CharacterWrap"
+					Style="{StaticResource ButtonLabelStyle}"
+					TextColor="White"
+					VerticalOptions="FillAndExpand">
+				</customControls:LabelWithShadowEffect>
+				<customControls:LabelWithShadowEffect
+					x:Name="secondLineText"
+					Grid.Row="1"
+					HorizontalOptions="Center"
+					HorizontalTextAlignment="Center"
+					IsVisible="False"
+					Style="{StaticResource ButtonLabelStyle}"
+					TextColor="White"
+					VerticalOptions="CenterAndExpand">
+				</customControls:LabelWithShadowEffect>
+			</Grid>
+		</Grid>
+	</ContentView.Content>
+</ContentView>

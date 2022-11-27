@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="SloperMobile.Views.WelcomeOverviewPages.OverviewSlidesPage"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:ffImageLoading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:viewModel="clr-namespace:SloperMobile.ViewModel;assembly=SloperMobile" xmlns:forms1="http://xamarin.com/schemas/2014/forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             NavigationPage.HasNavigationBar="False"
+             ControlTemplate="{StaticResource HeaderFooterPageTemplate}"
+             Style="{StaticResource AppBackgroundColor}">
+    
+    <ContentPage.Content>
+        <Grid
+            HorizontalOptions="Fill"
+            VerticalOptions="Fill">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <!-- Carousel Slides -->
+            <forms1:CarouselView
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="FillAndExpand"
+                ItemsSource="{Binding CarouselPages,Mode=TwoWay}"
+                Position="{Binding SelectedItemPosition}"
+                VerticalOptions="Fill">
+                <forms1:CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid VerticalOptions="Fill">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                                <ffImageLoading:CachedImage Grid.Row="0"
+                                    Aspect="AspectFill"
+                                    FadeAnimationForCachedImages="True"
+                                    Source="{Binding BackGroundImage}">
+                                    
+                                </ffImageLoading:CachedImage>
+                        </Grid>
+                    </DataTemplate>
+                </forms1:CarouselView.ItemTemplate>
+            </forms1:CarouselView>
+            
+            <!--<StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Transparent">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding PrevCommand}"  />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            <StackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Transparent">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NextCommand}"  />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>-->
+            <!-- Carousel Indicator -->
+            <ContentView HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,20" BackgroundColor="Transparent" Grid.ColumnSpan="2" IsVisible="{Binding IsIndicatorVisible}">
+                <viewModel:CarouselIndicatorsViewModel
+                    Padding="0"
+                    IndicatorHeight="20"
+                    IndicatorWidth="8"
+                    IsVisible="True"
+                    ItemsSource="{Binding CarouselPages}"
+                    Position="{Binding SelectedItemPosition}"
+                    SelectedIndicator="selected_circle.png"
+                    UnselectedIndicator="unselected_circle.png"
+                    VerticalOptions="CenterAndExpand" />
+            </ContentView>
+            
+            <!-- Next Button -->
+            
+            <ContentView HorizontalOptions="Center" VerticalOptions="End" Margin="{Binding BottomMargin}" BackgroundColor="Transparent" Grid.ColumnSpan="2" IsVisible="{Binding IsIndicatorVisible, Converter={StaticResource BoolInvertConverter}}">
+                <Button BackgroundColor="#4D000000" BorderColor="{StaticResource AppOrange}" 
+                        BorderWidth="1" CornerRadius="0"
+                        Command="{Binding NextCommand}" 
+                        FontSize="Small" HeightRequest="35" WidthRequest="280"
+                        Text="{Binding CommandText}" TextColor="White"
+                        VerticalOptions="FillAndExpand" />
+            </ContentView>
+            
+            <!--  Close Button  -->
+            <ContentView HorizontalOptions="End" VerticalOptions="Start" Margin="0,40,20,0" Grid.ColumnSpan="2">
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CloseCommand}" />
+                </ContentView.GestureRecognizers>
+                <Image
+                    x:Name="CloseImage"
+                    Source="close"
+                    Aspect="AspectFit"
+                    HeightRequest="20"
+                    WidthRequest="20" />
+            </ContentView>
+        </Grid>
+    </ContentPage.Content>
+    
+</ContentPage>

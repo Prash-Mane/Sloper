@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Grid
+    x:Class="SloperMobile.UserControls.HeaderUC"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:SloperMobile.CustomControls"
+    HeightRequest="40">
+
+    <Grid.Resources>
+        <ResourceDictionary>
+            <Style x:Key="lblHeader" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="LineBreakMode" Value="TailTruncation" />
+            </Style>
+        </ResourceDictionary>
+    </Grid.Resources>
+    
+    <!--  Back Button  -->
+    <controls:ImageButton
+        IsVisible="{Binding IsBackButtonVisible}"
+        HorizontalOptions="Start"
+        HeightRequest="40"
+        WidthRequest="40"
+        ImageSize="24"
+        ImageSource="icon_arrow_left_12x21"
+        TapCommand="{Binding BackCommand}" />
+
+    <!--  Menu Button  -->
+    <controls:ImageButton
+        IsVisible="{Binding IsMenuVisible}"
+        HorizontalOptions="Start"
+        HeightRequest="40"
+        WidthRequest="40"
+        ImageSize="24"
+        ImageSource="Menu_button"
+        TapCommand="{Binding MenuCommand}" />
+
+    <!-- Headers -->
+    <StackLayout
+        HorizontalOptions="CenterAndExpand"
+        Spacing="0"
+        Margin="40,0">
+        <Label
+            Style="{StaticResource lblHeader}"
+            FontSize="Medium"
+            TextColor="{StaticResource AppOrange}"
+            Text="{Binding Path=PageHeaderText}" />
+        <Label
+            Margin="0,-3,0,0"
+            Style="{StaticResource lblHeader}"
+            FontSize="Small"
+            TextColor="White"
+            Text="{Binding Path=PageSubHeaderText}" />
+    </StackLayout>
+    
+    <ContentView
+        HorizontalOptions="End"
+        VerticalOptions="Fill"
+        Content="{DynamicResource RightHeaderView}" />
+</Grid>

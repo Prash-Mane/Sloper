@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SloperMobile.Views.SplashPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    Padding="0,20,0,0"
+    ios:Page.UseSafeArea="true"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    BackgroundColor="Black"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="SplashLabelStyle" TargetType="Label" BasedOn="{StaticResource GeneralLabelStyle}">
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="LineBreakMode" Value="WordWrap"/>
+                <Setter Property="FontSize" Value="Micro"/>
+            </Style>            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <Grid Padding="40, 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40*" />
+                <RowDefinition Height="40*" />
+                <RowDefinition Height="20*" />
+            </Grid.RowDefinitions>
+            <Image
+                Aspect="AspectFit"
+                HorizontalOptions="Center"
+                Source="logo_215w"
+                VerticalOptions="Center" />
+            
+            <StackLayout
+                Grid.Row="1"
+                Spacing="10">
+                <Label
+                    FontSize="Medium"
+                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource GeneralLabelStyle}"
+                    Text="THANKS FOR DOWNLOADING" />
+                <Label
+                    FontSize="Medium"
+                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource GeneralLabelStyle}"
+                    Text="{Binding AppTitle, StringFormat='THE {0} APP.'}" />
+                <Label
+                    Margin="0,20,0,0"
+                    Style="{StaticResource SplashLabelStyle}"
+                    Text="The App works offline, but you will need either a Wi-Fi connection or a data plan to download updates and use the maps." />
+                <Label
+                    Style="{StaticResource SplashLabelStyle}"
+                    Text="If you like the app, please leave us a nice review in the app store!" />
+                <Label
+                    Style="{StaticResource SplashLabelStyle}"
+                    Text="By using this App you agree to our " />
+
+                <Label
+                    Style="{StaticResource SplashLabelStyle}"
+                    TextColor="#FF8E2D"
+                    Text="Terms, Conditions and Privacy Policy">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding TermsCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label
+                    Style="{StaticResource SplashLabelStyle}"
+                    Text="{Binding AppCompany, StringFormat='The {0} Team'}" />
+            </StackLayout>
+
+			<Button
+				Grid.Row="2"
+				Command="{Binding ContinueCommand}"
+				Style="{StaticResource GeneralButtonStyle}"
+				Text="Let's Go!"
+				VerticalOptions="Start" />
+		</Grid>
+	</ScrollView>
+</ContentPage>

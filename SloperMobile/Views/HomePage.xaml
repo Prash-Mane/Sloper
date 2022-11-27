@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SloperMobile.Views.HomePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+    xmlns:effect="clr-namespace:SloperMobile.Effects;assembly=SloperMobile"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+     xmlns:controls="clr-namespace:SloperMobile.CustomControls"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    ControlTemplate="{StaticResource HeaderFooterPageTemplate}"
+    Style="{DynamicResource AppBackgroundColor}">
+ <ContentPage.Resources>
+        <StackLayout Orientation="Horizontal" x:Key="RightHeaderView">
+            <controls:ImageButton
+                Style="{StaticResource SearchBtn}"
+                IsVisible="{Binding SearchVisible}"
+                ImageSize="20"/>
+        </StackLayout>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid
+                Margin="20,0"
+                ColumnSpacing="0"
+                HorizontalOptions="FillAndExpand"
+                RowSpacing="0"
+                VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35*" />
+                    <RowDefinition Height="20*" />
+                    <RowDefinition Height="1" />
+                    <RowDefinition Height="20*" />
+                    <RowDefinition Height="1" />
+                    <RowDefinition Height="20*" />
+                    <RowDefinition Height="5*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <BoxView
+                    Grid.Row="1"
+                    Grid.RowSpan="5"
+                    Grid.Column="1"
+                    BackgroundColor="#3F3F3F"
+                    HorizontalOptions="End"
+                    VerticalOptions="FillAndExpand"
+                    WidthRequest="1" />
+                <BoxView
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    BackgroundColor="#3F3F3F"
+                    HeightRequest="1"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="End" />
+                <BoxView
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    BackgroundColor="#3F3F3F"
+                    HeightRequest="1"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="End" />
+                <Grid
+                    Grid.ColumnSpan="3"
+                    ColumnSpacing="0"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill">
+                    <Image
+                        Margin="40"
+                        Aspect="AspectFit"
+                        HorizontalOptions="Fill"
+                        Source="logo_215w"
+                        VerticalOptions="Fill" />
+                </Grid>
+                
+                <!-- CLIMBING LOCATIONS -->
+                
+                <StackLayout
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding IconPressedCommand}" CommandParameter="GoogleMapPinsPage" />
+                    </StackLayout.GestureRecognizers>
+                    <Image
+                        Aspect="AspectFit"
+                        Source="icon_home_climbing_locations"
+                        HeightRequest="56"
+                        
+                        VerticalOptions="Center" />
+                    <Label
+                        TextColor="White"
+                        FontSize="10"
+                        HorizontalTextAlignment="Center"
+                        Text="CLIMBING LOCATIONS"/>
+                </StackLayout>
+                
+                <!-- GUIDEBOOKS -->
+                
+                <StackLayout
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GBsCommand}" />
+                    </StackLayout.GestureRecognizers>
+                    <Image
+                        Aspect="AspectFit"
+                        HeightRequest="56"
+                        Source="icon_home_guidebooks"/>
+                    <Label
+                        TextColor="White"
+                        FontSize="10"
+                        HorizontalTextAlignment="Center"
+                        Text="GUIDEBOOKS"/>
+                </StackLayout>  
+                
+                <!-- SECTORS -->
+                
+                <StackLayout
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding IconPressedCommand}" CommandParameter="CragSectorsPage" />
+                    </StackLayout.GestureRecognizers>
+                    <Image
+                        HeightRequest="56"
+                        Aspect="AspectFit"
+                        Source="icon_home_sectors"/>
+                    <Label
+                        TextColor="White"
+                        FontSize="10"
+                        HorizontalTextAlignment="Center"
+                        Text="SECTORS"/>
+                </StackLayout>                
+                
+                <!-- CLIMBING DAYS -->
+                
+                <Grid
+                    Grid.Row="3"
+                    Grid.Column="2"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CalendarCommand}"/>
+                    </Grid.GestureRecognizers>
+                    <StackLayout>
+                        <Image
+                           
+                            Aspect="AspectFit"
+                            HeightRequest="56"
+                            Source="icon_home_climbing_days"/>
+                        <Label
+                            TextColor="White"
+                            FontSize="10"
+                            HorizontalTextAlignment="Center"
+                            Text="CLIMBING DAYS"/>
+                    </StackLayout>
+                    <Label
+                        Margin="0,0,0,0"
+                        FontSize="24"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding Path=ClimbDaysCount}"
+                        TextColor="#FF8E2D"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center" />
+                    <Label
+                        Margin="0,8,0,0"
+                        FontSize="12"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding Path=ClimbingYear}"
+                        VerticalTextAlignment="Center" />
+                </Grid>
+                
+                <!-- NEWS -->
+
+                <StackLayout
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding IconPressedCommand}" CommandParameter="JournalFeedPage" />
+                    </StackLayout.GestureRecognizers>
+                    <Image
+                        Aspect="AspectFit"
+                        HeightRequest="56"
+                        Source="icon_home_news" />
+                    <Label
+                        TextColor="White"
+                        FontSize="10"
+                        HorizontalTextAlignment="Center"
+                        Text="NEWS"/>
+                </StackLayout>
+                
+                <!-- PROFILE -->
+                
+                <StackLayout
+                    Grid.Row="5"
+                    Grid.Column="2"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding IconPressedCommand}" CommandParameter="MemberProfilePage" />
+                    </StackLayout.GestureRecognizers>
+                    <Image
+                        Aspect="AspectFit"
+                        Source="icon_home_profile"
+                        HeightRequest="56"/>
+                    <Label
+                        TextColor="White"
+                        FontSize="10"
+                        HorizontalTextAlignment="Center"
+                        Text="PROFILE"/>
+                </StackLayout>                
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<StackLayout
+	x:Class="SloperMobile.UserControls.AscentRating"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+	xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms"
+	BackgroundColor="Black"
+	HorizontalOptions="FillAndExpand"
+	VerticalOptions="FillAndExpand">
+	<Grid
+		Margin="20,0"
+		HorizontalOptions="FillAndExpand"
+		VerticalOptions="FillAndExpand">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="100" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid
+			Grid.ColumnSpan="2"
+			HorizontalOptions="FillAndExpand"
+			VerticalOptions="FillAndExpand">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="35*" />
+				<RowDefinition Height="40*" />
+				<RowDefinition Height="25*" />
+			</Grid.RowDefinitions>
+            <StackLayout
+                Grid.Row="0"
+                VerticalOptions="Center">
+    			<Label
+    				FontSize="24"
+    				HorizontalOptions="Center"
+    				Text="Rate the climb!"
+    				TextColor="White"
+    				VerticalOptions="StartAndExpand" />
+    			<rating:SfRating
+    				x:Name="rating"
+    				HorizontalOptions="Center"
+    				ItemCount="5"
+    				ItemSize="25"
+    				Precision="Standard"
+    				VerticalOptions="StartAndExpand"
+    				WidthRequest="145"
+    				Value="{Binding SendRating, Mode=TwoWay}">
+    				<rating:SfRating.RatingSettings>
+    					<rating:SfRatingSettings
+    						HorizontalOptions="Center"
+    						RatedFill="#FF8E2D"
+    						RatedStroke="#FF8E2D"
+    						RatedStrokeWidth="1"
+    						UnRatedStroke="White"
+    						UnRatedStrokeWidth="1" />
+    				</rating:SfRating.RatingSettings>
+    			</rating:SfRating>
+            </StackLayout>
+			<StackLayout
+				Grid.Row="1"
+				HorizontalOptions="CenterAndExpand"
+				Orientation="Vertical"
+				Spacing="5"
+				VerticalOptions="FillAndExpand">
+				<Label
+					FontSize="20"
+					HorizontalOptions="Center"
+					Text="Attach a Photo!"
+					TextColor="White" />
+				<Image HorizontalOptions="Center" Source="icon_photo_44w">
+					<Image.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding CameraClickCommand}" />
+					</Image.GestureRecognizers>
+				</Image>
+				<Image
+					HeightRequest="100"
+					HorizontalOptions="Center"
+					Source="{Binding AcentRatingImage, Mode=TwoWay}"
+					VerticalOptions="Center"
+					WidthRequest="200" />
+            </StackLayout>
+            <StackLayout
+                Grid.Row="2"
+                HorizontalOptions="CenterAndExpand"
+                Orientation="Vertical"
+                Spacing="5"
+                VerticalOptions="FillAndExpand">              
+				<Label
+					FontSize="20"
+					HorizontalOptions="CenterAndExpand"
+					Text="Comments"
+					TextColor="White" />
+				<Image
+					HorizontalOptions="Center"
+					Source="icon_comment_44w"
+					VerticalOptions="Center">
+					<Image.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding CommentClickCommand}" />
+					</Image.GestureRecognizers>
+				</Image>
+				<ScrollView HeightRequest="100" Orientation="Vertical">
+					<Label
+						FontSize="Medium"
+						HorizontalOptions="CenterAndExpand"
+						IsEnabled="False"
+						Text="{Binding CommentText, Mode=TwoWay}"
+						TextColor="White"
+						VerticalOptions="FillAndExpand" />
+				</ScrollView>
+			</StackLayout>
+		</Grid>
+		<StackLayout
+			x:Name="ImgAscRatingPrv"
+			Grid.Row="1"
+			Grid.Column="0"
+			Orientation="Horizontal">
+			<Image
+				HeightRequest="20"
+				HorizontalOptions="CenterAndExpand"
+				Source="arrowLeftWhite"
+				VerticalOptions="CenterAndExpand" />
+		</StackLayout>
+		<StackLayout
+			x:Name="ImgAscRatingNxt"
+			Grid.Row="1"
+			Grid.Column="1"
+			Orientation="Horizontal">
+			<Image
+				HeightRequest="20"
+				HorizontalOptions="CenterAndExpand"
+				Rotation="180"
+				Source="arrowLeftWhite"
+				VerticalOptions="CenterAndExpand" />
+		</StackLayout>
+	</Grid>
+</StackLayout>

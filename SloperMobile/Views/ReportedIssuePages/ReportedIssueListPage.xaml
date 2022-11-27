@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="SloperMobile.Views.ReportedIssuePages.ReportedIssueListPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:Controls="clr-namespace:SloperMobile.CustomControls;assembly=SloperMobile"
+	xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	Title="ReportedIssueListPage"
+	NavigationPage.HasNavigationBar="False"
+	Style="{StaticResource AppBackgroundColor}">
+	<Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto" />
+			<RowDefinition Height="auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<UC:HeaderUC
+			BindingContext="{Binding .}"
+			HeightRequest="40"
+			HorizontalOptions="Fill"
+			VerticalOptions="Start" />
+		<StackLayout
+			Grid.Row="1"
+			Margin="5,0"
+			BackgroundColor="Black"
+			HorizontalOptions="Center"
+			Orientation="Horizontal"
+			VerticalOptions="Center">
+			<Label
+				BackgroundColor="Black"
+				FontSize="Medium"
+				HorizontalOptions="Center"
+				HorizontalTextAlignment="Center"
+				Text="{Binding RouteName, Mode=TwoWay}"
+				TextColor="#FA7200" />
+			<Image
+				Margin="5,0"
+				HeightRequest="50"
+				HorizontalOptions="Center"
+				Source="icon_route_warning"
+				VerticalOptions="Center"
+				WidthRequest="50" />
+		</StackLayout>
+		<StackLayout Grid.Row="2" Margin="5,0">
+			<Label
+				FontSize="Large"
+				HorizontalOptions="Center"
+				HorizontalTextAlignment="Center"
+				Text="REPORTED ISSUE(S)"
+				TextColor="White"
+				VerticalOptions="Center" />
+
+			<StackLayout>
+				<Grid
+					Margin="0,15,0,0"
+					ColumnSpacing="0"
+					RowSpacing="0">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="25" />
+						<RowDefinition Height="1" />
+					</Grid.RowDefinitions>
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="20*" />
+							<ColumnDefinition Width="60*" />
+							<ColumnDefinition Width="20*" />
+						</Grid.ColumnDefinitions>
+						<Label
+							HorizontalOptions="Center"
+							HorizontalTextAlignment="Center"
+							Style="{StaticResource ListHeaderStyle}"
+							Text="DATE"
+							VerticalOptions="StartAndExpand" />
+						<Label
+							Grid.Row="0"
+							Grid.Column="1"
+							HorizontalTextAlignment="Center"
+							Style="{StaticResource ListHeaderStyle}"
+							Text="ISSUE"
+							VerticalOptions="StartAndExpand" />
+						<Label
+							Grid.Row="0"
+							Grid.Column="2"
+							HorizontalOptions="Center"
+							HorizontalTextAlignment="Center"
+							Style="{StaticResource ListHeaderStyle}"
+							Text="REPORTED BY"
+							VerticalOptions="StartAndExpand" />
+					</Grid>
+					<BoxView
+						Grid.Row="1"
+						BackgroundColor="#676767"
+						HeightRequest="1"
+						HorizontalOptions="Fill"
+						VerticalOptions="Center" />
+				</Grid>
+				<Controls:InfiniteListView
+					x:Name="listView"
+					Grid.Row="2"
+					BackgroundColor="Black"
+					HasUnevenRows="True"
+					ItemsSource="{Binding ReportedIssueList}"
+					SeparatorVisibility="None">
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell>
+								<Grid
+									x:Name="gridData"
+									Margin="0"
+									Padding="0"
+									BackgroundColor="Black"
+									RowSpacing="0">
+									<Grid.GestureRecognizers>
+										<TapGestureRecognizer Command="{Binding BindingContext.IssueTapCommand, Source={x:Reference listView}}" CommandParameter="{Binding .}" />
+									</Grid.GestureRecognizers>
+									<Grid.RowDefinitions>
+										<RowDefinition Height="40" />
+										<RowDefinition Height="1" />
+									</Grid.RowDefinitions>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="20*" />
+										<ColumnDefinition Width="60*" />
+										<ColumnDefinition Width="20*" />
+									</Grid.ColumnDefinitions>
+									<Label
+										Grid.Row="0"
+										Grid.Column="0"
+										HorizontalTextAlignment="Center"
+										Style="{StaticResource ListItemStyle}"
+										Text="{Binding DateCreated}"
+										VerticalTextAlignment="Center" />
+									<StackLayout
+										Grid.Row="0"
+										Grid.Column="1"
+										HorizontalOptions="Center"
+										Spacing="2">
+										<Label
+											HorizontalTextAlignment="Center"
+											Style="{StaticResource ListItemStyle}"
+											Text="{Binding IssueCategory}"
+											VerticalTextAlignment="Center" />
+										<Label
+											HorizontalTextAlignment="Center"
+											Style="{StaticResource ListItemStyle}"
+											Text="{Binding IssueType}"
+											VerticalTextAlignment="Center" />
+									</StackLayout>
+
+									<Label
+										Grid.Row="0"
+										Grid.Column="2"
+										HorizontalTextAlignment="Center"
+										Style="{StaticResource ListItemStyle}"
+										Text="{Binding ReportedBy}"
+										VerticalTextAlignment="Center" />
+									<BoxView
+										Grid.Row="1"
+										Grid.ColumnSpan="3"
+										BackgroundColor="#3F3F3F"
+										HeightRequest="1"
+										HorizontalOptions="Fill"
+										VerticalOptions="Center" />
+								</Grid>
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</Controls:InfiniteListView>
+			</StackLayout>
+		</StackLayout>
+	</Grid>
+</ContentPage>

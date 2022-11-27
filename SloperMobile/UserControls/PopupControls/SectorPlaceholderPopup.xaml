@@ -1,0 +1,108 @@
+<pages:PopupPage
+    x:Class="SloperMobile.UserControls.PopupControls.SectorPlaceholderPopup"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    HasSystemPadding="false"
+    x:Name="PlaceholderPopup">
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="CenteredView" TargetType="View">
+                 <Setter Property="HorizontalOptions" Value="Center" />
+                 <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            
+            <Style x:Key="PlaceHolderLabelStyle" TargetType="Label" BasedOn="{StaticResource CenteredLabel}">
+                 <Setter Property="HorizontalOptions" Value="Center" />
+                 <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="18" />
+            </Style>
+            <Style x:Key="SmallPlaceHolderLabelStyle" TargetType="Label" BasedOn="{StaticResource PlaceHolderLabelStyle}">
+                <Setter Property="FontSize" Value="16" />
+            </Style>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+    <Grid
+          Padding="0,20,0,0"
+          BackgroundColor="Black"
+          HorizontalOptions="FillAndExpand"
+          VerticalOptions="FillAndExpand">
+        <Grid Margin="40">
+             <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Label Grid.ColumnSpan="2"
+                   Text="{Binding PageName, Source={x:Reference PlaceholderPopup},StringFormat='To explore the {0} of a Crag, you need to first download a Crag from either the Climbing Locations map or the selection of Guidebooks:'}"
+                   Style="{StaticResource PlaceHolderLabelStyle}"/>
+            
+            <StackLayout
+                Grid.Row="1"
+                Style="{StaticResource CenteredView}">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding FooterCommand}"
+                                          CommandParameter="GoogleMapPinsPage" />
+                </StackLayout.GestureRecognizers>
+                <Image
+                    Margin="20,20,20,0"
+                    Aspect="AspectFit"
+                    Source="icon_home_climbing_locations"
+                    VerticalOptions="FillAndExpand"/>
+                <Label
+                        Margin="0,2,0,15"
+                        VerticalOptions="End"
+                        TextColor="White"
+                        FontSize="12"
+                        HorizontalTextAlignment="Center"
+                        Text="CLIMBING LOCATIONS"/>
+            </StackLayout>
+            
+            <StackLayout
+                Grid.Row="1"
+                Grid.Column="1"
+                Style="{StaticResource CenteredView}">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GBsCommand}"/>
+                </StackLayout.GestureRecognizers>
+                <Image
+                    Margin="20,20,20,0"
+                    Aspect="AspectFit"
+                    Source="icon_home_guidebooks"
+                    VerticalOptions="FillAndExpand"/>
+                <Label
+                        Margin="0,2,0,15"
+                        VerticalOptions="End"
+                        TextColor="White"
+                        FontSize="12"
+                        HorizontalTextAlignment="Center"
+                        Text="GUIDEBOOKS"/>
+            </StackLayout>
+            
+            <Label Grid.Row="2"
+                   Grid.ColumnSpan="2"
+                   Text="Please note that you will have access to two free Premium Crags. Any additional Crags or Guidebooks can be subscribed to on a Yearly or Monthly basis and can be cancelled at any time" 
+                   Style="{StaticResource SmallPlaceHolderLabelStyle}"/>
+            
+       </Grid>
+         <!--  Close Button  -->
+       <ContentView Margin="16" HorizontalOptions="End" VerticalOptions="Start">
+            <ContentView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnClose" />
+            </ContentView.GestureRecognizers>
+            <Image
+                x:Name="CloseImage"
+                Aspect="AspectFit"
+                HeightRequest="32"
+                Source="close_circle_button"
+                WidthRequest="32" />
+        </ContentView>
+    </Grid>
+</pages:PopupPage>

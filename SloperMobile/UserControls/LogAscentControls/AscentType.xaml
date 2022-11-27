@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<StackLayout
+	x:Class="SloperMobile.UserControls.AscentType"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+	BackgroundColor="Black">
+	<Grid
+		Margin="20,0"
+		HorizontalOptions="FillAndExpand"
+		VerticalOptions="FillAndExpand">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="100" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid
+			Grid.ColumnSpan="2"
+			HorizontalOptions="FillAndExpand"
+			VerticalOptions="FillAndExpand">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="35*" />
+				<RowDefinition Height="20*" />
+				<RowDefinition Height="1" />
+				<RowDefinition Height="20*" />
+				<RowDefinition Height="1" />
+				<RowDefinition Height="20*" />
+				<RowDefinition Height="5*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1*" />
+				<ColumnDefinition Width="1" />
+				<ColumnDefinition Width="1*" />
+			</Grid.ColumnDefinitions>
+			<StackLayout
+				Grid.Row="0"
+				Grid.ColumnSpan="3"
+				VerticalOptions="Center">
+				<Label
+					FontSize="24"
+					HorizontalOptions="Center"
+					Text="What type of send"
+					TextColor="White" />
+				<Label
+					FontSize="24"
+					HorizontalOptions="Center"
+					Text="for this route?"
+					TextColor="White" />
+			</StackLayout>
+
+			<BoxView
+				Grid.Row="1"
+				Grid.RowSpan="5"
+				Grid.Column="1"
+				BackgroundColor="#676767"
+				HorizontalOptions="End"
+				VerticalOptions="FillAndExpand"
+				WidthRequest="1" />
+			<BoxView
+				Grid.Row="2"
+				Grid.Column="0"
+				Grid.ColumnSpan="3"
+				BackgroundColor="#676767"
+				HeightRequest="1"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="End" />
+			<BoxView
+				Grid.Row="4"
+				Grid.Column="0"
+				Grid.ColumnSpan="3"
+				BackgroundColor="#676767"
+				HeightRequest="1"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="End" />
+
+			<Frame
+				x:Name="Onsight"
+				Grid.Row="1"
+				Grid.Column="0"
+				BackgroundColor="Black"
+				BorderColor="Black"
+				HorizontalOptions="Fill"
+				VerticalOptions="Fill">
+				<Frame.GestureRecognizers>
+					<TapGestureRecognizer
+						Command="{Binding SendTypeCommand, Mode=TwoWay}"
+						CommandParameter="Onsight"
+						Tapped="SetFrameColor" />
+				</Frame.GestureRecognizers>
+				<Label
+					HorizontalOptions="Center"
+					Style="{StaticResource GeneralLabelStyle}"
+					Text="Onsight"
+					VerticalOptions="Center" />
+			</Frame>
+
+			<Frame
+				x:Name="Flash"
+				Grid.Row="1"
+				Grid.Column="2"
+				BackgroundColor="Black"
+				BorderColor="Black"
+				HorizontalOptions="Fill"
+				VerticalOptions="Fill">
+				<Frame.GestureRecognizers>
+					<TapGestureRecognizer
+						Command="{Binding SendTypeCommand}"
+						CommandParameter="Flash"
+						Tapped="SetFrameColor" />
+				</Frame.GestureRecognizers>
+				<Label
+					HorizontalOptions="Center"
+					Style="{StaticResource GeneralLabelStyle}"
+					Text="Flash"
+					VerticalOptions="Center" />
+			</Frame>
+			<Frame
+				x:Name="Redpoint"
+				Grid.Row="3"
+				Grid.Column="0"
+				BackgroundColor="Black"
+				BorderColor="Black"
+				HorizontalOptions="Fill"
+				VerticalOptions="Fill">
+				<Frame.GestureRecognizers>
+					<TapGestureRecognizer
+						Command="{Binding SendTypeCommand}"
+						CommandParameter="Redpoint"
+						Tapped="SetFrameColor" />
+				</Frame.GestureRecognizers>
+				<Label
+					HorizontalOptions="Center"
+					Style="{StaticResource GeneralLabelStyle}"
+					Text="Redpoint"
+					VerticalOptions="Center" />
+			</Frame>
+			<Frame
+				x:Name="Repeat"
+				Grid.Row="3"
+				Grid.Column="2"
+				BackgroundColor="Black"
+				BorderColor="Black"
+				HorizontalOptions="Fill"
+				VerticalOptions="Fill">
+				<Frame.GestureRecognizers>
+					<TapGestureRecognizer
+						Command="{Binding SendTypeCommand}"
+						CommandParameter="Repeat"
+						Tapped="SetFrameColor" />
+				</Frame.GestureRecognizers>
+				<Label
+					HorizontalOptions="Center"
+					Style="{StaticResource GeneralLabelStyle}"
+					Text="Repeat"
+					VerticalOptions="Center" />
+			</Frame>
+			<Frame
+				x:Name="ProjectBurn"
+				Grid.Row="5"
+				Grid.Column="0"
+				BackgroundColor="Black"
+				BorderColor="Black"
+				HorizontalOptions="Fill"
+				VerticalOptions="Fill">
+				<Frame.GestureRecognizers>
+					<TapGestureRecognizer
+						Command="{Binding SendTypeCommand}"
+						CommandParameter="Project"
+						Tapped="SetFrameColor" />
+				</Frame.GestureRecognizers>
+				<Label
+					HorizontalOptions="Center"
+					Style="{StaticResource GeneralLabelStyle}"
+					Text="Project Burn"
+					VerticalOptions="Center" />
+			</Frame>
+			<Frame
+				x:Name="OneHang"
+				Grid.Row="5"
+				Grid.Column="2"
+				BackgroundColor="Black"
+				BorderColor="Black"
+				HorizontalOptions="Fill"
+				VerticalOptions="Fill">
+				<Frame.GestureRecognizers>
+					<TapGestureRecognizer
+						Command="{Binding SendTypeCommand}"
+						CommandParameter="One hang"
+						Tapped="SetFrameColor" />
+				</Frame.GestureRecognizers>
+				<Label
+					HorizontalOptions="Center"
+					Style="{StaticResource GeneralLabelStyle}"
+					Text="One Hang"
+					VerticalOptions="Center" />
+			</Frame>
+		</Grid>
+
+		<StackLayout
+			x:Name="ImgAcentTypeNxt"
+			Grid.Row="1"
+			Grid.Column="1"
+			Orientation="Horizontal">
+			<Image
+				HeightRequest="20"
+				HorizontalOptions="CenterAndExpand"
+				Rotation="180"
+				Source="arrowLeftWhite"
+				VerticalOptions="CenterAndExpand" />
+		</StackLayout>
+	</Grid>
+</StackLayout>

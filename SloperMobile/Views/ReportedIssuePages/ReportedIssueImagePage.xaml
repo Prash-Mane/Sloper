@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="SloperMobile.Views.ReportedIssuePages.ReportedIssueImagePage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    NavigationPage.HasNavigationBar="False"
+	Style="{DynamicResource AppBackgroundColor}">
+	<Grid
+		x:Name="MainGrid"
+		Margin="0"
+		ColumnSpacing="0"
+		HorizontalOptions="FillAndExpand"
+		RowSpacing="0"
+		VerticalOptions="FillAndExpand">
+		<Grid.Padding>
+			<OnPlatform x:TypeArguments="Thickness">
+				<On Platform="iOS">
+					0,20,0,0
+				</On>
+				<On Platform="Android">
+					0,0,0,0
+				</On>
+			</OnPlatform>
+		</Grid.Padding>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<UC:HeaderUC
+			x:Name="BackHeaderUC"
+			Grid.Row="0"
+			Margin="0"
+			Padding="0"
+			BackgroundColor="Black"
+			BindingContext="{Binding .}"
+			HeightRequest="40"
+			HorizontalOptions="FillAndExpand"
+			VerticalOptions="StartAndExpand" />
+		<Grid
+			x:Name="ImageGrid"
+			Grid.Row="1"
+			Margin="0"
+			Padding="0"
+			HorizontalOptions="FillAndExpand"
+			VerticalOptions="FillAndExpand">
+			<ScrollView Orientation="Both">
+				<Image x:Name="ScrollableImage" Aspect="AspectFit" />
+			</ScrollView>
+			<!--<local:ZoomableScrollView
+                x:Name="ZoomScroll"
+                Grid.Row="0"
+                Grid.Column="0"
+                HorizontalOptions="FillAndExpand"
+                MaximumZoomScale="5"
+                MinimumZoomScale="1"
+                Orientation="Both"
+                VerticalOptions="FillAndExpand">
+                <AbsoluteLayout
+                    x:Name="AbsoluteLayoutLocal"
+                    HeightRequest="300"
+                    WidthRequest="300">
+                    <forms:SKCanvasView
+                        x:Name="skCanvas"
+                        AbsoluteLayout.LayoutBounds="0,0,1,1"
+                        AbsoluteLayout.LayoutFlags="All"
+                        HeightRequest="300"
+                        PaintSurface="SkCanvas_OnPaintSurface"
+                        WidthRequest="300" />
+                </AbsoluteLayout>
+            </local:ZoomableScrollView>-->
+		</Grid>
+		<!--<OnPlatform x:TypeArguments="View">
+            <On Platform="Android">
+                <Grid
+                    Grid.Row="1"
+                    Margin="0,0,10,10"
+                    Padding="0"
+                    ColumnSpacing="0"
+                    HorizontalOptions="End"
+                    RowSpacing="0"
+                    VerticalOptions="End">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Button
+                        Margin="0,0,0,0"
+                        Clicked="ZoomIn"
+                        HeightRequest="50"
+                        Opacity="0.8"
+                        Text=""
+                        WidthRequest="50" />
+                    <Label
+                        Margin="0,0,0,0"
+                        FontSize="30"
+                        HeightRequest="50"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="+"
+                        TextColor="#5b5b5b"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center"
+                        WidthRequest="50" />
+                    <Button
+                        Grid.Row="1"
+                        Margin="0,-11,0,0"
+                        Clicked="ZoomOut"
+                        HeightRequest="50"
+                        Opacity="0.8"
+                        Text=""
+                        WidthRequest="50" />
+                    <Label
+                        Grid.Row="1"
+                        Margin="0,-11,0,0"
+                        FontSize="30"
+                        HeightRequest="50"
+                        HorizontalOptions="Fill"
+                        HorizontalTextAlignment="Center"
+                        Text="–"
+                        VerticalOptions="Fill"
+                        VerticalTextAlignment="Center"
+                        WidthRequest="50" />
+                </Grid>
+            </On>
+            <On Platform="iOS">
+                <Grid
+                    Grid.Row="0"
+                    Margin="0"
+                    Padding="0"
+                    ColumnSpacing="0"
+                    InputTransparent="true" />
+            </On>
+        </OnPlatform>-->
+	</Grid>
+</ContentPage>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="SloperMobile.UserControls.ReportIssue.IssueTypeToReport"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+    xmlns:effects="clr-namespace:SloperMobile.Effects;assembly=SloperMobile"
+    ControlTemplate="{StaticResource HeaderFooterPageTemplate}">
+    <ContentView.Content>
+        <Grid
+            Margin="20,0,20,0"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid
+                Grid.ColumnSpan="2"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40*" />
+                    <RowDefinition Height="20*" />
+                    <RowDefinition Height="1" />
+                    <RowDefinition Height="20*" />
+                    <RowDefinition Height="20*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <StackLayout
+                    Grid.Row="0"
+                    Grid.ColumnSpan="3"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                    <Label
+                        FontSize="24"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding SelectedIssueCategoryName}"
+                        TextColor="White" />
+                </StackLayout>
+                <Frame
+                    x:Name="IssueType_1"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    BackgroundColor="Black"
+                    Padding="10">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding IssueTypeCommand, Mode=TwoWay}"
+                            CommandParameter="{Binding IssueTypeCmdParam_1, Mode=TwoWay}"
+                            Tapped="SetFrameColor" />
+                    </Frame.GestureRecognizers>
+                    <Image
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill"
+                        Aspect="AspectFit"
+                        Source="{Binding TypeIcon_1, Mode=TwoWay}" />
+                </Frame>
+                <BoxView
+                    Grid.Row="1"
+                    Grid.RowSpan="3"
+                    Grid.Column="1"
+                    WidthRequest="1"
+                    HorizontalOptions="End"
+                    VerticalOptions="FillAndExpand"
+                    BackgroundColor="#676767" />
+                <Frame
+                    x:Name="IssueType_2"
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Margin="0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    BackgroundColor="Black"
+                    Padding="10">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding IssueTypeCommand, Mode=TwoWay}"
+                            CommandParameter="{Binding IssueTypeCmdParam_2, Mode=TwoWay}"
+                            Tapped="SetFrameColor" />
+                    </Frame.GestureRecognizers>
+                    <Image
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill"
+                        Aspect="AspectFit"
+                        Source="{Binding TypeIcon_2, Mode=TwoWay}" />
+                </Frame>
+                <BoxView
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    HeightRequest="1"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="End"
+                    BackgroundColor="#676767" />
+                <Frame
+                    x:Name="IssueType_3"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Margin="0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    BackgroundColor="Black"
+                    Padding="10">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding IssueTypeCommand, Mode=TwoWay}"
+                            CommandParameter="{Binding IssueTypeCmdParam_3, Mode=TwoWay}"
+                            Tapped="SetFrameColor" />
+                    </Frame.GestureRecognizers>
+                    <Image
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill"
+                        Aspect="AspectFit"
+                        Source="{Binding TypeIcon_3, Mode=TwoWay}" />
+                </Frame>
+                <Frame
+                    x:Name="IssueType_4"
+                    Grid.Row="3"
+                    Grid.Column="2"
+                    Margin="0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    BackgroundColor="Black"
+                    Padding="10">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding IssueTypeCommand, Mode=TwoWay}"
+                            CommandParameter="{Binding IssueTypeCmdParam_4, Mode=TwoWay}"
+                            Tapped="SetFrameColor" />
+                    </Frame.GestureRecognizers>
+                    <Image
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill"
+                        Aspect="AspectFit"
+                        Source="{Binding TypeIcon_4, Mode=TwoWay}" />
+                </Frame>
+            </Grid>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

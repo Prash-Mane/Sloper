@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="SloperMobile.Views.SectorPages.SectorRoutesPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+	xmlns:controls="clr-namespace:SloperMobile.CustomControls"
+	xmlns:effect="clr-namespace:SloperMobile.Effects;assembly=SloperMobile"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	xmlns:models="clr-namespace:SloperMobile.Model;assembly=SloperMobile"
+	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+	prism:ViewModelLocator.AutowireViewModel="True"
+	ControlTemplate="{StaticResource HeaderFooterPageTemplate}"
+	NavigationPage.HasNavigationBar="False"
+	Style="{DynamicResource AppBackgroundColor}">
+    <ContentPage.Resources>
+       <controls:ImageButton
+            x:Key="RightHeaderView"
+            Style="{StaticResource ToolbarItem}"
+            ImageSource="icon_arrow_expand"
+            TapCommand="{Binding TapSectorCommand}" />
+    </ContentPage.Resources>
+	<StackLayout
+		Margin="0"
+		HorizontalOptions="FillAndExpand"
+		VerticalOptions="FillAndExpand">
+		<Grid
+			HorizontalOptions="FillAndExpand"
+			RowSpacing="0"
+			VerticalOptions="FillAndExpand">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="auto" />
+				<RowDefinition Height="auto" />
+				<RowDefinition Height="1*" />
+			</Grid.RowDefinitions>
+			<Image
+				Grid.Row="0"
+				Margin="0,0,0,5"
+				Aspect="AspectFill"
+				HeightRequest="240"
+				Source="{Binding SectorImage}"
+				WidthRequest="100">
+				<Image.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding TapSectorCommand}" CommandParameter="RoutePage" />
+				</Image.GestureRecognizers>
+			</Image>
+			<BoxView
+				Grid.Row="0"
+				BackgroundColor="Black"
+				HorizontalOptions="FillAndExpand"
+				IsVisible="{Binding IsNavigatingToTopos}"
+				Opacity="0.5"
+				VerticalOptions="FillAndExpand" />
+			<ActivityIndicator
+				Grid.Row="0"
+				HorizontalOptions="CenterAndExpand"
+				IsRunning="{Binding IsNavigatingToTopos}"
+				IsVisible="{Binding IsNavigatingToTopos}"
+				VerticalOptions="CenterAndExpand"
+				Color="White" />
+			<!--  ROUTE LEGENDS STARTS  -->
+
+			<controls:SegmentedControl
+				Grid.Row="1"
+				Margin="5"
+				x:TypeArguments="models:BucketsSegmentModel"
+				HorizontalOptions="FillAndExpand"
+				ItemsSource="{Binding LegendsDataSource}"
+				Orientation="Horizontal"
+                ItemSelectedCommand="{Binding FilterCommand}" 
+				Spacing="0">
+				<controls:SegmentedControl.ItemTemplate>
+					<DataTemplate>
+						<controls:RepeaterView ItemsSource="{Binding Buckets}" Spacing="0">
+							<controls:RepeaterView.ItemTemplate>
+								<DataTemplate>
+									<Label
+										FontSize="Small"
+										HorizontalOptions="FillAndExpand"
+										HorizontalTextAlignment="Center"
+										Text="{Binding bucket_name}"
+										TextColor="{Binding hex_code}"
+										VerticalTextAlignment="Center" />
+								</DataTemplate>
+							</controls:RepeaterView.ItemTemplate>
+						</controls:RepeaterView>
+					</DataTemplate>
+				</controls:SegmentedControl.ItemTemplate>
+			</controls:SegmentedControl>
+			<ListView
+				x:Name="listView"
+				Grid.Row="2"
+				Margin="0"
+				BackgroundColor="Black"
+				HasUnevenRows="false"
+				HorizontalOptions="FillAndExpand"
+				IsEnabled="{Binding IsListEnabled}"
+				ItemsSource="{Binding Routes}"
+				RowHeight="41"
+				SeparatorVisibility="None"
+				VerticalOptions="FillAndExpand">
+				<ListView.Footer>
+					<Label />
+				</ListView.Footer>
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<Grid
+								Margin="5,0"
+								BackgroundColor="Transparent"
+								ColumnSpacing="0"
+								HeightRequest="41"
+								HorizontalOptions="FillAndExpand"
+								RowSpacing="0"
+								VerticalOptions="FillAndExpand">
+								<Grid.GestureRecognizers>
+									<TapGestureRecognizer Command="{Binding Path=BindingContext.ItemTappedCommand, Source={x:Reference listView}}" CommandParameter="{Binding .}" />
+								</Grid.GestureRecognizers>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*" />
+									<ColumnDefinition Width="auto" />
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="40" />
+									<RowDefinition Height="1" />
+								</Grid.RowDefinitions>
+								<!--  ROUTE INDEX AND TITLE  -->
+								<StackLayout
+									Grid.Row="0"
+									Grid.Column="0"
+									Padding="5"
+									HeightRequest="40"
+									HorizontalOptions="Start"
+									Orientation="Horizontal"
+									VerticalOptions="Fill">
+									<Image
+										Margin="0,0,2,0"
+										HeightRequest="30"
+										HorizontalOptions="Start"
+										IsVisible="{Binding RouteIndex}"
+										Source="icon_new_star"
+										VerticalOptions="Center" />
+									<StackLayout VerticalOptions="Center">
+										<Label
+											HorizontalOptions="StartAndExpand"
+											LineBreakMode="TailTruncation"
+											Text="{Binding TitleText}"
+											TextColor="White"
+											VerticalOptions="StartAndExpand" />
+									</StackLayout>
+								</StackLayout>
+								<!--  END ROUTE INDEX AND TITLE  -->
+								<!--  GRADE AND ROUTE CHARACTERISTICS  -->
+
+								<StackLayout
+									Grid.Row="0"
+									Grid.Column="1"
+									Padding="5"
+									HeightRequest="40"
+									HorizontalOptions="End"
+									Orientation="Horizontal"
+									Spacing="4"
+									VerticalOptions="Fill">
+									<Image 
+                                        VerticalOptions="Center"
+                                        ClassId="resizeByHeight"
+                                        HeightRequest="20" 
+                                        WidthRequest="20"
+                                        Source="{Binding Steepness2}" />
+									<Image
+                                        VerticalOptions="Center"
+                                        ClassId="resizeByHeight"
+										HeightRequest="20"
+                                        WidthRequest="20"
+										IsVisible="{Binding HasSteepness3}"
+										Source="{Binding Steepness3}" />
+									<Image
+                                        VerticalOptions="Center"
+                                        ClassId="resizeByHeight"
+										HeightRequest="20"
+                                        WidthRequest="20"
+										IsVisible="{Binding HasStarImage}"
+										Source="{Binding StarImage}" />
+									<Frame
+										VerticalOptions="Center"
+										Padding="0"
+										BackgroundColor="{Binding RouteGradeColor}"
+										CornerRadius="0"
+										HasShadow="false"
+										HeightRequest="20"
+										WidthRequest="50">
+										<Label
+											Margin="0"
+											FontSize="Small"
+											HorizontalOptions="CenterAndExpand"
+											Text="{Binding RouteTechGrade}"
+											TextColor="White"
+											VerticalOptions="CenterAndExpand" />
+									</Frame>
+								</StackLayout>
+								<!--  END ROUTE CHARACTERISTICS  -->
+								<!--  ROUTE INFO  -->
+								<!--                                <StackLayout Grid.Row="1" Grid.ColumnSpan="2">-->
+								<!--<Label Text="{Binding SubText}" TextColor="#95989A" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" LineBreakMode="WordWrap" />-->
+								<!--                                </StackLayout>-->
+								<!--  END ROUTE INFO  -->
+								<!--  SEPARATOR  -->
+								<BoxView
+									Grid.Row="1"
+									Grid.ColumnSpan="2"
+									BackgroundColor="#3F3F3F"
+									HeightRequest="1"
+									HorizontalOptions="FillAndExpand"
+									VerticalOptions="End" />
+								<!--  END SEPARATOR  -->
+							</Grid>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+
+			<Label
+				Grid.Row="2"
+				FontSize="Large"
+				HorizontalOptions="CenterAndExpand"
+				IsVisible="{Binding ShowEmptyOverlay}"
+				Text="No Filtered Routes Found"
+				TextColor="White"
+				VerticalOptions="CenterAndExpand" />            
+		</Grid>
+	</StackLayout>
+</ContentPage>

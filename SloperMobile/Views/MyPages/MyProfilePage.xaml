@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SloperMobile.Views.MyPages.MyProfilePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    NavigationPage.HasNavigationBar="False"
+    ControlTemplate="{StaticResource HeaderFooterPageTemplate}"
+    Style="{DynamicResource AppBackgroundColor}">
+    <Grid Margin="35,0,35,0" VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45*" />
+            <RowDefinition Height="20*" />
+            <RowDefinition Height="45*" />
+        </Grid.RowDefinitions>
+        <!--<Image
+            Grid.Row="0"
+            HorizontalOptions="Center"
+            Scale="0.75"
+            Source="icon_profile_large"
+            VerticalOptions="Center" />-->
+        <Image
+            Grid.Row="0"
+            Margin="0"
+            Aspect="AspectFit"
+            HeightRequest="300"
+            HorizontalOptions="Center"
+            Source="{Binding UserProfileImage, Mode=TwoWay}"
+            VerticalOptions="Center"
+            WidthRequest="300">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding AvatarCommand}" />
+            </Image.GestureRecognizers>
+        </Image>
+        <StackLayout
+            Grid.Row="1"
+            HorizontalOptions="CenterAndExpand"
+            Orientation="Vertical"
+            VerticalOptions="CenterAndExpand">
+            <Label
+                HorizontalOptions="CenterAndExpand"
+                Style="{StaticResource GeneralLabelStyle}"
+                Text="You are logged in as:" />
+            <Label
+                HorizontalOptions="CenterAndExpand"
+                Style="{StaticResource GeneralLabelStyle}"
+                Text="{Binding DisplayName}" />
+        </StackLayout>
+        <StackLayout
+            Grid.Row="2"
+            Margin="0,0,0,80"
+            HorizontalOptions="Fill"
+            Spacing="20"
+            VerticalOptions="End">
+            <Button
+                Command="{Binding ChangePasswordCommand}"
+                IsVisible="{Binding IsButtonVisible}"
+                Style="{StaticResource GeneralButtonStyle}"
+                Text="CHANGE PASSWORD" />
+            <Button
+                Command="{Binding EditProfileCommand}"
+                Style="{StaticResource GeneralButtonStyle}"
+                Text="EDIT PROFILE" />
+<!--            <Button
+                BorderRadius="0"
+                Command="{Binding LogOutCommand}"
+                Style="{StaticResource GeneralButtonStyle}"
+                Text="LOGOUT" />-->
+        </StackLayout>
+    </Grid>
+</ContentPage>

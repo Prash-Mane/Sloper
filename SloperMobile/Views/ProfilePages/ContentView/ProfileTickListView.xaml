@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="SloperMobile.ProfileTickListView"
+                xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms">
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="1" Margin="5,0">
+            <Grid
+                Margin="0,15,0,0"
+                ColumnSpacing="0"
+                RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="1" />
+                </Grid.RowDefinitions>
+                <Grid Margin="0,0,5,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="60*" />
+                        <ColumnDefinition Width="20*" />
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        HorizontalTextAlignment="Center"
+                        Style="{StaticResource ListHeaderStyle}"
+                        Text="DATE"
+                        VerticalOptions="StartAndExpand" />
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        HorizontalTextAlignment="Center"
+                        Style="{StaticResource ListHeaderStyle}"
+                        Text="CLIMB"
+                        VerticalOptions="StartAndExpand" />
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        HorizontalTextAlignment="Center"
+                        Style="{StaticResource ListHeaderStyle}"
+                        Text="GRADE"
+                        VerticalOptions="StartAndExpand" />
+                </Grid>
+                <BoxView
+                    Grid.Row="1"
+                    BackgroundColor="#676767"
+                    HeightRequest="1"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Center" />
+            </Grid>
+            <sync:SfListView
+                x:Name="listView"
+                AutoFitMode="Height"
+                IsVisible="{Binding ShowEmptyOverlay, Converter={StaticResource BoolInvertConverter}}"
+                ItemHolding="listView_ItemHolding"
+                ItemsSource="{Binding TickListsList}"
+                SelectionBackgroundColor="Transparent"
+                SwipeOffset="40"
+                SwipeThreshold="30">
+                <sync:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout HeightRequest="41" Spacing="0">
+                            <StackLayout
+                                HeightRequest="40"
+                                HorizontalOptions="Fill"
+                                Orientation="Horizontal"
+                                Spacing="0">
+                                <Label
+                                    HeightRequest="40"
+                                    HorizontalOptions="Start"
+                                    HorizontalTextAlignment="Center"
+                                    Style="{StaticResource ListItemStyle}"
+                                    Text="{Binding DateCreated}"
+                                    VerticalTextAlignment="Center"
+                                    WidthRequest="75" />
+                                <Label
+                                    HeightRequest="40"
+                                    HorizontalOptions="CenterAndExpand"
+                                    HorizontalTextAlignment="Center"
+                                    Style="{StaticResource ListItemStyle}"
+                                    Text="{Binding route_name}"
+                                    VerticalTextAlignment="Center" />
+                                <Label
+                                    HeightRequest="40"
+                                    HorizontalOptions="End"
+                                    HorizontalTextAlignment="Center"
+                                    Style="{StaticResource ListItemStyle}"
+                                    Text="{Binding grade_name}"
+                                    VerticalTextAlignment="Center"
+                                    WidthRequest="75" />
+                            </StackLayout>
+                            <StackLayout
+                                BackgroundColor="#3F3F3F"
+                                HeightRequest="1"
+                                HorizontalOptions="FillAndExpand" />
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Path=BindingContext.ItemTapCommand, Source={x:Reference listView}}" CommandParameter="{Binding .}" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    </DataTemplate>
+                </sync:SfListView.ItemTemplate>
+            </sync:SfListView>
+        </StackLayout>
+        <StackLayout
+            Grid.Row="1"
+            HorizontalOptions="Fill"
+            IsVisible="{Binding ShowEmptyOverlay}"
+            Orientation="Vertical"
+            VerticalOptions="Center">
+            <Label
+                FontSize="Large"
+                HorizontalOptions="CenterAndExpand"
+                Text="No Ticks"
+                TextColor="White"
+                VerticalOptions="Start" />
+            <Label
+                Margin="5"
+                FontSize="Default"
+                HorizontalOptions="CenterAndExpand"
+                HorizontalTextAlignment="Center"
+                Text="Add some of the routes you want to send this season to your tick list and get the most of your days at the crag!"
+                TextColor="White"
+                VerticalOptions="End" />
+        </StackLayout>
+    </Grid>
+</ContentView>

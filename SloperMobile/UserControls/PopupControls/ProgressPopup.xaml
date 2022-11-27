@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pages:PopupPage
+    x:Class="SloperMobile.UserControls.PopupControls.ProgressPopup"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" 
+    xmlns:ffImageLoading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    BackgroundColor="Black"
+    HasSystemPadding="false"
+    x:Name="Root">
+    <Grid>
+        <Grid>
+            <ffImageLoading:CachedImage
+                x:Name="bgImage"
+                Aspect="AspectFill"
+                FadeAnimationDuration="500"
+                FadeAnimationEnabled="True"
+                FadeAnimationForCachedImages="True"
+                LoadingPlaceholder="fade_top_trans_bottom_black"
+                Source="{Binding BackgroundImageSource, Source={x:Reference Root}}">
+              <ffImageLoading:CachedImage.Transformations>
+                <transformations:GrayscaleTransformation />
+              </ffImageLoading:CachedImage.Transformations>
+            </ffImageLoading:CachedImage> 
+            <Image 
+                Aspect="AspectFill" 
+                Source="fade_top_trans_bottom_black"/>
+        </Grid>
+       <StackLayout VerticalOptions="CenterAndExpand">
+            <Label 
+                x:Name="lblTitle"
+                FontSize="24"
+                TextColor="White"
+                HorizontalOptions="Fill"
+                HorizontalTextAlignment="Center"
+                VerticalOptions="Center"
+                Margin="0,0,0,20"/>
+            <Grid 
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                ClassId="doNotResize"
+                WidthRequest="273"
+                HeightRequest="200">
+                <Image
+                    ClassId="doNotResize"
+                    Aspect="AspectFill"
+                    Source="logo_sloper_no_text_215w_orange"/>
+                <AbsoluteLayout 
+                    x:Name="imgWhite"
+                    ClassId="doNotResize"
+                    VerticalOptions="Start"
+                    IsClippedToBounds="true">
+                    <Image
+                        ClassId="doNotResize"
+                        HeightRequest="200"
+                        WidthRequest="273"
+                        Aspect="AspectFill"
+                        Source="logo_sloper_no_text_215w_white"/>
+                </AbsoluteLayout>
+            </Grid>
+            <Label 
+                x:Name="lblMessage" 
+                FontSize="24"
+                TextColor="White"
+                HorizontalOptions="Fill"
+                HorizontalTextAlignment="Center"
+                VerticalOptions="Center"
+                Margin="0,20,0,0"/>
+        </StackLayout>
+    </Grid>
+</pages:PopupPage>

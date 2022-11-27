@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SloperMobile.Views.CragPages.CragSectorsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+    xmlns:XLabUC="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+    xmlns:customcontrols="clr-namespace:SloperMobile.CustomControls;assembly=SloperMobile"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:local="clr-namespace:SloperMobile.ViewModel"
+    xmlns:mobile="clr-namespace:SloperMobile"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    xmlns:views="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+    xmlns:models="clr-namespace:SloperMobile.Model;assembly=SloperMobile"
+    xmlns:controls="clr-namespace:SloperMobile.CustomControls"
+    x:Name="root"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    ControlTemplate="{StaticResource HeaderFooterPageTemplate}"
+    NavigationPage.HasNavigationBar="False"
+    Style="{DynamicResource AppBackgroundColor}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <!--  BUCKET LEGENDS START  -->
+        
+         <controls:SegmentedControl 
+                ItemsSource="{Binding LegendsDataSource}"
+                ItemSelectedCommand="{Binding FilterCommand}"
+                Orientation="Horizontal"
+                Spacing="0"
+                Grid.Row="0"
+                Margin="0,5,0,0"
+                x:TypeArguments="models:BucketsSegmentModel"
+                HorizontalOptions="FillAndExpand">
+                <controls:SegmentedControl.ItemTemplate>
+                    <DataTemplate>
+                        <controls:RepeaterView Spacing="0" ItemsSource="{Binding Buckets}">
+                            <controls:RepeaterView.ItemTemplate>
+                                <DataTemplate>
+                                    <Label 
+                                           Text="{Binding bucket_name}"
+                                           FontSize="Small"
+                                           TextColor="{Binding hex_code}"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalOptions="FillAndExpand" />
+                                </DataTemplate>
+                            </controls:RepeaterView.ItemTemplate>
+                        </controls:RepeaterView>
+                    </DataTemplate>
+                </controls:SegmentedControl.ItemTemplate>
+            </controls:SegmentedControl>
+        
+        <!--  BUCKET LEGENDS  END  -->
+
+        <customcontrols:InfiniteListView
+            Grid.Row="1"
+            BackgroundColor="Black"
+            HasUnevenRows="true"
+            HorizontalOptions="FillAndExpand"
+            IsEnabled="{Binding IsCragsListEnabled}"
+            ItemsSource="{Binding SectorImageList}"
+            SelectedItem="{Binding SelectedSector, Mode=TwoWay}"
+            SeparatorVisibility="None">
+    
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="0,0,0,5" ColumnSpacing="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Image
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Aspect="AspectFill"
+                                HeightRequest="{Binding BindingContext.SectorImageHeight, Source={x:Reference root}}"
+                                Source="{Binding SectorImage}" />
+                            <Image
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="0,0,0,10"
+                                Aspect="Fill"
+                                HeightRequest="50"
+                                Source="bg_gradient_trans_black"
+                                VerticalOptions="End" />
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="10,0,0,62"
+                                FontSize="Large"
+                                HorizontalOptions="Start"
+                                Text="{Binding SectorName}"
+                                TextColor="White"
+                                VerticalOptions="End">
+                                <Label.Effects>
+                                    <customcontrols:ShadowEffect Color="#191919">
+                                        <customcontrols:ShadowEffect.DistanceX>
+                                            <OnPlatform
+                                                x:TypeArguments="x:Single"
+                                                Android="4"
+                                                iOS="1" />
+                                        </customcontrols:ShadowEffect.DistanceX>
+                                        <customcontrols:ShadowEffect.DistanceY>
+                                            <OnPlatform
+                                                x:TypeArguments="x:Single"
+                                                Android="4"
+                                                iOS="1" />
+                                        </customcontrols:ShadowEffect.DistanceY>
+                                        <customcontrols:ShadowEffect.Radius>
+                                            <OnPlatform
+                                                x:TypeArguments="x:Single"
+                                                Android="7"
+                                                iOS="1.3" />
+                                        </customcontrols:ShadowEffect.Radius>
+                                    </customcontrols:ShadowEffect>
+                                </Label.Effects>
+                            </Label>
+
+                            <!--  SECTOR NAME AND TOP 2 STEEPNESS  -->
+
+                            <StackLayout
+                                HeightRequest="50"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="0,0,10,10"
+                                HorizontalOptions="End"
+                                Spacing="4"
+                                Orientation="Horizontal"
+                                VerticalOptions="End">
+
+                                <XLabUC:ContentControl 
+                                    VerticalOptions="Center"
+                                    HeightRequest="25"
+                                    ContentTemplate="{Binding BucketCountTemplate}"/>
+
+                                <!--  Need to check ffImage  -->
+
+                                <ffimageloading:CachedImage
+                                    VerticalOptions="Center"
+                                    Aspect="AspectFit"
+                                    HeightRequest="25"
+                                    Source="{Binding Steepness1}"
+                                    WidthRequest="25" />
+
+                                <!--  Need to check ffImage  -->
+
+                                <ffimageloading:CachedImage
+                                    VerticalOptions="Center"
+                                    Aspect="AspectFit"
+                                    HeightRequest="25"
+                                    Source="{Binding Steepness2}"
+                                    WidthRequest="25" />
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.Footer>
+                <StackLayout 
+                    HeightRequest="0"
+                    BackgroundColor="Black"
+                    Padding="{Binding Source={x:Static mobile:SizeHelper.FooterMargin}}"/>
+            </ListView.Footer>
+        </customcontrols:InfiniteListView>
+        
+        <Label
+            Grid.Row="1"
+            FontSize="Large"
+            HorizontalOptions="CenterAndExpand"
+            IsVisible="{Binding ShowEmptyOverlay}"
+            Text="No Filtered Sectors Found"
+            TextColor="White"
+            VerticalOptions="CenterAndExpand" />            
+        
+        <BoxView
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            BackgroundColor="Black"
+            HorizontalOptions="FillAndExpand"
+            IsVisible="{Binding IsLoadingMore}"
+            Opacity="0.5"
+            VerticalOptions="CenterAndExpand" />
+        <ActivityIndicator
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            HorizontalOptions="CenterAndExpand"
+            IsRunning="{Binding IsLoadingMore}"
+            IsVisible="{Binding IsLoadingMore}"
+            VerticalOptions="CenterAndExpand"
+            Color="White" />
+    </Grid>
+</ContentPage>

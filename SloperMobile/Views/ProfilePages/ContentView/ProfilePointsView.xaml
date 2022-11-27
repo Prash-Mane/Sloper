@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SloperMobile.ProfilePointsView"   xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+    xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+    xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:local="clr-namespace:SloperMobile.Common.Helpers;assembly=SloperMobile"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <chart:ChartColorCollection x:Key="BarColor">
+                <Color>#803c00</Color>
+            </chart:ChartColorCollection>
+            <Style x:Key="HederLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="12" />
+            </Style>
+            <Style x:Key="ListLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="12" />
+            </Style>
+            <local:GradeNameToColorConverter x:Key="Inverter" />
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="0.3*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackLayout
+            x:Name="gauge_layout"
+            Grid.Row="1"
+            Margin="5,10,5,-10"
+            HorizontalOptions="Fill"
+            Orientation="Horizontal"
+            Spacing="0,0,0,0"
+            VerticalOptions="StartAndExpand">
+            <StackLayout.Padding>
+                <OnPlatform
+                    x:TypeArguments="Thickness"
+                    Android="-3"
+                    iOS="1" />
+            </StackLayout.Padding>
+            <Grid
+                Margin="0"
+                ColumnSpacing="0"
+                RowSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+                    <StackLayout
+                        Margin="0"
+                        HorizontalOptions="Center"
+                        Orientation="Vertical"
+                        Spacing="0"
+                        VerticalOptions="Center">
+                        <Label
+                            FontSize="14"
+                            HorizontalOptions="Center"
+                            Text="{Binding PersonalBest, StringFormat='{0}%'}"
+                            TextColor="White" />
+                        <Label
+                            FontSize="13"
+                            HorizontalOptions="Center"
+                            Text="Personal Best"
+                            TextColor="White" />
+                    </StackLayout>
+                    <Image
+                        HorizontalOptions="Center"
+                        Source="icon_gauge_mountains"
+                        WidthRequest="32"
+                        HeightRequest="32"
+                        VerticalOptions="End" />
+                    <gauge:SfCircularGauge HorizontalOptions="Fill" VerticalOptions="Fill">
+                        <gauge:SfCircularGauge.Scales>
+                            <gauge:Scale
+                                EndValue="100"
+                                RadiusFactor="1"
+                                RimColor="#fff"
+                                RimThickness="{Binding RimThickness}"
+                                ShowLabels="False"
+                                ShowTicks="False"
+                                StartAngle="135"
+                                StartValue="0"
+                                SweepAngle="270">
+                                <gauge:Scale.Pointers>
+                                    <gauge:RangePointer
+                                        Thickness="{Binding GaugeThickness}"
+                                        Offset="1"
+                                        Color="#FF8E2D"
+                                        Value="{Binding PersonalBest}" />
+                                </gauge:Scale.Pointers>
+                            </gauge:Scale>
+                        </gauge:SfCircularGauge.Scales>
+                    </gauge:SfCircularGauge>
+                </Grid>
+
+                <StackLayout Grid.Column="1" VerticalOptions="Center">
+                    <Label
+                        FontSize="14"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="{Binding Path=ClimbDate, StringFormat='{0:MM.dd.yyyy}'}"
+                        TextColor="White" />
+                    <Label
+                        FontSize="12"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Total Points"
+                        TextColor="White" />
+                    <Label
+                        FontSize="12"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="{Binding TotalPoints, Mode=TwoWay}"
+                        TextColor="#FF8E2D" />
+                    <Label
+                        FontSize="12"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Total Routes"
+                        TextColor="White" />
+                    <Label
+                        FontSize="12"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="{Binding TotalRoutes, Mode=TwoWay}"
+                        TextColor="#FF8E2D" />
+                </StackLayout>
+                <chart:SfChart
+                    Grid.Column="2"
+                    Margin="0"
+                    BackgroundColor="Transparent"
+                    SelectionChanging="SfChart_SelectionChanging"
+                    VerticalOptions="Center">
+                    <chart:SfChart.PrimaryAxis>
+                        <chart:CategoryAxis
+                            AutoScrollingDelta="6"
+                            IsVisible="False"
+                            ShowMajorGridLines="False" />
+                    </chart:SfChart.PrimaryAxis>
+                    <chart:SfChart.SecondaryAxis>
+                        <chart:NumericalAxis IsVisible="False" ShowMajorGridLines="False" />
+                    </chart:SfChart.SecondaryAxis>
+                    <chart:SfChart.Series>
+                        <chart:ColumnSeries
+                            AnimationDuration="1"
+                            EnableAnimation="True"
+                            EnableDataPointSelection="True"
+                            ItemsSource="{Binding DailyPointsList, Mode=TwoWay}"
+                            SelectedDataPointColor="#FF8E2D"
+                            SelectedDataPointIndex="{Binding SelectedPointIndex, Mode=TwoWay}"
+                            XBindingPath="Name"
+                            YBindingPath="PointPercentage">
+                            <chart:ColumnSeries.ColorModel>
+                                <chart:ChartColorModel CustomBrushes="{StaticResource BarColor}" Palette="Custom" />
+                            </chart:ColumnSeries.ColorModel>
+                        </chart:ColumnSeries>
+                    </chart:SfChart.Series>
+                </chart:SfChart>
+            </Grid>
+        </StackLayout>
+
+        <Grid
+            Grid.Row="2"
+            Margin="0,15,0,0"
+            ColumnSpacing="0"
+            HorizontalOptions="FillAndExpand"
+            RowSpacing="0"
+            VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="1" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="5,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource HederLabelStyle}"
+                    Text="CLIMB"
+                    VerticalOptions="StartAndExpand" />
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource HederLabelStyle}"
+                    Text="GRADE"
+                    VerticalOptions="StartAndExpand" />
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource HederLabelStyle}"
+                    Text="POINTS"
+                    VerticalOptions="StartAndExpand" />
+            </Grid>
+            <BoxView
+                Grid.Row="1"
+                BackgroundColor="#676767"
+                HeightRequest="1"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center" />
+            <ListView
+                x:Name="listView"
+                Grid.Row="2"
+                BackgroundColor="Black"
+                HasUnevenRows="true"
+                IsGroupingEnabled="true"
+                IsVisible="{Binding ShowEmptyOverlay, Converter={StaticResource BoolInvertConverter}}"
+                ItemsSource="{Binding PointsList}"
+                SelectedItem="{Binding SelectedItem}"
+                SeparatorColor="#3F3F3F"
+                SeparatorVisibility="None">
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout
+                                Padding="15,0"
+                                BackgroundColor="#3F3F3F"
+                                VerticalOptions="FillAndExpand"
+                                HorizontalOptions="FillAndExpand"
+                                HeightRequest="50">
+                                <Label
+                                    BackgroundColor="#3F3F3F"
+                                    FontSize="12"
+                                    Text="{Binding Path=Key, StringFormat='{}{0:dd.MM.yyyy}'}"
+                                    TextColor="White"
+                                    VerticalOptions="FillAndExpand"
+                                    VerticalTextAlignment="Center" />
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BindingContext.DateHeaderTappedCommand, Source={x:Reference listView}}" CommandParameter="{Binding .}" />
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Margin="0" RowSpacing="0" HeightRequest="41">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="1" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.ItemTappedCommand, Source={x:Reference listView}}" CommandParameter="{Binding .}" />
+                                </Grid.GestureRecognizers>
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="2"
+                                    FontSize="12"
+                                    HorizontalTextAlignment="Center"
+                                    Style="{StaticResource ListLabelStyle}"
+                                    Text="{Binding route_name}"
+                                    VerticalTextAlignment="Center" />
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    FontSize="12"
+                                    HorizontalTextAlignment="Center"
+                                    Text="{Binding tech_grade}"
+                                    TextColor="{Binding Path=tech_grade, Converter={StaticResource Inverter}, Mode=TwoWay}"
+                                    VerticalTextAlignment="Center" />
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="3"
+                                    FontSize="12"
+                                    HorizontalTextAlignment="Center"
+                                    Text="{Binding points}"
+                                    TextColor="{Binding Path=tech_grade, Converter={StaticResource Inverter}, Mode=TwoWay}"
+                                    VerticalTextAlignment="Center" />
+                                <BoxView
+                                    Grid.Row="1"
+                                    Grid.ColumnSpan="4"
+                                    Margin="0"
+                                    BackgroundColor="#3F3F3F"
+                                    HeightRequest="1"
+                                    HorizontalOptions="Fill"
+                                    VerticalOptions="Center" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout
+                Orientation="Vertical"
+                Grid.Row="2"
+                IsVisible="{Binding ShowEmptyOverlay}"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center">
+                <Label
+                    FontSize="Large"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="No Points"
+                    TextColor="White"
+                    VerticalOptions="Start" />
+                <Label
+                    Margin="5"
+                    FontSize="Default"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    Text="Once you start logging your ascents you will be able to compare your climbing days with points accumulated for each day!"
+                    TextColor="White"
+                    VerticalOptions="End" />
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentView>

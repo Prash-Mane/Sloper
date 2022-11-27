@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SloperMobile.Views.GuideBooks.ManageDownloadsPage"
+             xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:controls="clr-namespace:SloperMobile.CustomControls;assembly=SloperMobile"
+             ControlTemplate="{StaticResource HeaderFooterPageTemplate}"
+             NavigationPage.HasNavigationBar="False"
+             Style="{DynamicResource AppBackgroundColor}">
+    <ContentPage.Resources>
+        <controls:ImageButton
+            x:Key="RightHeaderView"
+            Style="{StaticResource CancelBtn}"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <controls:InfiniteListView
+                x:Name="listvw_GBCrags"
+                Grid.Row="0"
+                Margin="10,0"
+                BackgroundColor="Black"
+                HorizontalOptions="Fill"
+                RowHeight="42"
+                HasUnevenRows="false"
+                VerticalOptions="FillAndExpand"
+                ItemsSource="{Binding GuideBookCrags}"
+                SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <Grid
+                                Padding="0"
+                                ColumnSpacing="0"
+                                HeightRequest="42"
+                                RowSpacing="0">
+                                <AbsoluteLayout
+                                    BackgroundColor="#FF8E2D"
+                                    HeightRequest="42"
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="Fill"
+                                    WidthRequest="{Binding ProgressValue}" />
+                                <Grid
+                                    BackgroundColor="Transparent"
+                                    HorizontalOptions="Fill"
+                                    RowSpacing="0"
+                                    VerticalOptions="Fill">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="41" />
+                                        <RowDefinition Height="1" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*" />
+                                        <ColumnDefinition Width="40" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Margin="10,0"
+                                        FontSize="12"
+                                        HorizontalOptions="StartAndExpand"
+                                        LineBreakMode="WordWrap"
+                                        Text="{Binding CragName}"
+                                        TextColor="White"
+                                        VerticalTextAlignment="Center" />
+                                    <StackLayout
+                                        Grid.Row="0"
+                                        Grid.Column="1" 
+                                        Padding="10,10,10,10"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="Center">
+                                        <ff:CachedImage
+                                            Aspect="AspectFill"
+                                            HeightRequest="20"
+                                            Source="{Binding ActionImage}"
+                                            WidthRequest="20">
+                                        </ff:CachedImage>
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding BindingContext.DownloadCommand, Source={x:Reference listvw_GBCrags}}" CommandParameter="{Binding .}" />
+                                        </StackLayout.GestureRecognizers>
+                                    </StackLayout>
+                                    <BoxView
+                                        Grid.Row="1"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="2"
+                                        BackgroundColor="#3F3F3F"
+                                        HeightRequest="1"
+                                        HorizontalOptions="Fill"
+                                        VerticalOptions="Fill" />
+                                </Grid>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </controls:InfiniteListView>
+            <Label
+                Grid.Row="0"
+                FontSize="Large"
+                HorizontalOptions="CenterAndExpand"
+                IsVisible="{Binding ShowEmptyOverlay}"
+                Text="No Pending Downloads"
+                TextColor="White"
+                VerticalOptions="CenterAndExpand" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

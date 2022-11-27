@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<autofac:PrismApplication
+    x:Class="SloperMobile.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+    xmlns:controls="clr-namespace:SloperMobile.CustomControls"
+    xmlns:autofac="clr-namespace:Prism.Autofac;assembly=Prism.Autofac.Forms"
+    xmlns:converters="clr-namespace:SloperMobile.Common.Converters;assembly=SloperMobile"
+    xmlns:local="clr-namespace:SloperMobile">
+    <Application.Resources>
+        <!--  Application resource dictionary  -->
+        <ResourceDictionary>
+            <!--  App Colors  -->
+            <Color x:Key="TransparentWhite">#D9FFFFFF</Color>
+            <Color x:Key="AppOrange">#FF8E2D</Color>
+            
+            <converters:BoolInvertConverter x:Key="BoolInvertConverter" />
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="Black" />
+                <Setter Property="BarTextColor" Value="#FF8E2D" />
+            </Style>
+            <Style x:Key="AppBackgroundColor" TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="Black" />
+            </Style>
+            <Style x:Key="DrawerBackgroundColor" TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="#050505" />
+            </Style>
+            <Style x:Key="FormLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#CCCCCC" />
+                <Setter Property="FontSize" Value="Micro" />
+            </Style>
+            <Style x:Key="CenteredLabel" TargetType="Label">
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>           
+            <Style x:Key="GeneralTxtStyle" TargetType="Entry">
+                <Setter Property="TextColor" Value="#333333" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="PlaceholderColor" Value="#A9A9A9" />
+                <Setter Property="HeightRequest" Value="42" />
+            </Style>
+            <Style x:Key="GeneralEditorStyle" TargetType="Editor">
+                <Setter Property="TextColor" Value="#333333" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="BackgroundColor" Value="White" />
+            </Style>
+            <Style x:Key="GeneralLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="Medium" />
+            </Style>
+            <Style x:Key="ButtonLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="Small" />
+            </Style>
+            <Style x:Key="PageLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="Small" />
+            </Style>
+            
+            <Style TargetType="Button">
+                <Setter Property="CornerRadius" Value="0" />
+            </Style>
+            
+            <Style x:Key="GeneralButtonStyle" TargetType="Button">
+                <Setter Property="FontSize" Value="17" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="#FF8E2D" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="BorderRadius" Value="0" />
+            </Style>
+            <Style x:Key="ButtonWithBordersStyle" TargetType="Button">
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="Black" />
+                <Setter Property="Opacity" Value="0.3" />
+                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="BorderColor" Value="#FF8E2D" />
+                <Setter Property="CornerRadius" Value="0" />
+            </Style>
+            <Style x:Key="ListHeaderStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="12" />
+                <!--                <Setter Property="FontAttributes" Value="Bold" />-->
+            </Style>
+            <Style x:Key="ListItemStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="12" />
+            </Style>
+            <Style x:Key="ToolbarItem" TargetType="controls:ImageButton">
+                <Setter Property="HeightRequest" Value="40"/>
+                <Setter Property="WidthRequest" Value="40"/>
+                <Setter Property="ImageSize" Value="24"/>
+            </Style>
+            <Style x:Key="FilterBtn" BasedOn="{StaticResource ToolbarItem}" TargetType="controls:ImageButton">
+                <Setter Property="ImageSource" Value="icon_filter"/>
+                <Setter Property="TapCommand" Value="{Binding FilterCommand}"/>
+            </Style> 
+            <Style x:Key="CancelBtn" BasedOn="{StaticResource ToolbarItem}" TargetType="controls:ImageButton">
+                <Setter Property="ImageSource" Value="icon_guidebook_remove"/>
+                <Setter Property="TapCommand" Value="{Binding StopDownloads}"/>
+                <Setter Property="IsVisible" Value="{Binding IsStopDownloadVisible}"/>
+            </Style>
+             <Style x:Key="SearchBtn" BasedOn="{StaticResource ToolbarItem}" TargetType="controls:ImageButton">
+                <Setter Property="ImageSource" Value="icon_search_16x16"/>
+                <Setter Property="TapCommand" Value="{Binding SearchCommand}"/>
+            </Style> 
+
+            <ControlTemplate x:Key="HeaderFooterPageTemplate">
+                <Grid BindingContext="{TemplateBinding BindingContext}">
+
+                    <ContentPresenter
+                        VerticalOptions="FillAndExpand">
+                        <ContentPresenter.Triggers>
+                            <DataTrigger
+                                TargetType="ContentPresenter"
+                                Binding="{TemplateBinding BindingContext.Offset}"
+                                Value="None">
+                                <Setter Property="Margin" Value="0" />
+                            </DataTrigger>
+                            <DataTrigger
+                                TargetType="ContentPresenter"
+                                Binding="{TemplateBinding BindingContext.Offset}"
+                                Value="Header">
+                                <Setter Property="Margin" Value="{Binding Source={x:Static local:SizeHelper.HeaderMargin}}" />
+                            </DataTrigger>
+                            <DataTrigger
+                                TargetType="ContentPresenter"
+                                Binding="{TemplateBinding BindingContext.Offset}"
+                                Value="Footer">
+                                <Setter Property="Margin" Value="{Binding Source={x:Static local:SizeHelper.FooterMargin}}" />
+                            </DataTrigger>
+                            <DataTrigger
+                                TargetType="ContentPresenter"
+                                Binding="{TemplateBinding BindingContext.Offset}"
+                                Value="Both">
+                                <Setter Property="Margin" Value="{Binding Source={x:Static local:SizeHelper.HeaderAndFooterMargin}}" />
+                            </DataTrigger>
+                        </ContentPresenter.Triggers>
+                    </ContentPresenter>
+
+                    <UC:GradientStackLayout
+                        VerticalOptions="Start"
+                        HeightRequest="{Binding GradientHeaderHeight}"
+                        InputTransparent="true"
+                        HasFadeBackground="{Binding HasFade}"
+                        Colors="{Binding HeaderColors}"/>
+
+                    <UC:HeaderUC
+                        IsVisible="{TemplateBinding BindingContext.IsShowHeader}"
+                        HorizontalOptions="Fill" 
+                        VerticalOptions="Start" />
+                    
+                    <!--Turn off resizing, coz it's not updating layout properly after height edit. There's a small underline appearing-->
+                    <UC:FooterUC
+                        ClassId="doNotResize"
+                        IsVisible="{TemplateBinding BindingContext.IsShowFooter}"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="End" />
+                </Grid>
+            </ControlTemplate>
+            
+              <ControlTemplate x:Key="ClosePopupTempalete">
+                <Grid BindingContext="{TemplateBinding BindingContext}">
+                    
+                    <ContentPresenter
+                        VerticalOptions="FillAndExpand" />
+                    
+                    <Grid 
+                        HorizontalOptions="End" 
+                        VerticalOptions="Start"
+                        Margin="0, 40, 20, 0">
+                        <ContentView.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CancelRemoveCommand}" />
+                        </ContentView.GestureRecognizers>
+                        <Image
+                            x:Name="CloseImage"
+                            WidthRequest="32"
+                            HeightRequest="32"
+                            Aspect="AspectFit"
+                            Source="close_circle_button" />
+                    </Grid>
+                </Grid>
+            </ControlTemplate>
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</autofac:PrismApplication>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="SloperMobile.Views.SocialPages.JournalFeedPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SloperMobile"
+	xmlns:Controls="clr-namespace:SloperMobile.CustomControls;assembly=SloperMobile"
+	xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+	xmlns:converters="clr-namespace:SloperMobile.Common.Converters;assembly=SloperMobile"
+	xmlns:customcontrols="clr-namespace:SloperMobile.CustomControls;assembly=SloperMobile"
+	xmlns:ffimageLoading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    prism:ViewModelLocator.AutowireViewModel="True"
+	ControlTemplate="{StaticResource HeaderFooterPageTemplate}"
+	NavigationPage.HasNavigationBar="False"
+	Style="{DynamicResource AppBackgroundColor}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:DateElapsedConverter x:Key="dateConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Black">
+           <customcontrols:InfiniteListView
+				x:Name="listViewFeeds"
+				BackgroundColor="Transparent"
+				HasUnevenRows="true"
+				HorizontalOptions="FillAndExpand"
+				IsPullToRefreshEnabled="True"
+				IsRefreshing="{Binding IsRefreshing}"
+				IsVisible="{Binding ShowEmptyOverlay, Converter={StaticResource BoolInvertConverter}}"
+				ItemsSource="{Binding FeedList}"
+				LoadMoreCommand="{Binding LoadMoreFeedCommand}"
+				RefreshCommand="{Binding RefreshCommand}"
+				SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid BackgroundColor="White">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="0.5" />
+                                </Grid.RowDefinitions>
+                                
+                                <StackLayout
+									Grid.Row="0"
+									Margin="5,5,0,0"
+									HorizontalOptions="FillAndExpand"
+									Orientation="Horizontal"
+									VerticalOptions="FillAndExpand">
+                                    <ffimageLoading:CachedImage
+										Margin="5"
+										Aspect="AspectFill"										
+										HeightRequest="50"
+										Source="{Binding ProfileImageUrl}"
+										VerticalOptions="Center"
+										WidthRequest="50">
+                                        <ffimageLoading:CachedImage.Transformations>
+                                            <fftransformations:CircleTransformation />
+                                        </ffimageLoading:CachedImage.Transformations>
+                                    </ffimageLoading:CachedImage>
+                                    <StackLayout
+										Margin="0,0,0,0"
+										HorizontalOptions="StartAndExpand"
+										VerticalOptions="CenterAndExpand">
+                                        <Label
+											FontSize="16"
+											HorizontalOptions="StartAndExpand"
+											Text="{Binding JournalAuthor.Name}"
+											TextColor="Black"
+											VerticalOptions="Center" />
+                                    </StackLayout>
+                                    <StackLayout Margin="0,0,10,0" VerticalOptions="CenterAndExpand">
+                                        <Label
+											FontSize="Micro"
+											HorizontalOptions="StartAndExpand"
+											Text="{Binding DateUpdated, Converter={StaticResource dateConverter}}"
+											TextColor="Black"
+											VerticalOptions="Center" />
+                                    </StackLayout>
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding BindingContext.ProfileCommand, Source={x:Reference listViewFeeds}}" CommandParameter="{Binding .}" />
+                                    </StackLayout.GestureRecognizers>
+                                </StackLayout>
+                                
+                                <ffimageLoading:CachedImage
+                                    Grid.Row="1"
+                                    Aspect="Fill"
+                                    FadeAnimationDuration="300"
+                                    FadeAnimationEnabled="true"
+                                    FadeAnimationForCachedImages="True"
+                                    HeightRequest="{Binding ImgHeight}"
+                                    HorizontalOptions="FillAndExpand"
+                                    LoadingPlaceholder="transparent.png"
+                                    Source="{Binding AttachmentUrl}" />
+                                
+                                <Label
+									Grid.Row="2"
+									Margin="10,5,10,0"
+									FontSize="14"
+									HorizontalOptions="FillAndExpand"
+									LineBreakMode="WordWrap"
+                                    FormattedText="{Binding FormattedTitle}"
+									TextColor="Black"
+									VerticalOptions="FillAndExpand" />
+
+                                <StackLayout
+									Grid.Row="3"
+									HorizontalOptions="FillAndExpand"
+									Orientation="Horizontal"
+									Spacing="0"
+									VerticalOptions="FillAndExpand">
+                                    <StackLayout HorizontalOptions="StartAndExpand" Margin="10,0,0,0" Orientation="Horizontal">
+                                        <Label
+											FontSize="Small"
+											Text="{Binding LikeCounts, StringFormat='{0} Likes'}"
+											TextColor="Black"
+											VerticalOptions="Center">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding BindingContext.LikeUserList,Source={x:Reference listViewFeeds}}" CommandParameter="{Binding .}"/>
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                        <Label
+											FontSize="Small"
+                                            Margin="15,0,0,0"
+											Text="{Binding CommentCount, StringFormat='{0} Comments'}"
+											TextColor="Black"
+											VerticalOptions="Center">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding BindingContext.CommentUserList,Source={x:Reference listViewFeeds}}" CommandParameter="{Binding .}"/>
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions="EndAndExpand" Margin="0,0,10,0" Orientation="Horizontal">
+                                        <Image
+											HeightRequest="40"
+											Source="comments.png"
+											VerticalOptions="Center"
+											WidthRequest="40">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding BindingContext.CommentCommand, Source={x:Reference listViewFeeds}}" CommandParameter="{Binding .}" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                        <Image
+											HeightRequest="40"
+											Source="{Binding LikeImage}"
+											VerticalOptions="Center"
+											WidthRequest="40">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding BindingContext.LikeUnlikeCommand, Source={x:Reference listViewFeeds}}" CommandParameter="{Binding .}" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                    </StackLayout>
+                                </StackLayout>
+                                <BoxView
+									Grid.Row="4"
+									Margin="0"
+									BackgroundColor="#3F3F3F"
+									HorizontalOptions="FillAndExpand"
+									VerticalOptions="End" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Header>
+                    <StackLayout 
+                        HeightRequest="0"
+                        BackgroundColor="Black"
+                        Padding="{Binding Source={x:Static local:SizeHelper.HeaderMargin}}"/>
+                </ListView.Header>
+                <ListView.Footer>
+                    <StackLayout 
+                        HeightRequest="0"
+                        BackgroundColor="Black"
+                        Padding="{Binding Source={x:Static local:SizeHelper.FooterMargin}}"/>
+                </ListView.Footer>
+            </customcontrols:InfiniteListView>
+            <StackLayout
+				HorizontalOptions="Fill"
+				IsVisible="{Binding ShowEmptyOverlay}"
+				Orientation="Vertical"
+				VerticalOptions="Center">
+                <Label
+					FontSize="Large"
+					HorizontalOptions="CenterAndExpand"
+					Text="No News"
+					TextColor="White"
+					VerticalOptions="Start" />
+                <Label
+					Margin="5"
+					FontSize="Default"
+					HorizontalOptions="CenterAndExpand"
+					HorizontalTextAlignment="Center"
+					Text="Follow friends in the Rankings sections of your favourite Crags to give them props for their latest Sends!"
+					TextColor="White"
+					VerticalOptions="End" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

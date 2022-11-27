@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:tabView="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms"
+    xmlns:sloper="clr-namespace:SloperMobile;assembly=SloperMobile"
+    x:Class="SloperMobile.ProfilePage"
+    xmlns:ffImageLoading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    xmlns:controls="clr-namespace:SloperMobile.CustomControls"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    xmlns:skia="clr-namespace:SkiaSharp;assembly=SkiaSharp"
+    xmlns:skiaforms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+    ControlTemplate="{StaticResource HeaderFooterPageTemplate}"
+    Style="{DynamicResource AppBackgroundColor}">
+    <ContentPage.Resources>
+        <controls:ImageButton
+            x:Key="RightHeaderView"
+            Style="{StaticResource FilterBtn}"
+            IsVisible="{Binding IsFilterVisible}"/>
+    </ContentPage.Resources>
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+        <ffImageLoading:CachedImage
+            VerticalOptions="FillAndExpand"
+            Aspect="AspectFill"
+            FadeAnimationDuration="2000"
+            FadeAnimationEnabled="True"
+            FadeAnimationForCachedImages="True"
+            Source="{Binding BackgroundImage}">
+        </ffImageLoading:CachedImage>
+        
+        <skiaforms:SKCanvasView x:Name="canvasView"
+                                PaintSurface="DrawRadialGradientHandle" />
+        
+        <tabView:SfTabView 
+            Grid.RowSpan="2"
+            EnableSwiping="false"
+            x:Name="TabView"
+            SelectedIndex="{Binding SelectedIndex}"
+            SelectionChanged="Handle_SelectionChanged" 
+            BackgroundColor="Transparent"
+            VisibleHeaderCount="5">
+                    
+         <tabView:SfTabView.SelectionIndicatorSettings>
+            <tabView:SelectionIndicatorSettings
+            Color="Transparent"/>
+        </tabView:SfTabView.SelectionIndicatorSettings>
+            
+        <tabView:SfTabItem Title="Ranking" >
+            <tabView:SfTabItem.HeaderContent>
+                <sloper:ProfileHeader HeaderText="RANKING"
+                                      HeaderId="0"
+                                      SelectedCommand="{Binding SelectedHeaderCommand}"
+                                      SelectedColor="{StaticResource AppOrange}"
+                                      IsSelected="true"
+                                      HeaderColor="White"/>
+            </tabView:SfTabItem.HeaderContent>
+            <tabView:SfTabItem.Content>
+                <sloper:ProfileRankingView x:Name="Ranking" BackgroundColor="Transparent"/>
+            </tabView:SfTabItem.Content>
+        </tabView:SfTabItem>
+
+        <tabView:SfTabItem Title="Points">
+            <tabView:SfTabItem.HeaderContent>
+                 <sloper:ProfileHeader 
+                            HeaderText="POINTS"
+                            HeaderId="1"
+                            SelectedCommand="{Binding SelectedHeaderCommand}"
+                            SelectedColor="{StaticResource AppOrange}"
+                            HeaderColor="White"/>
+            </tabView:SfTabItem.HeaderContent>
+            <tabView:SfTabItem.Content>
+                <sloper:ProfilePointsView x:Name="Points"/>
+            </tabView:SfTabItem.Content>
+        </tabView:SfTabItem>
+
+        <tabView:SfTabItem Title="Sends">
+            <tabView:SfTabItem.HeaderContent>
+                <sloper:ProfileHeader 
+                            HeaderId="2"
+                            SelectedCommand="{Binding SelectedHeaderCommand}"
+                            HeaderText="SENDS"
+                            SelectedColor="{StaticResource AppOrange}"
+                            HeaderColor="White"/>
+            </tabView:SfTabItem.HeaderContent>
+            <tabView:SfTabItem.Content>
+                <sloper:ProfileSendsView x:Name="Sends"/>
+            </tabView:SfTabItem.Content>
+        </tabView:SfTabItem>
+                
+        <tabView:SfTabItem Title="Calendar">
+            <tabView:SfTabItem.HeaderContent>
+                  <sloper:ProfileHeader
+                            HeaderId="3"
+                            SelectedCommand="{Binding SelectedHeaderCommand}"
+                            HeaderText="CALENDAR"
+                            SelectedColor="{StaticResource AppOrange}"
+                            HeaderColor="White"/>
+            </tabView:SfTabItem.HeaderContent>
+            <tabView:SfTabItem.Content>
+            <sloper:ProfileCalendarView x:Name="Calendar"/>
+            </tabView:SfTabItem.Content>
+        </tabView:SfTabItem>
+                           
+        <tabView:SfTabItem Title="Tick List">
+            <tabView:SfTabItem.HeaderContent>
+                <sloper:ProfileHeader 
+                            HeaderId="4"
+                            SelectedCommand="{Binding SelectedHeaderCommand}"
+                            HeaderText="TICK LIST"
+                            SelectedColor="{StaticResource AppOrange}"
+                            HeaderColor="White"/>
+            </tabView:SfTabItem.HeaderContent>
+            <tabView:SfTabItem.Content>
+               <sloper:ProfileTickListView x:Name="TickList"/>
+            </tabView:SfTabItem.Content>
+        </tabView:SfTabItem>
+          
+        </tabView:SfTabView>
+    </Grid>
+</ContentPage>

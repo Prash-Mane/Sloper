@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage x:Class="SloperMobile.Views.SectorPages.SectorTopoDetailsPage" 
+             xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile" 
+             xmlns:controls="clr-namespace:SloperMobile.CustomControls;assembly=SloperMobile" 
+             xmlns:effects="clr-namespace:SloperMobile.Effects;assembly=SloperMobile" 
+             xmlns:ffImageLoading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             xmlns:local="clr-namespace:SloperMobile.ViewModel" 
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms" 
+             xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" 
+             xmlns:views="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms" 
+             prism:ViewModelLocator.AutowireViewModel="True" 
+             BackgroundColor="Black" 
+             ControlTemplate="{StaticResource HeaderFooterPageTemplate}" 
+             NavigationPage.HasNavigationBar="false" 
+             Style="{DynamicResource AppBackgroundColor}">
+    <Grid x:Name="MainGrid" ColumnSpacing="0" RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="30" />
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="canvasGrid" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="3" Margin="0" Padding="0" HorizontalOptions="Fill" IsVisible="{Binding IsUnlockVisible, Converter={StaticResource BoolInvertConverter}}" VerticalOptions="Fill">
+            <OnPlatform x:TypeArguments="View">
+                <On Platform="iOS">
+                    <local:ZoomableScrollView x:Name="iOSZoomScroll" IsVisible="{Binding IsIOSScrollVisible}" MaximumZoomScale="5" MinimumZoomScale="1" Orientation="Both">
+                        <AbsoluteLayout x:Name="iOSdAbsoluteLayout">
+                            <views:SKCanvasView x:Name="skCanvasiOS" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional" PaintSurface="OnPaintSample" />
+                        </AbsoluteLayout>
+                    </local:ZoomableScrollView>
+                </On>
+                <On Platform="Android">
+                    <local:ZoomableScrollView x:Name="androidZoomScroll" Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" MaximumZoomScale="5" MinimumZoomScale="1" Orientation="Both" VerticalOptions="FillAndExpand">
+                        <AbsoluteLayout x:Name="AndroidAbsoluteLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <views:SKCanvasView x:Name="skCanvasAndroid" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" PaintSurface="OnPaintSample" />
+                        </AbsoluteLayout>
+                    </local:ZoomableScrollView>
+                </On>
+            </OnPlatform>
+            <Image Grid.Row="0" Grid.Column="0" AbsoluteLayout.LayoutBounds="3.0, 3.0, 3.0, 3.0" AbsoluteLayout.LayoutFlags="All" Aspect="AspectFill" BackgroundColor="Black" HorizontalOptions="FillAndExpand" IsVisible="{Binding IsImageBackgroundVisible}" Source="{Binding ImageBackgroundSource}" VerticalOptions="FillAndExpand" />
+            <OnPlatform x:TypeArguments="View">
+                <On Platform="Android">
+                    <StackLayout Grid.Row="0" Grid.Column="0" Margin="0,0,10,10" Padding="0" HorizontalOptions="End" Spacing="1" VerticalOptions="End">
+                        <Button BackgroundColor="#ccf8f8ff" Clicked="ZoomIn" FontSize="32" HeightRequest="40" Text="+" TextColor="Gray" WidthRequest="40" />
+                        <Button BackgroundColor="#ccf8f8ff" Clicked="ZoomOut" FontSize="32" HeightRequest="40" Text="-" TextColor="Gray" WidthRequest="40" />
+                    </StackLayout>
+                </On>
+                <On Platform="iOS">
+                    <Grid Grid.Row="0" Grid.Column="0" Margin="0,0,0,0" Padding="0" ColumnSpacing="0" HorizontalOptions="End" RowSpacing="0" VerticalOptions="End" />
+                </On>
+            </OnPlatform>
+        </Grid>
+        <BoxView x:Name="ArrowBoxViewLeft" Grid.Row="1" Grid.Column="0" Margin="0" BackgroundColor="Black" HeightRequest="30" InputTransparent="True" IsVisible="{Binding IsNavigatedFromSectorImage, Converter={StaticResource BoolInvertConverter}}" Opacity="0.6" />
+        <BoxView x:Name="ArrowBoxViewRight" Grid.Row="1" Grid.Column="2" Margin="0" BackgroundColor="Black" HeightRequest="30" InputTransparent="True" IsVisible="{Binding IsNavigatedFromSectorImage, Converter={StaticResource BoolInvertConverter}}" Opacity="0.6" />
+        <Image x:Name="leftArrow" Grid.Row="1" Grid.Column="0" HeightRequest="20" HorizontalOptions="Center" InputTransparent="true" IsVisible="{Binding IsNavigatedFromSectorImage, Converter={StaticResource BoolInvertConverter}}" Source="arrowLeftWhite" VerticalOptions="Center" />
+        <Image x:Name="rightArrow" Grid.Row="1" Grid.Column="2" HeightRequest="20" HorizontalOptions="Center" InputTransparent="true" IsVisible="{Binding IsNavigatedFromSectorImage, Converter={StaticResource BoolInvertConverter}}" Rotation="180" Source="arrowLeftWhite" VerticalOptions="Center" />
+        <controls:SwipeGestureFrame x:Name="smallPopup" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="3" Margin="0" Padding="0" BackgroundColor="#77000000" CornerRadius="0" HeightRequest="150"
+            HorizontalOptions="FillAndExpand" IsVisible="{Binding DisplayRoutePopupSm, Mode=TwoWay}" SwipeDownCommand="{Binding ShowRoutePopupLgCommand}" SwipeUpCommand="{Binding HideSmallPopupCommand}" VerticalOptions="Start">
+            <controls:SwipeGestureFrame.Effects>
+                <effects:ControlSizeEffect />
+            </controls:SwipeGestureFrame.Effects>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="02" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="02" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".20*" />
+                    <RowDefinition Height=".60*" />
+                    <RowDefinition Height=".20*" />
+                </Grid.RowDefinitions>
+                <ActivityIndicator Grid.Row="0" Grid.RowSpan="3" Grid.Column="1" HorizontalOptions="CenterAndExpand" IsRunning="{Binding IsNavigatingToTopos}" IsVisible="{Binding IsNavigatingToTopos}" VerticalOptions="CenterAndExpand" Color="White" />
+                <StackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" IsVisible="{Binding IsNavigatingToTopos, Converter={StaticResource BoolInvertConverter}}" Orientation="Horizontal">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BindingContext.HideSmallPopupCommand, Source={x:Reference smallPopup}}" />
+                    </StackLayout.GestureRecognizers>
+                    <Image HorizontalOptions="CenterAndExpand" Rotation="90" Source="arrowLeftWhite" VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+                <Grid Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" IsVisible="{Binding IsNavigatingToTopos, Converter={StaticResource BoolInvertConverter}}" VerticalOptions="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="15" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Label FontSize="Medium" HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="{Binding RouteName}" TextColor="#FA7200" VerticalOptions="FillAndExpand" />
+                    <rating:SfRating x:Name="rating" Grid.Row="1" HorizontalOptions="Center" ItemCount="5" ItemSize="15" Precision="Exact" ReadOnly="True" Value="{Binding Rating}">
+                        <rating:SfRating.RatingSettings>
+                            <rating:SfRatingSettings HorizontalOptions="Center" RatedFill="#FF8E2D" RatedStroke="#FF8E2D" RatedStrokeWidth="1" UnRatedStroke="#FF8E2D" UnRatedStrokeWidth="1" VerticalOptions="Center" />
+                        </rating:SfRating.RatingSettings>
+                    </rating:SfRating>
+                    <controls:RepeaterView Grid.Row="2" HorizontalOptions="Center" ItemsSource="{Binding TopoDetailIcons_20}" Orientation="Horizontal" VerticalOptions="Center">
+                        <controls:RepeaterView.ItemTemplate>
+                            <DataTemplate>
+                                <Image Aspect="AspectFill" HeightRequest="20" Source="{Binding .}" WidthRequest="20" />
+                            </DataTemplate>
+                        </controls:RepeaterView.ItemTemplate>
+                    </controls:RepeaterView>
+                </Grid>
+                <StackLayout Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" IsVisible="{Binding IsNavigatingToTopos, Converter={StaticResource BoolInvertConverter}}" Orientation="Horizontal">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BindingContext.ShowRoutePopupLgCommand, Source={x:Reference smallPopup}}" />
+                    </StackLayout.GestureRecognizers>
+                    <Image HorizontalOptions="CenterAndExpand" Rotation="270" Source="arrowLeftWhite" VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+            </Grid>
+        </controls:SwipeGestureFrame>
+        <!--  LARGE POPUP  -->
+        <controls:SwipeGestureFrame x:Name="largePopup" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="3" Margin="0" Padding="0" BackgroundColor="#77000000" CornerRadius="0" HorizontalOptions="FillAndExpand"
+            IsVisible="{Binding DisplayRoutePopupLg, Mode=TwoWay}" SwipeUpCommand="{Binding HideRoutePopupLgCommand}" VerticalOptions="FillAndExpand">
+            <controls:SwipeGestureFrame.Content>
+                <Grid Margin="0" Padding="0" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="{Binding PopupTopHeight}" />
+                        <RowDefinition Height="{Binding PopupBottomHeight}" />
+                    </Grid.RowDefinitions>
+                    <ffImageLoading:CachedImage Grid.Row="0" Grid.RowSpan="3" Margin="0" Aspect="AspectFill" IsVisible="{Binding IsUnlockVisible}" Source="sub_sector_images_background">
+                        <ffImageLoading:CachedImage.Transformations>
+                            <transformations:GrayscaleTransformation />
+                        </ffImageLoading:CachedImage.Transformations>
+                    </ffImageLoading:CachedImage>
+                    <BoxView 
+                        Grid.Row="0"
+                        Grid.RowSpan="3"
+                        Margin="0"
+                        IsVisible="{Binding IsUnlockVisible}"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="Black" Opacity="0.85"/>
+                    <!--  Route Data  -->
+                    <Grid Grid.Row="0" Margin="0,10,0,0" IsVisible="{Binding IsUnlockVisible, Converter={StaticResource BoolInvertConverter}}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+							<RowDefinition Height="auto" />
+                            <RowDefinition Height="100" />
+							<RowDefinition Height="auto" />
+							<RowDefinition Height="auto" />
+							<RowDefinition Height="auto" />
+							<RowDefinition Height="auto" />
+                            <RowDefinition Height="80" />
+							<RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <!--  ROUTE NAME  -->
+                        <StackLayout Grid.Row="0" BackgroundColor="Black" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                            <Label Margin="5" BackgroundColor="Black" FontSize="Medium" HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="{Binding RouteName}" TextColor="#FA7200" VerticalOptions="CenterAndExpand" />
+                        </StackLayout>
+                        <!--  Warning icon  -->
+                        <Image Grid.Row="1" HeightRequest="50" IsVisible="{Binding IsDisplayWarningIcon}" Source="icon_route_warning" WidthRequest="50">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OnWarningCommand}" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <!--  SCROLLVIEW FOR ROUTE INFO  -->
+                        <ScrollView Grid.Row="2" Margin="10,0" HorizontalOptions="FillAndExpand" IsClippedToBounds="True" VerticalOptions="FillAndExpand">
+                            <Label FontSize="Medium" HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="{Binding RouteInfo}" TextColor="White" VerticalOptions="Center" VerticalTextAlignment="Center" />
+                        </ScrollView>
+                        <!--  FIRST ASCENT  -->	                        
+						<Grid Grid.Row="3" HorizontalOptions="CenterAndExpand" IsVisible="{Binding IsNavigatedFromSectorImage, Converter={StaticResource BoolInvertConverter}}">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="auto" />
+								<ColumnDefinition Width="auto" />
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="auto" />
+							</Grid.RowDefinitions>
+							<Label FontAttributes="Bold" FontSize="Small" IsVisible="{Binding IsFAVisible}" Text="First Ascent: " TextColor="#FF8E2D" HorizontalTextAlignment="Center"/>
+							<Label Grid.Column="1" Grid.Row="0" FontSize="Small" LineBreakMode="TailTruncation" Text="{Binding FirstAscentInfo}" TextColor="White" HorizontalTextAlignment="Center">
+								<Label.GestureRecognizers>
+									<TapGestureRecognizer Command="{Binding ShowWrapTextcommand}" />
+								</Label.GestureRecognizers>
+							</Label>
+						</Grid>
+                        <!--  EQUIPPER INFO  -->
+                        <StackLayout Grid.Row="4" Margin="0" HorizontalOptions="CenterAndExpand" IsVisible="{Binding IsEquippedVisible}" Orientation="Horizontal" Spacing="0">
+                            <Label FontAttributes="Bold" FontSize="Small" IsVisible="{Binding IsEquippedVisible}" Text="Equipped: " TextColor="#FF8E2D" />
+                            <Label FontSize="Small" Text="{Binding EquipperInfo}" TextColor="White" />
+                        </StackLayout>
+                        <!--  BOLTS COUNT AND ROUTE LENGTH  -->
+                        <Label Grid.Row="5" FontSize="Small" HorizontalOptions="Center" HorizontalTextAlignment="Center" IsVisible="{Binding IsNavigatedFromSectorImage, Converter={StaticResource BoolInvertConverter}}" Text="{Binding BoltsAndRouteLength}" TextColor="White" />
+                        <!--  RATING  -->
+                        <StackLayout Grid.Row="6" HorizontalOptions="Fill" IsVisible="{Binding IsNavigatedFromSectorImage, Converter={StaticResource BoolInvertConverter}}">
+                            <rating:SfRating x:Name="rating_detail" HorizontalOptions="CenterAndExpand" ItemCount="5" ItemSize="35" Precision="Exact" ReadOnly="True" Value="{Binding Rating}">
+                                <rating:SfRating.RatingSettings>
+                                    <rating:SfRatingSettings RatedFill="#FF8E2D" RatedStroke="#FF8E2D" RatedStrokeWidth="1" UnRatedStroke="#FF8E2D" UnRatedStrokeWidth="1" VerticalOptions="StartAndExpand" />
+                                </rating:SfRating.RatingSettings>
+                            </rating:SfRating>
+                        </StackLayout>
+                        <!--  TOP HOLD, STYLE AND ANGLE ICONS  -->
+                        <ScrollView Grid.Row="7" Orientation="Horizontal" VerticalOptions="FillAndExpand">
+                            <controls:RepeaterView HorizontalOptions="Center" IsVisible="{Binding IsNavigatedFromSectorImage, Converter={StaticResource BoolInvertConverter}}" ItemsSource="{Binding TopoDetailIcons_54}" Orientation="Horizontal" VerticalOptions="Center">
+                                <controls:RepeaterView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Image Aspect="AspectFill" HeightRequest="54" Source="{Binding .}" WidthRequest="54" />
+                                    </DataTemplate>
+                                </controls:RepeaterView.ItemTemplate>
+                            </controls:RepeaterView>
+                        </ScrollView>
+                        <!--  TICK LIST AND SEND BUTTON  -->
+                        <Grid Grid.Row="8" Margin="20,10,20,0" ColumnSpacing="20" IsVisible="{Binding IsNavigatedFromSectorImage, Converter={StaticResource BoolInvertConverter}}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Button Grid.Row="0" Grid.Column="0" BackgroundColor="#FF8E2D" BorderRadius="0" Command="{Binding TickListCommand}" FontSize="Small" HeightRequest="40" IsEnabled="{Binding EnabledTickList}" IsVisible="{Binding ShowHideTickList}" Text="{Binding ShowTickListName}"
+                                TextColor="White" />
+                            <Button Grid.Row="0" Grid.Column="1" BackgroundColor="#FF8E2D" BorderRadius="0" Command="{Binding SendCommand}" FontSize="Small" HeightRequest="40" Text="+ SEND" TextColor="White" />
+                            <Button Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#4D000000" BorderColor="{StaticResource AppOrange}" BorderWidth="1" Command="{Binding IssueCommand}" FontSize="Small" HeightRequest="40" Text="REPORT AN ISSUE" TextColor="White"
+                                VerticalOptions="FillAndExpand" />
+                        </Grid>
+                    </Grid>
+                    <!--  Unlock popup UI  -->
+                    <ScrollView Grid.Row="0" Margin="{Binding ScrollPopupMargin}" IsVisible="{Binding IsUnlockVisible}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="80" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <!--  ROUTE NAME  -->
+                            <StackLayout Grid.Row="0" Margin="0,50,0,0" BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                                <Label Margin="5" BackgroundColor="Transparent" FontSize="Medium" HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="{Binding RouteName}" TextColor="#FA7200" VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+                            <!--  Warning icon  -->
+                            <Image Grid.Row="1" HeightRequest="50" IsVisible="{Binding IsDisplayWarningIcon}" Source="icon_route_warning" WidthRequest="50">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OnWarningCommand}" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <!--  SCROLLVIEW FOR ROUTE INFO  -->
+                            <ScrollView Grid.Row="2" Margin="10,0" HorizontalOptions="FillAndExpand" IsClippedToBounds="True" VerticalOptions="Start">
+                                <Label FontSize="Medium" HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="{Binding RouteInfo}" TextColor="White" VerticalOptions="Center" VerticalTextAlignment="Center" />
+                            </ScrollView>
+                            <!--  FIRST ASCENT  -->
+							<Grid Grid.Row="3" HorizontalOptions="CenterAndExpand">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="auto" />
+									<ColumnDefinition Width="auto" />
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="auto" />
+								</Grid.RowDefinitions>
+								<Label FontAttributes="Bold" FontSize="Small" IsVisible="{Binding IsFAVisible}" Text="First Ascent: " TextColor="#FF8E2D" HorizontalTextAlignment="Center"/>
+								<Label Grid.Column="1" Grid.Row="0" FontSize="Small" LineBreakMode="TailTruncation" Text="{Binding FirstAscentInfo}" TextColor="White" HorizontalTextAlignment="Center">
+									<Label.GestureRecognizers>
+										<TapGestureRecognizer Command="{Binding ShowWrapTextcommand}" />
+									</Label.GestureRecognizers>
+								</Label>
+							</Grid>
+							<!--  EQUIPPER INFO  -->
+                            <StackLayout Grid.Row="4" Margin="0" HorizontalOptions="CenterAndExpand" IsVisible="{Binding IsEquippedVisible}" Orientation="Horizontal" Spacing="0">
+                                <Label FontAttributes="Bold" FontSize="Small" IsVisible="{Binding IsEquippedVisible}" Text="Equipped: " TextColor="#FF8E2D" />
+                                <Label FontSize="Small" Text="{Binding EquipperInfo}" TextColor="White" />
+                            </StackLayout>
+                            <!--  BOLTS COUNT AND ROUTE LENGTH  -->
+                            <Label Grid.Row="5" FontSize="Small" HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="{Binding BoltsAndRouteLength}" TextColor="White" />
+                            <!--  RATING  -->
+                            <StackLayout Grid.Row="6" HorizontalOptions="Fill" Margin="0,10,0,10" IsVisible="{Binding IsNavigatedFromSectorImage, Converter={StaticResource BoolInvertConverter}}">
+                                <rating:SfRating x:Name="rating_detail_locked" HorizontalOptions="CenterAndExpand" ItemCount="5" ItemSize="35" Precision="Exact" ReadOnly="True" Value="{Binding Rating}">
+                                    <rating:SfRating.RatingSettings>
+                                        <rating:SfRatingSettings RatedFill="#FF8E2D" RatedStroke="#FF8E2D" RatedStrokeWidth="1" UnRatedStroke="#FF8E2D" UnRatedStrokeWidth="1" VerticalOptions="StartAndExpand" />
+                                    </rating:SfRating.RatingSettings>
+                                </rating:SfRating>
+                            </StackLayout>
+                            <!--  TOP HOLD, STYLE AND ANGLE ICONS  -->
+                            <ScrollView Grid.Row="7" Margin="0,10,0,10" Orientation="Horizontal" VerticalOptions="FillAndExpand">
+                                <controls:RepeaterView HorizontalOptions="Center" ItemsSource="{Binding TopoDetailIcons_54}" Orientation="Horizontal" VerticalOptions="Center">
+                                    <controls:RepeaterView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Image Aspect="AspectFill" HeightRequest="54" Source="{Binding .}" WidthRequest="54" />
+                                        </DataTemplate>
+                                    </controls:RepeaterView.ItemTemplate>
+                                </controls:RepeaterView>
+                            </ScrollView>
+                            <!--  TICK LIST AND SEND BUTTON  -->
+                            <Grid Grid.Row="8" Margin="0,10,0,0" ColumnSpacing="20">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <StackLayout Grid.Row="0" Grid.Column="0" Margin="20,0,0,0" IsVisible="{Binding IsNavigatedFromSectorImage, Converter={StaticResource BoolInvertConverter}}">
+                                        <Button BackgroundColor="#4D000000" BorderColor="{StaticResource AppOrange}" BorderWidth="1" BorderRadius="0" Command="{Binding TickListCommand}" FontSize="Small" HeightRequest="40" IsEnabled="{Binding EnabledTickList}"
+                                            IsVisible="{Binding ShowHideTickList}" Text="{Binding ShowTickListName}" TextColor="White" />
+                                </StackLayout>
+                                
+                                <StackLayout Grid.Row="0" Grid.Column="1" Margin="0,0,20,0" IsVisible="{Binding IsNavigatedFromSectorImage, Converter={StaticResource BoolInvertConverter}}">
+                                    <Button BackgroundColor="#4D000000" BorderColor="{StaticResource AppOrange}" BorderWidth="1" BorderRadius="0" Command="{Binding SendCommand}" FontSize="Small" HeightRequest="40" Text="+ SEND"
+                                        TextColor="White" />
+                                </StackLayout>
+                                
+                                <Button Grid.Row="1" Grid.ColumnSpan="2" Margin="20,0,20,0" BackgroundColor="Transparent" BorderColor="Transparent" BorderWidth="0" Command="{Binding IssueCommand}" FontSize="Small" HeightRequest="40" Text="REPORT AN ISSUE" TextColor="White"
+                                    VerticalOptions="FillAndExpand"
+                                    IsVisible="{Binding IsNavigatedFromSectorImage, Converter={StaticResource BoolInvertConverter}}"/>
+                                
+                                
+                                <StackLayout Grid.Row="2" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="StartAndExpand" Margin="{Binding PremiumBoxMargin}">
+                                    <UC:GradientStackLayout 
+                                        HasFadeBackground="True"
+                                        Spacing="0">
+                                        <UC:GradientStackLayout.Colors>
+                                            <UC:GradientColor Color="Transparent" />
+                                            <UC:GradientColor Color="#000000" Position=".1"/>
+                                        </UC:GradientStackLayout.Colors>
+                                         <StackLayout Margin="0,0,0,0">    
+                                            <Label HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="GO" TextColor="White" FontAttributes="Bold" FontSize="36" />
+                                                        <Span Text="PREMIUM" TextColor="White" FontSize="36" />
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                            <Label HorizontalOptions="Center" VerticalOptions="CenterAndExpand" TextColor="White" Text="Bringing Your Guidebook to Life" FontSize="Medium" />
+                                            <ffImageLoading:CachedImage Margin="0,10,0,10" Aspect="AspectFit" Source="icon_arrows_down" HorizontalOptions="Center" VerticalOptions="Center" />
+                                            <BoxView HeightRequest=".5" Margin="50,0,50,0" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+                                            <StackLayout>
+                                                <Grid Margin="0,20,0,0" HorizontalOptions="Fill">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="170" />
+                                                        <RowDefinition Height="auto" />
+                                                        <RowDefinition Height="1" />
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="140" />
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackLayout Grid.Column="0" Margin="10,0,10,10" HeightRequest="170" WidthRequest="123">
+                                                        <ffImageLoading:CachedImage Aspect="AspectFit" 
+                                                                ErrorPlaceholder="transparent" 
+                                                                FadeAnimationDuration="2000" 
+                                                                FadeAnimationEnabled="True" 
+                                                                FadeAnimationForCachedImages="True" 
+                                                                HeightRequest="170" 
+                                                                LoadingPlaceholder="transparent" 
+                                                                Source="{Binding RouteGuideBook.GuidebookPortraitCoverImage}" />
+                                                    </StackLayout>
+                                                    <StackLayout Grid.Column="1" Margin="0,20,0,0" HorizontalOptions="Fill" VerticalOptions="Fill">
+                                                        <Label FontSize="13" Text="{Binding RouteGuideBook.GuideBookName}" TextColor="White" FontAttributes="Bold" />
+                                                        <Label Margin="0,5,0,0" FontSize="11" Text="{Binding RouteGuideBook.Author}" TextColor="White" FontAttributes="Bold" />
+                                                        <Label FontSize="10" Text="{Binding RouteGuideBook.DatePublished, StringFormat='Published {0}'}" TextColor="White" />
+                                                        <rating:SfRating x:Name="gb_rating" HorizontalOptions="StartAndExpand" ItemCount="5" ItemSize="18" ItemSpacing="10" Precision="Exact" ReadOnly="True" VerticalOptions="StartAndExpand" WidthRequest="200" Value="{Binding RouteGuideBook.Rating}">
+                                                            <rating:SfRating.RatingSettings>
+                                                                <rating:SfRatingSettings 
+                                                                    HorizontalOptions="Center" 
+                                                                    RatedFill="#FF8E2D" 
+                                                                    RatedStroke="#FF8E2D" 
+                                                                    RatedStrokeWidth="1" 
+                                                                    UnRatedStroke="White" 
+                                                                    UnRatedStrokeWidth="1" />
+                                                            </rating:SfRating.RatingSettings>
+                                                        </rating:SfRating>
+<!--                                                        <StackLayout HorizontalOptions="EndAndExpand" Orientation="Horizontal" Spacing="0" VerticalOptions="Center">
+                                                            <ffImageLoading:CachedImage Margin="10,0,10,0" Aspect="AspectFill" HeightRequest="30" Source="icon_guidebook_download" WidthRequest="30">
+                                                                <ffImageLoading:CachedImage.GestureRecognizers>
+                                                                    <TapGestureRecognizer Command="{Binding BindingContext.DownloadAllCommand}" />
+                                                                </ffImageLoading:CachedImage.GestureRecognizers>
+                                                            </ffImageLoading:CachedImage>
+                                                        </StackLayout>-->
+                                                    </StackLayout>
+                                                </Grid>
+                                                <BoxView Margin="50,0,50,0" BackgroundColor="White" HeightRequest=".5" HorizontalOptions="Fill" VerticalOptions="Fill" />
+                                            </StackLayout>
+                                            <!-- Explore,Send and Track-->
+                                            <Grid Margin="25,0,25,0" HorizontalOptions="Fill">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="auto" />
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="auto" />
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="auto" />
+                                                        <RowDefinition Height="*" />
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                
+                                                    <StackLayout Grid.Row="0" HorizontalOptions="Fill" Grid.ColumnSpan="4">
+                                                        <Label HorizontalOptions="Center" VerticalOptions="CenterAndExpand" TextColor="White" Text="EXPLORE, SEND AND TRACK!"
+                                                                FontAttributes="Bold" FontSize="18"/>
+                                                        <BoxView Margin="25,0,25,0" HeightRequest=".5" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+                                                    </StackLayout>
+                                                     <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" Margin="-5,0" >
+                                                        <Image Source="icon_unlock_gps_locations" Aspect="AspectFit" HeightRequest="54" WidthRequest="54"/>
+                                                    </StackLayout>
+                                                    <StackLayout Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                                                        <Label Text="GPS LOCATIONS" TextColor="White" FontSize="Medium" FontAttributes="Bold"/>
+                                                        <Label Text="Climbing locations are growing but often difficult to locate. Not anymore." TextColor="White" FontSize=" Micro"/>
+                                                    </StackLayout>
+                                                
+                                                    <BoxView Margin="25,0,25,0" Grid.Row="2" Grid.ColumnSpan="4" HeightRequest=".5" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+                                                    
+                                                    <StackLayout Grid.Row="3" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="Center" >
+                                                        <Image Source="icon_unlock_topo_maps" Aspect="AspectFit" HeightRequest="54" WidthRequest="54"/>
+                                                    </StackLayout>
+                                                    <StackLayout Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                                                        <Label Text="TOPO MAPS" TextColor="White" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="End"  />
+                                                        <Label Text="Stunning colour topo images that will keep you on-route and inspired." TextColor="White" FontSize=" Micro" HorizontalTextAlignment="End"  />
+                                                    </StackLayout>
+                                                     
+                                                    <BoxView Margin="25,0,25,0" Grid.Row="4" Grid.ColumnSpan="4" HeightRequest=".5" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+                                                
+                                                    <StackLayout Grid.Row="5" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" Margin="-5,0" >
+                                                        <Image Source="icon_unlock_safety" Aspect="AspectFit" HeightRequest="54" WidthRequest="54"/>
+                                                    </StackLayout>
+                                                    <StackLayout Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                                                        <Label Text="SAFTEY" TextColor="White" FontSize="Medium" FontAttributes="Bold"/>
+                                                        <Label Text="Know about hardware issue on the route ahed of you before you leave the ground." TextColor="White" FontSize=" Micro"/>
+                                                    </StackLayout>
+                                                
+                                                    <BoxView Margin="25,0,25,0" Grid.Row="6" Grid.ColumnSpan="4" HeightRequest=".5" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+                                                    
+                                                    <StackLayout Grid.Row="7" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="Center" >
+                                                        <Image Source="icon_unlock_community" Aspect="AspectFit" HeightRequest="54" WidthRequest="54"/>
+                                                    </StackLayout>
+                                                    <StackLayout Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                                                        <Label Text="COMMUNITY" TextColor="White" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="End" />
+                                                        <Label Text="Follow,encourage and inspire your friends in a growing network of climbers!" TextColor="White" FontSize=" Micro" HorizontalTextAlignment="End"  />
+                                                    </StackLayout>
+                                            </Grid>
+                                            <!-- Guidebook Poster -->
+                                            <StackLayout Margin="-20,10,-20,0">
+                                                <ffImageLoading:CachedImage Aspect="AspectFill" 
+                                                                ErrorPlaceholder="transparent" 
+                                                                FadeAnimationDuration="2000" 
+                                                                FadeAnimationEnabled="True" 
+                                                                FadeAnimationForCachedImages="True" 
+                                                                HeightRequest="270" 
+                                                                LoadingPlaceholder="transparent"
+                                                                Source="{Binding RouteGuideBook.GuidebookPortraitImage}" />
+                                            </StackLayout>
+                                            
+                                            <!-- Progress unmatched -->
+                                            <Grid Margin="25,0,25,0" HorizontalOptions="Fill">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="auto" />
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="auto" />
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="auto" />
+                                                        <RowDefinition Height="*" />
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                
+                                                    <StackLayout Grid.Row="0" HorizontalOptions="Fill" Grid.ColumnSpan="4">
+                                                        <Label HorizontalOptions="Center" VerticalOptions="CenterAndExpand" TextColor="White" Text="PROGRESS UNMATCHED"
+                                                                FontAttributes="Bold" FontSize="18"/>
+                                                        <BoxView Margin="25,0,25,0" HeightRequest=".5" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+                                                    </StackLayout>
+                                                     <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" Margin="-5,0" >
+                                                        <Image Source="icon_unlock_ranking" Aspect="AspectFit" HeightRequest="54" WidthRequest="54"/>
+                                                    </StackLayout>
+                                                    <StackLayout Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                                                        <Label Text="RANKING" TextColor="White" FontSize="Medium" FontAttributes="Bold"/>
+                                                        <Label Text="Statistics and ranking on your day, week, year at the crag." TextColor="White" FontSize=" Micro"/>
+                                                    </StackLayout>
+                                                
+                                                    <BoxView Margin="25,0,25,0" Grid.Row="2" Grid.ColumnSpan="4" HeightRequest=".5" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+                                                    
+                                                    <StackLayout Grid.Row="3" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="Center" >
+                                                        <Image Source="icon_unlock_tick_list" Aspect="AspectFit" HeightRequest="54" WidthRequest="54"/>
+                                                    </StackLayout>
+                                                    <StackLayout Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                                                        <Label Text="TICK LIST" TextColor="White" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="End"  />
+                                                        <Label Text="Maintain an ongoing list of all the routes you want to send this year." TextColor="White" FontSize=" Micro" HorizontalTextAlignment="End" />
+                                                    </StackLayout>
+                                                     
+                                                    <BoxView Margin="25,0,25,0" Grid.Row="4" Grid.ColumnSpan="4" HeightRequest=".5" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+                                                
+                                                    <StackLayout Grid.Row="5" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" Margin="-5,0" >
+                                                        <Image Source="icon_unlock_sends" Aspect="AspectFit" HeightRequest="54" WidthRequest="54"/>
+                                                    </StackLayout>
+                                                    <StackLayout Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                                                        <Label Text="SENDS" TextColor="White" FontSize="Medium" FontAttributes="Bold"/>
+                                                        <Label Text="A powerful history and statistics of your flashes,onsights,redpoints and more." TextColor="White" FontSize=" Micro"/>
+                                                    </StackLayout>
+                                                
+                                                    <BoxView Margin="25,0,25,0" Grid.Row="6" Grid.ColumnSpan="4" HeightRequest=".5" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+                                                    
+                                                    <StackLayout Grid.Row="7" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="Center" >
+                                                        <Image Source="icon_unlock_personal_best" Aspect="AspectFit" HeightRequest="54" WidthRequest="54"/>
+                                                    </StackLayout>
+                                                    <StackLayout Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                                                        <Label Text="PERSONAL BEST" TextColor="White" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="End" />
+                                                        <Label Text="Know when you have pushed yourself harder than even before." TextColor="White" FontSize=" Micro" HorizontalTextAlignment="End" />
+                                                    </StackLayout>
+                                            </Grid>
+                                            <StackLayout Margin="0,20,0,0">
+                                                <Label HorizontalOptions="Center" VerticalOptions="CenterAndExpand" TextColor="White" Text="GO PREMIUM. YOU WILL LOVE IT." FontAttributes="Bold" FontSize="18" />
+                                            </StackLayout>
+                                            <Button Margin="20" BackgroundColor="#4D000000" BorderColor="{StaticResource AppOrange}" BorderWidth="1" Command="{Binding NavigateToUnlockPageCommand}" FontSize="Small" HeightRequest="40" HorizontalOptions="CenterAndExpand"
+                                                    Text="SUBSCRIBE NOW" TextColor="White" CornerRadius="0" VerticalOptions="Center" WidthRequest="200" />
+                                            
+                                            <Label HorizontalOptions="Center" VerticalOptions="CenterAndExpand" TextColor="White" Text="Hassle free, no commitment, cancel anytime." FontSize="Micro" />
+                                            <Label HorizontalOptions="Center" 
+                                                   VerticalOptions="CenterAndExpand" 
+                                                   TextColor="White" 
+                                                   Text="Subscription Terms" 
+                                                   FontSize="Micro" 
+                                                   Margin="0,0,0,10">
+                                                <Label.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding TermsCommand}" />
+                                                </Label.GestureRecognizers>
+                                            </Label>
+                                        </StackLayout>
+                                        
+                                    </UC:GradientStackLayout>
+                                </StackLayout>
+                            </Grid>
+                        </Grid>
+                    </ScrollView>
+                    <!--  ARROW UP TO HIDE LARGE POPUP  -->
+                    <StackLayout Grid.Row="2" Margin="0,0,0,5" HorizontalOptions="FillAndExpand" IsVisible="{Binding IsUnlockVisible, Converter={StaticResource BoolInvertConverter}}" Orientation="Horizontal">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding HideRoutePopupLgCommand}" />
+                        </StackLayout.GestureRecognizers>
+                        <Image HeightRequest="30" HorizontalOptions="CenterAndExpand" Rotation="90" Source="arrowLeftWhite" VerticalOptions="CenterAndExpand" WidthRequest="30" />
+                    </StackLayout>
+                </Grid>
+            </controls:SwipeGestureFrame.Content>
+        </controls:SwipeGestureFrame>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SloperMobile.Views.SocialPages.MemberProfilePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+    xmlns:ffimageLoading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:skiaforms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    NavigationPage.HasNavigationBar="False"
+    Style="{DynamicResource AppBackgroundColor}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <OnIdiom x:Key="RimThickness" x:TypeArguments="x:Double">
+                <OnIdiom.Phone>
+                    <OnPlatform
+                        x:TypeArguments="x:Double"
+                        Android="10"
+                        iOS="15" />
+                </OnIdiom.Phone>
+                <OnIdiom.Tablet>
+                    <OnPlatform
+                        x:TypeArguments="x:Double"
+                        Android="20"
+                        iOS="30" />
+                </OnIdiom.Tablet>
+            </OnIdiom>
+            <OnIdiom x:Key="RangePointThickness" x:TypeArguments="x:Double">
+                <OnIdiom.Phone>
+                    <OnPlatform
+                        x:TypeArguments="x:Double"
+                        Android="10"
+                        iOS="7.5" />
+                </OnIdiom.Phone>
+                <OnIdiom.Tablet>
+                    <OnPlatform
+                        x:TypeArguments="x:Double"
+                        Android="20"
+                        iOS="15" />
+                </OnIdiom.Tablet>
+            </OnIdiom>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        
+        <Grid RowSpacing="0" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid
+                Grid.Row="0"
+                HorizontalOptions="FillAndExpand"
+                RowSpacing="0"
+                VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="245" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="60" />
+                </Grid.RowDefinitions>
+                <ffimageLoading:CachedImage
+                    Grid.Row="0"
+                    Grid.RowSpan="3"
+                    Aspect="AspectFill"
+                    Source="{Binding ProfileImageUrl}" />
+                <UC:GradientStackLayout
+                    Margin="0,0,0,-1"
+                    Grid.Row="1"
+                    Grid.RowSpan="2"
+                    VerticalOptions="Fill" >
+                    <UC:GradientStackLayout.Colors>
+                        <UC:GradientColor Color="Transparent" Position="0"/>
+                        <UC:GradientColor Color="Black" Position="1"/>
+                    </UC:GradientStackLayout.Colors>
+                </UC:GradientStackLayout>
+                <StackLayout
+                    Grid.Row="2"
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal"
+                    Spacing="0"
+                    VerticalOptions="EndAndExpand">
+                    <StackLayout
+                        HorizontalOptions="CenterAndExpand"
+                        Spacing="0"
+                        VerticalOptions="FillAndExpand">
+                        <Image 
+                            Margin="3"
+                            HeightRequest="22" 
+                            WidthRequest="22" 
+                            Source="icon_profile_years_climbing" />
+                        <Label
+                            FontSize="10"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding YearsClimbGroup}"
+                            TextColor="White" />
+                        <Label
+                            FontSize="7"
+                            HorizontalTextAlignment="Center"
+                            Text="years climbing"
+                            TextColor="White"
+                            VerticalTextAlignment="Center" />
+                    </StackLayout>
+                    <StackLayout
+                        HorizontalOptions="CenterAndExpand"
+                        Spacing="0"
+                        VerticalOptions="FillAndExpand">
+                        <Image 
+                            Margin="3"
+                            HeightRequest="22" 
+                            WidthRequest="22" 
+                            Source="icon_profile_weight" />
+                        <Label
+                            FontSize="10"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding WeightGroup}"
+                            TextColor="White" />
+                        <Label
+                            FontSize="7"
+                            HorizontalTextAlignment="Center"
+                            Text="weight"
+                            TextColor="White"
+                            VerticalTextAlignment="Center" />
+                    </StackLayout>
+                    <StackLayout
+                        HorizontalOptions="CenterAndExpand"
+                        Spacing="0"
+                        VerticalOptions="FillAndExpand">
+                        <Image 
+                            Margin="3"
+                            HeightRequest="22" 
+                            WidthRequest="22" 
+                            Source="icon_profile_height" />
+                        <Label
+                            FontSize="10"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding HeightGroup}"
+                            TextColor="White" />
+                        <Label
+                            FontSize="7"
+                            HorizontalTextAlignment="Center"
+                            Text="height"
+                            TextColor="White"
+                            VerticalTextAlignment="Center" />
+                    </StackLayout>
+                    <StackLayout
+                        HorizontalOptions="CenterAndExpand"
+                        Spacing="0"
+                        VerticalOptions="FillAndExpand">
+                        <Image
+                            Margin="3"
+                            HeightRequest="22" 
+                            WidthRequest="22" 
+                            Source="icon_profile_age" />
+                        <Label
+                            FontSize="10"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding AgeGroup}"
+                            TextColor="White" />
+                        <Label
+                            FontSize="7"
+                            HorizontalTextAlignment="Center"
+                            Text="age group"
+                            TextColor="White"
+                            VerticalTextAlignment="Center" />
+                    </StackLayout>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding EditProfileCommand}" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </Grid>
+
+            <Grid
+                Grid.Row="1"
+                BackgroundColor="Black"
+                VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <StackLayout
+                    Grid.Row="0"
+                    Padding="5,8,5,5"
+                    HorizontalOptions="Fill"
+                    Orientation="Horizontal"
+                    VerticalOptions="Fill">
+                    <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+                        <StackLayout
+                            HorizontalOptions="Center"
+                            Orientation="Vertical"
+                            VerticalOptions="Center">
+                            <Label
+                                FontSize="Large"
+                                HorizontalOptions="Center"
+                                Text="{Binding Flash}"
+                                TextColor="White" />
+                            <Label
+                                FontSize="8"
+                                HorizontalOptions="Center"
+                                Text="flash"
+                                TextColor="White" />
+                        </StackLayout>
+                        <Image
+                            HorizontalOptions="Center"
+                            Source="icon_profile_flash"
+                            VerticalOptions="End"
+                            HeightRequest="22"
+                            WidthRequest="22"/>
+                        <gauge:SfCircularGauge HorizontalOptions="Fill" VerticalOptions="Fill">
+                            <gauge:SfCircularGauge.Scales>
+                                <gauge:Scale
+                                    EndValue="100"
+                                    RadiusFactor="1"
+                                    RimColor="#fff"
+                                    RimThickness="{StaticResource RimThickness}"
+                                    ShowLabels="False"
+                                    ShowTicks="False"
+                                    StartAngle="135"
+                                    StartValue="0"
+                                    SweepAngle="270">
+                                    <gauge:Scale.Pointers>
+                                        <gauge:RangePointer
+                                            Thickness="{StaticResource RangePointThickness}"
+                                            Offset="1"
+                                            Color="#FF8E2D"
+                                            Value="{Binding FlashPercent}" />
+                                    </gauge:Scale.Pointers>
+                                </gauge:Scale>
+                            </gauge:SfCircularGauge.Scales>
+                        </gauge:SfCircularGauge>
+                    </Grid>
+                    <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+                        <StackLayout
+                            HorizontalOptions="Center"
+                            Orientation="Vertical"
+                            VerticalOptions="Center">
+                            <Label
+                                FontSize="Large"
+                                HorizontalOptions="Center"
+                                Text="{Binding Onsight}"
+                                TextColor="White" />
+                            <Label
+                                FontSize="8"
+                                HorizontalOptions="Center"
+                                Text="onsight"
+                                TextColor="White" />
+                        </StackLayout>
+                        <Image
+                            HorizontalOptions="Center"
+                            Source="icon_profile_onsight"
+                            VerticalOptions="End" 
+                            HeightRequest="22"
+                            WidthRequest="22"/>
+                        <gauge:SfCircularGauge HorizontalOptions="Fill" VerticalOptions="Fill">
+                            <gauge:SfCircularGauge.Scales>
+                                <gauge:Scale
+                                    EndValue="100"
+                                    RadiusFactor="1"
+                                    RimColor="#fff"
+                                    RimThickness="{StaticResource RimThickness}"
+                                    ShowLabels="False"
+                                    ShowTicks="False"
+                                    StartAngle="135"
+                                    StartValue="0"
+                                    SweepAngle="270">
+                                    <gauge:Scale.Pointers>
+                                        <gauge:RangePointer
+                                            Thickness="{StaticResource RangePointThickness}"
+                                            Offset="1"
+                                            Color="#FF8E2D"
+                                            Value="{Binding OnsightPercent}" />
+                                    </gauge:Scale.Pointers>
+                                </gauge:Scale>
+                            </gauge:SfCircularGauge.Scales>
+                        </gauge:SfCircularGauge>
+                    </Grid>
+                    <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+                        <StackLayout
+                            Margin="0"
+                            HorizontalOptions="Center"
+                            Orientation="Vertical"
+                            Spacing="0"
+                            VerticalOptions="Center">
+                            <Label
+                                FontSize="Large"
+                                HorizontalOptions="Center"
+                                Text="{Binding RedPoint}"
+                                TextColor="White" />
+                            <Label
+                                FontSize="8"
+                                HorizontalOptions="Center"
+                                Text="redpoint"
+                                TextColor="White" />
+                        </StackLayout>
+                        <Image
+                            HorizontalOptions="Center"
+                            Source="icon_profile_redpoint"
+                            VerticalOptions="End" 
+                            HeightRequest="22"
+                            WidthRequest="22"/>
+                        <gauge:SfCircularGauge HorizontalOptions="Fill" VerticalOptions="Fill">
+                            <gauge:SfCircularGauge.Scales>
+                                <gauge:Scale
+                                    EndValue="100"
+                                    RadiusFactor="1"
+                                    RimColor="#fff"
+                                    RimThickness="{StaticResource RimThickness}"
+                                    ShowLabels="False"
+                                    ShowTicks="False"
+                                    StartAngle="135"
+                                    StartValue="0"
+                                    SweepAngle="270">
+                                    <gauge:Scale.Pointers>
+                                        <gauge:RangePointer
+                                            Thickness="{StaticResource RangePointThickness}"
+                                            Offset="1"
+                                            Color="#FF8E2D"
+                                            Value="{Binding RedPointPercent}" />
+                                    </gauge:Scale.Pointers>
+                                </gauge:Scale>
+                            </gauge:SfCircularGauge.Scales>
+                        </gauge:SfCircularGauge>
+                    </Grid>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ActivityCommand}" CommandParameter="ProfilePoints" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout
+                    Grid.Row="1"
+                    Padding="5,5,5,8"
+                    HorizontalOptions="Fill"
+                    Orientation="Horizontal"
+                    VerticalOptions="Fill">
+                    <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+                        <StackLayout
+                            HorizontalOptions="Center"
+                            Orientation="Vertical"
+                            VerticalOptions="Center">
+                            <Label
+                                FontSize="Large"
+                                HorizontalOptions="Center"
+                                Text="{Binding Ranking}"
+                                TextColor="White" />
+                            <Label
+                                FontSize="8"
+                                HorizontalOptions="Center"
+                                Text="ranking"
+                                TextColor="White" />
+                        </StackLayout>
+                        <Image
+                            HorizontalOptions="Center"
+                            Source="icon_profile_ranking"
+                            VerticalOptions="End" 
+                            HeightRequest="22"
+                            WidthRequest="22"/>
+                        <gauge:SfCircularGauge HorizontalOptions="Fill" VerticalOptions="Fill">
+                            <gauge:SfCircularGauge.Scales>
+                                <gauge:Scale
+                                    EndValue="100"
+                                    RadiusFactor="1"
+                                    RimColor="#fff"
+                                    RimThickness="{StaticResource RimThickness}"
+                                    ShowLabels="False"
+                                    ShowTicks="False"
+                                    StartAngle="135"
+                                    StartValue="0"
+                                    SweepAngle="270">
+                                    <gauge:Scale.Pointers>
+                                        <gauge:RangePointer
+                                            Thickness="{StaticResource RangePointThickness}"
+                                            Offset="1"
+                                            Color="#FF8E2D"
+                                            Value="{Binding RankingPercentage}" />
+                                    </gauge:Scale.Pointers>
+                                </gauge:Scale>
+                            </gauge:SfCircularGauge.Scales>
+                        </gauge:SfCircularGauge>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ActivityCommand}" CommandParameter="ProfileRanking" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                    <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+                        <StackLayout
+                            HorizontalOptions="Center"
+                            Orientation="Vertical"
+                            VerticalOptions="Center">
+                            <Label
+                                FontSize="Large"
+                                HorizontalOptions="Center"
+                                Text="{Binding DaysClimbed}"
+                                TextColor="White" />
+                            <Label
+                                FontSize="8"
+                                HorizontalOptions="Center"
+                                Text="days climbed"
+                                TextColor="White" />
+                        </StackLayout>
+                        <Image
+                            HorizontalOptions="Center"
+                            Source="icon_profile_days_climbed"
+                            VerticalOptions="End" 
+                            HeightRequest="22"
+                            WidthRequest="22"/>
+                        <gauge:SfCircularGauge HorizontalOptions="Fill" VerticalOptions="Fill">
+                            <gauge:SfCircularGauge.Scales>
+                                <gauge:Scale
+                                    EndValue="100"
+                                    RadiusFactor="1"
+                                    RimColor="#fff"
+                                    RimThickness="{StaticResource RimThickness}"
+                                    ShowLabels="False"
+                                    ShowTicks="False"
+                                    StartAngle="135"
+                                    StartValue="0"
+                                    SweepAngle="270">
+                                    <gauge:Scale.Pointers>
+                                        <gauge:RangePointer
+                                            Thickness="{StaticResource RangePointThickness}"
+                                            Offset="1"
+                                            Color="#FF8E2D"
+                                            Value="{Binding DaysClimbedPercentage}" />
+                                    </gauge:Scale.Pointers>
+                                </gauge:Scale>
+                            </gauge:SfCircularGauge.Scales>
+                        </gauge:SfCircularGauge>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ActivityCommand}" CommandParameter="ProfileCalendar" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                    <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+                        <StackLayout
+                            HorizontalOptions="Center"
+                            Orientation="Vertical"
+                            VerticalOptions="Center">
+                            <Label
+                                FontSize="Large"
+                                HorizontalOptions="Center"
+                                Text="{Binding Sends}"
+                                TextColor="White" />
+                            <Label
+                                FontSize="8"
+                                HorizontalOptions="Center"
+                                Text="sends"
+                                TextColor="White" />
+                        </StackLayout>
+                        <Image
+                            HorizontalOptions="Center"
+                            Source="icon_profile_sends"
+                            VerticalOptions="End" 
+                            HeightRequest="22"
+                            WidthRequest="22"/>
+                        <gauge:SfCircularGauge HorizontalOptions="Fill" VerticalOptions="Fill">
+                            <gauge:SfCircularGauge.Scales>
+                                <gauge:Scale
+                                    EndValue="100"
+                                    RadiusFactor="1"
+                                    RimColor="#fff"
+                                    RimThickness="{StaticResource RimThickness}"
+                                    ShowLabels="False"
+                                    ShowTicks="False"
+                                    StartAngle="135"
+                                    StartValue="0"
+                                    SweepAngle="270">
+                                    <gauge:Scale.Pointers>
+                                        <gauge:RangePointer
+                                            Thickness="{StaticResource RangePointThickness}"
+                                            Offset="1"
+                                            Color="#FF8E2D"
+                                            Value="{Binding SendsPercentage}" />
+                                    </gauge:Scale.Pointers>
+                                </gauge:Scale>
+                            </gauge:SfCircularGauge.Scales>
+                        </gauge:SfCircularGauge>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ActivityCommand}" CommandParameter="ProfileSends" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                </StackLayout>
+            </Grid>
+        </Grid>
+        
+        <!-- Header. Temp solution, need to change after HeaderControl will be implemented -->
+        <UC:GradientStackLayout
+                VerticalOptions="Start"
+                HeightRequest="{Binding GradientHeaderHeight}"
+                InputTransparent="true"
+                HasFadeBackground="{Binding HasFade}"
+                Colors="{Binding HeaderColors}"/>
+            
+        <UC:HeaderUC
+            IsVisible="{Binding IsShowHeader}"
+            HorizontalOptions="Fill" 
+            VerticalOptions="Start" />
+        
+        <StackLayout
+            Grid.Row="0"
+            Margin="0,90,10,0"
+            HeightRequest="30"
+            WidthRequest="92"
+            VerticalOptions="Start"
+            HorizontalOptions="End"
+            IsVisible="{Binding IsFollowBtnVisible}">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding FollowCommand}" />
+            </StackLayout.GestureRecognizers>
+            <Frame
+                BorderColor="#FF8E2D"
+                Padding="1"
+                CornerRadius="2"
+                BackgroundColor="{Binding FollowBGColor}"
+                HasShadow="false">
+                <Label
+                    TextColor="{Binding FollowTxtColor}"
+                    Text="{Binding FollowText}"
+                    FontSize="14"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"/>
+            </Frame>
+        </StackLayout>
+        
+        <Frame 
+            OutlineColor="White"
+            Padding="1"
+            CornerRadius="2"
+            BackgroundColor="{Binding FollowersBG}"
+            HasShadow="false"
+            Grid.Row="0"
+            Margin="{Binding FollowersMargin}"
+            HeightRequest="52"
+            WidthRequest="90"
+            VerticalOptions="Start"
+            HorizontalOptions="End">
+            <StackLayout
+                Orientation="Horizontal" >
+                <StackLayout
+                    HorizontalOptions="CenterAndExpand"
+                    Spacing="0"
+                    VerticalOptions="FillAndExpand">
+                    <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding FollowersCommand}" />
+                    </StackLayout.GestureRecognizers>
+                    <Image 
+                        HeightRequest="24"
+                        WidthRequest="24"
+                        Margin="3"
+                        Source="icon_profile_followers" />
+                    <Label
+                        FontSize="10"
+                        HeightRequest="12"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding FollowerCount}"
+                        TextColor="White"
+                        VerticalOptions="Center" />
+                    <Label
+                        FontSize="7"
+                        HeightRequest="9"
+                        HorizontalTextAlignment="Center"
+                        Text="followers"
+                        TextColor="White"
+                        VerticalTextAlignment="Start" />
+                </StackLayout>
+                <StackLayout
+                    HorizontalOptions="CenterAndExpand"
+                    Spacing="0"
+                    VerticalOptions="FillAndExpand">
+                    <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding FollowingsCommand}" />
+                    </StackLayout.GestureRecognizers>
+                    <Image
+                        HeightRequest="24"
+                        WidthRequest="24"
+                        Margin="3"
+                        Source="icon_profile_following" />
+                    <Label
+                        FontSize="10"
+                        HeightRequest="12"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding FollowingCount}"
+                        TextColor="White"
+                        VerticalOptions="Center"/>
+                    <Label
+                        FontSize="7"
+                        HeightRequest="9"
+                        HorizontalTextAlignment="Center"
+                        Text="following"
+                        TextColor="White"
+                        VerticalTextAlignment="Start" />
+                </StackLayout>
+            </StackLayout>
+        </Frame> 
+                 
+        <!--Turn off resizing, coz it's not updating layout properly after height edit. There's a small underline appearing-->
+        <UC:FooterUC
+            Grid.Row="1"
+            ClassId="doNotResize"
+            IsVisible="{Binding IsShowFooter}"
+            HorizontalOptions="Fill"
+            VerticalOptions="End" />
+    </Grid>
+</ContentPage>

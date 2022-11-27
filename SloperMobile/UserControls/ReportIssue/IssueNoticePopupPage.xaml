@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+    x:Class="SloperMobile.UserControls.ReportIssue.IssueNoticePopupPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
+
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+            DurationIn="400"
+            DurationOut="200"
+            EasingIn="SinIn"
+            EasingOut="SinOut"
+            HasBackgroundAnimation="true"
+            PositionIn="Center"
+            PositionOut="Center" />
+    </pages:PopupPage.Animation>
+
+    <!-- External frame -->
+    <Grid
+        Margin="16"
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+
+        <!-- Internal frame -->
+
+        <StackLayout
+            Margin="16"    
+            BackgroundColor="{StaticResource TransparentWhite}"
+            Padding="30"
+            Spacing="8">
+            <Label
+                Margin="0,0,0,16"
+                x:Name="lbl_notice"
+                HorizontalOptions="Center"
+                LineBreakMode="WordWrap"/>
+            <Button
+                x:Name="btn_viewdetails"
+                Clicked="btn_viewdetails_Clicked"
+                Style="{StaticResource GeneralButtonStyle}"
+                Text="VIEW DETAILS"
+
+                TextColor="White" />
+        </StackLayout>
+
+        <!-- Close Button -->
+        <ContentView HorizontalOptions="End" VerticalOptions="Start">
+            <ContentView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnClose" />
+            </ContentView.GestureRecognizers>
+            <Image
+                x:Name="CloseImage"
+                WidthRequest="32"
+                HeightRequest="32"
+                Aspect="AspectFit"
+                Source="close_circle_button" />
+        </ContentView>
+    </Grid>
+
+</pages:PopupPage>

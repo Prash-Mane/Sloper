@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+	x:Class="SloperMobile.UserControls.HeaderMenuControl"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	BindingContext="{Binding .}">
+	<ContentView.Content>
+		<Grid
+			ColumnSpacing="0"
+			HorizontalOptions="FillAndExpand"
+			RowSpacing="0"
+			VerticalOptions="FillAndExpand">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="1" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="1" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="1" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="1" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="1" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="1" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="1" />
+			</Grid.ColumnDefinitions>
+			<BoxView
+				Grid.Row="0"
+				Grid.ColumnSpan="11"
+				BackgroundColor="#3F3F3F"
+				HeightRequest="1"
+				HorizontalOptions="FillAndExpand" />
+			<BoxView
+				Grid.Row="1"
+				Grid.Column="0"
+				BackgroundColor="#3F3F3F"
+				VerticalOptions="FillAndExpand"
+				WidthRequest="1" />
+			<Label
+				Grid.Row="1"
+				Grid.Column="1"
+				BackgroundColor="{Binding RankingBackgroundColor}"
+				FontSize="Micro"
+				HorizontalOptions="FillAndExpand"
+				HorizontalTextAlignment="Center"
+				Text="RANKING"
+				TextColor="White"
+				VerticalOptions="FillAndExpand"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding FooterCommand}" CommandParameter="ProfileRankingPage" />
+				</Label.GestureRecognizers>
+			</Label>
+			<BoxView
+				Grid.Row="1"
+				Grid.Column="2"
+				BackgroundColor="#3F3F3F"
+				VerticalOptions="FillAndExpand"
+				WidthRequest="1" />
+			<Label
+				Grid.Row="1"
+				Grid.Column="3"
+				BackgroundColor="{Binding PointsBackgroundColor}"
+				FontSize="Micro"
+				HorizontalOptions="FillAndExpand"
+				HorizontalTextAlignment="Center"
+				Text="POINTS"
+				TextColor="White"
+				VerticalOptions="FillAndExpand"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding FooterCommand}" CommandParameter="ProfilePointsPage" />
+				</Label.GestureRecognizers>
+			</Label>
+			<BoxView
+				Grid.Row="1"
+				Grid.Column="4"
+				BackgroundColor="#3F3F3F"
+				VerticalOptions="FillAndExpand"
+				WidthRequest="1" />
+			<Label
+				Grid.Row="1"
+				Grid.Column="5"
+				BackgroundColor="{Binding SendsBackgroundColor}"
+				FontSize="Micro"
+				HorizontalOptions="FillAndExpand"
+				HorizontalTextAlignment="Center"
+				Text="SENDS"
+				TextColor="White"
+				VerticalOptions="FillAndExpand"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding FooterCommand}" CommandParameter="ProfileSendsPage" />
+				</Label.GestureRecognizers>
+			</Label>
+			<BoxView
+				Grid.Row="1"
+				Grid.Column="6"
+				BackgroundColor="#3F3F3F"
+				VerticalOptions="FillAndExpand"
+				WidthRequest="1" />
+			<Label
+				Grid.Row="1"
+				Grid.Column="7"
+				BackgroundColor="{Binding CalendarBackgroundColor}"
+				FontSize="Micro"
+				HorizontalOptions="FillAndExpand"
+				HorizontalTextAlignment="Center"
+				Text="CALENDAR"
+				TextColor="White"
+				VerticalOptions="FillAndExpand"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding FooterCommand}" CommandParameter="ProfileCalendarPage" />
+				</Label.GestureRecognizers>
+			</Label>
+			<BoxView
+				Grid.Row="1"
+				Grid.Column="8"
+				BackgroundColor="#3F3F3F"
+				VerticalOptions="FillAndExpand"
+				WidthRequest="1" />
+			<Label
+				Grid.Row="1"
+				Grid.Column="9"
+				BackgroundColor="{Binding TickListBackgroundColor}"
+				FontSize="Micro"
+				HorizontalOptions="FillAndExpand"
+				HorizontalTextAlignment="Center"
+				Text="TICK LIST"
+				TextColor="White"
+				VerticalOptions="FillAndExpand"
+				VerticalTextAlignment="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding FooterCommand}" CommandParameter="ProfileTickListPage" />
+				</Label.GestureRecognizers>
+			</Label>
+			<BoxView
+				Grid.Row="1"
+				Grid.Column="10"
+				BackgroundColor="#3F3F3F"
+				VerticalOptions="FillAndExpand"
+				WidthRequest="1" />
+			<BoxView
+				Grid.Row="2"
+				Grid.ColumnSpan="11"
+				BackgroundColor="#3F3F3F"
+				HeightRequest="1"
+				HorizontalOptions="FillAndExpand" />
+		</Grid>
+	</ContentView.Content>
+</ContentView>

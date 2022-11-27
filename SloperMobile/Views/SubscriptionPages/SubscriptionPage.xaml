@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="SloperMobile.Views.SubscriptionPages.SubscriptionPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:customControls="clr-namespace:SloperMobile.UserControls.CustomControls;assembly=SloperMobile"
+	xmlns:effect="clr-namespace:SloperMobile.Effects;assembly=SloperMobile"
+	xmlns:ffImageLoading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+	xmlns:userControls="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    NavigationPage.HasNavigationBar="False"
+    ControlTemplate="{StaticResource HeaderFooterPageTemplate}"
+	Style="{DynamicResource AppBackgroundColor}">
+	<ContentPage.Content>
+		<Grid
+			Padding="0"
+			RowSpacing="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="60" />
+				<RowDefinition>
+					<RowDefinition.Height>
+						<OnPlatform
+							x:TypeArguments="GridLength"
+							Android="6*"
+							iOS="8*" />
+					</RowDefinition.Height>
+				</RowDefinition>
+				<RowDefinition>
+					<RowDefinition.Height>
+						<OnPlatform
+							x:TypeArguments="GridLength"
+							Android="4*"
+							iOS="5*" />
+					</RowDefinition.Height>
+				</RowDefinition>
+				<RowDefinition>
+					<RowDefinition.Height>
+						<OnPlatform
+							x:TypeArguments="GridLength"
+							Android="4*"
+							iOS="8.5*" />
+					</RowDefinition.Height>
+				</RowDefinition>
+			</Grid.RowDefinitions>
+     
+			<ffImageLoading:CachedImage
+				Grid.Row="0"
+				Grid.RowSpan="4"
+				Margin="0"
+				Aspect="AspectFill"
+				FadeAnimationDuration="2000"
+				FadeAnimationEnabled="True"
+				FadeAnimationForCachedImages="True"
+				Source="{Binding BackgroundImage}">
+				<ffImageLoading:CachedImage.Transformations>
+					<transformations:GrayscaleTransformation />
+				</ffImageLoading:CachedImage.Transformations>
+			</ffImageLoading:CachedImage>
+			<ffImageLoading:CachedImage
+				Grid.Row="0"
+				Grid.RowSpan="4"
+				Margin="0"
+				Aspect="AspectFill"
+				FadeAnimationDuration="2000"
+				FadeAnimationEnabled="True"
+				FadeAnimationForCachedImages="True"
+				Source="fade_top_trans_bottom_black.png" />
+            <BoxView 
+                Grid.Row="0"
+                Grid.RowSpan="4"
+                Margin="0"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="Black" Opacity="0.3"/>
+
+			<!--<ffImageLoading:CachedImage
+                Grid.Row="1"
+                Margin="0,10,0,0"
+                Aspect="AspectFill"
+                HorizontalOptions="CenterAndExpand"
+                Source="icon_sloper_premium.png"
+                VerticalOptions="CenterAndExpand" />-->
+			<Grid
+				Grid.Row="1"
+				HorizontalOptions="FillAndExpand"
+				RowSpacing="0"
+				VerticalOptions="FillAndExpand">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="7*" />
+					<RowDefinition Height="2.5*" />
+					<RowDefinition Height="1.5*" />
+				</Grid.RowDefinitions>
+				<Grid.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding ShowDescriptionPopupCommand}" />
+				</Grid.GestureRecognizers>
+				<Grid Grid.Row="0" Margin="0">
+					<customControls:LabelWithShadowEffect
+						Margin="0"
+						FontAttributes="Bold"
+						FontSize="54"
+						IsVisible="{Binding SubscriptionModel.AreGuidebooksVisible, Converter={StaticResource BoolInvertConverter}}"
+						LineBreakMode="WordWrap"
+						Text="{Binding SubscriptionModel.SubscriptionItemType}"
+						TextColor="White"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center">
+						<customControls:LabelWithShadowEffect.Effects>
+							<customControls:LabelSizeFontToFitEffect />
+						</customControls:LabelWithShadowEffect.Effects>
+					</customControls:LabelWithShadowEffect>
+				</Grid>
+				<StackLayout
+					Grid.Row="0"
+					HorizontalOptions="Center"
+					IsVisible="{Binding SubscriptionModel.AreGuidebooksVisible}"
+					Orientation="Horizontal"
+					Spacing="0"
+					VerticalOptions="EndAndExpand">
+					<customControls:LabelWithShadowEffect
+						Margin="0"
+						FontAttributes="Bold"
+						FontSize="54"
+						HorizontalOptions="Center"
+						HorizontalTextAlignment="Center"
+						Style="{StaticResource PageLabelStyle}"
+						Text="SLOPER" />
+					<customControls:LabelWithShadowEffect
+						Margin="0"
+						FontSize="54"
+						HorizontalOptions="Center"
+						HorizontalTextAlignment="Center"
+						Style="{StaticResource PageLabelStyle}"
+						Text="APP"
+						VerticalOptions="EndAndExpand" />
+				</StackLayout>
+				<Grid
+					Grid.Row="1"
+					Margin="0"
+					Padding="3"
+					HorizontalOptions="FillAndExpand"
+					RowSpacing="0"
+					VerticalOptions="FillAndExpand">
+					<Grid.RowDefinitions>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="6*"/>
+                    </Grid.RowDefinitions>
+
+					<Grid.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding ShowDescriptionPopupCommand}" />
+					</Grid.GestureRecognizers>
+					<customControls:LabelWithShadowEffect
+						Grid.Row="0"
+						FontSize="Small"
+						HorizontalOptions="FillAndExpand"
+						HorizontalTextAlignment="Center"
+						Style="{StaticResource PageLabelStyle}"
+						Text="{Binding SubscriptionModel.SubscriptionItemTypeDescription}" />
+					<customControls:LabelWithShadowEffect
+						Grid.Row="1"
+						FontSize="Large"
+						HorizontalTextAlignment="Center"
+						Style="{StaticResource PageLabelStyle}"
+						Text="{Binding SubscriptionModel.SubscriptionItemTypeAuthors}">
+						<customControls:LabelWithShadowEffect.Effects>
+							<customControls:LabelSizeFontToFitEffect Lines="1"/>
+						</customControls:LabelWithShadowEffect.Effects>
+					</customControls:LabelWithShadowEffect>
+				</Grid>
+				<StackLayout
+					Grid.Row="2"
+					Margin="0"
+					HeightRequest="25"
+					HorizontalOptions="FillAndExpand"
+					VerticalOptions="FillAndExpand">
+					<ffImageLoading:CachedImage
+						Aspect="AspectFit"
+						HeightRequest="25"
+						Source="icon_arrows_down.png" />
+				</StackLayout>
+			</Grid>
+			<StackLayout
+				Grid.Row="2"
+				HorizontalOptions="CenterAndExpand"
+				Orientation="Horizontal"
+				VerticalOptions="CenterAndExpand">
+				<StackLayout.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding ShowDescriptionPopupCommand}" />
+				</StackLayout.GestureRecognizers>
+				<Grid
+					Grid.Column="0"
+					HorizontalOptions="Center"
+					IsVisible="{Binding SubscriptionModel.AreGuidebooksVisible}"
+					RowSpacing="5"
+					WidthRequest="80">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="5*" />
+						<RowDefinition Height="1.5*" />
+						<RowDefinition Height="1.5*" />
+					</Grid.RowDefinitions>
+					<ffImageLoading:CachedImage
+						Grid.Row="0"
+						Aspect="AspectFit"
+						HorizontalOptions="CenterAndExpand"
+						Source="icon_guides.png"
+						VerticalOptions="CenterAndExpand" />
+					<customControls:LabelWithShadowEffect
+						Grid.Row="1"
+						FontAttributes="Bold"
+						HorizontalOptions="Center"
+						HorizontalTextAlignment="Center"
+						Style="{StaticResource GeneralLabelStyle}"
+						Text="{Binding SubscriptionModel.GuideBooksCount}"
+						TextColor="{StaticResource AppOrange}"
+						VerticalOptions="CenterAndExpand" />
+					<customControls:LabelWithShadowEffect
+						Grid.Row="2"
+						HorizontalOptions="Center"
+						HorizontalTextAlignment="Center"
+						Style="{StaticResource GeneralLabelStyle}"
+						Text="GUIDES"
+						VerticalOptions="CenterAndExpand" />
+				</Grid>
+				<Grid
+					Grid.Column="1"
+					HorizontalOptions="Center"
+					IsVisible="{Binding SubscriptionModel.AreCragsVisible}"
+					RowSpacing="5"
+					WidthRequest="80">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="5*" />
+						<RowDefinition Height="1.5*" />
+						<RowDefinition Height="1.5*" />
+					</Grid.RowDefinitions>
+					<ffImageLoading:CachedImage
+						Grid.Row="0"
+						Aspect="AspectFit"
+						HorizontalOptions="CenterAndExpand"
+						Source="icon_crags.png"
+						VerticalOptions="CenterAndExpand" />
+					<customControls:LabelWithShadowEffect
+						Grid.Row="1"
+						FontAttributes="Bold"
+						HorizontalOptions="Center"
+						HorizontalTextAlignment="Center"
+						Style="{StaticResource GeneralLabelStyle}"
+						Text="{Binding SubscriptionModel.CragsCount}"
+						TextColor="{StaticResource AppOrange}"
+						VerticalOptions="CenterAndExpand" />
+					<customControls:LabelWithShadowEffect
+						Grid.Row="2"
+						HorizontalOptions="Center"
+						HorizontalTextAlignment="Center"
+						Style="{StaticResource GeneralLabelStyle}"
+						Text="CRAGS"
+						VerticalOptions="CenterAndExpand" />
+				</Grid>
+				<Grid
+					Grid.Column="2"
+					HorizontalOptions="Center"
+					RowSpacing="5"
+					WidthRequest="80">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="5*" />
+						<RowDefinition Height="1.5*" />
+						<RowDefinition Height="1.5*" />
+					</Grid.RowDefinitions>
+					<ffImageLoading:CachedImage
+						Grid.Row="0"
+						Aspect="AspectFit"
+						HorizontalOptions="CenterAndExpand"
+						Source="icon_sectors.png"
+						VerticalOptions="CenterAndExpand" />
+					<customControls:LabelWithShadowEffect
+						Grid.Row="1"
+						FontAttributes="Bold"
+						HorizontalOptions="Center"
+						HorizontalTextAlignment="Center"
+						Style="{StaticResource GeneralLabelStyle}"
+						Text="{Binding SubscriptionModel.SectorsCount}"
+						TextColor="{StaticResource AppOrange}"
+						VerticalOptions="CenterAndExpand" />
+					<customControls:LabelWithShadowEffect
+						Grid.Row="2"
+						HorizontalOptions="Center"
+						HorizontalTextAlignment="Center"
+						Style="{StaticResource GeneralLabelStyle}"
+						Text="SECTORS"
+						VerticalOptions="CenterAndExpand" />
+				</Grid>
+				<Grid
+					Grid.Column="3"
+					HorizontalOptions="Center"
+					RowSpacing="5"
+					WidthRequest="80">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="5*" />
+						<RowDefinition Height="1.5*" />
+						<RowDefinition Height="1.5*" />
+					</Grid.RowDefinitions>
+					<ffImageLoading:CachedImage
+						Grid.Row="0"
+						Aspect="AspectFit"
+						HorizontalOptions="CenterAndExpand"
+						Source="icon_routes.png"
+						VerticalOptions="CenterAndExpand" />
+					<customControls:LabelWithShadowEffect
+						Grid.Row="1"
+						FontAttributes="Bold"
+						HorizontalOptions="Center"
+						HorizontalTextAlignment="Center"
+						Style="{StaticResource GeneralLabelStyle}"
+						Text="{Binding SubscriptionModel.RoutesCount}"
+						TextColor="{StaticResource AppOrange}"
+						VerticalOptions="CenterAndExpand" />
+					<customControls:LabelWithShadowEffect
+						Grid.Row="2"
+						HorizontalOptions="Center"
+						HorizontalTextAlignment="Center"
+						Style="{StaticResource GeneralLabelStyle}"
+						Text="ROUTES"
+						VerticalOptions="CenterAndExpand" />
+				</Grid>
+			</StackLayout>
+			<StackLayout
+				Grid.Row="3"
+				Margin="0"
+				Padding="0"
+				Spacing="0"
+				VerticalOptions="FillAndExpand">
+				<StackLayout
+					Padding="0"
+					HorizontalOptions="Center"
+					Spacing="0"
+					VerticalOptions="Start">
+					<customControls:LabelWithShadowEffect
+						HorizontalOptions="Center"
+						HorizontalTextAlignment="Center"
+						Style="{StaticResource PageLabelStyle}"
+						Text="{Binding SubscriptionModel.SubscriptionItemName}"
+						VerticalOptions="StartAndExpand" />
+					<customControls:LabelWithShadowEffect
+						HorizontalOptions="Center"
+						HorizontalTextAlignment="Center"
+						Style="{StaticResource PageLabelStyle}"
+						Text="{Binding SubscriptionModel.SubscriptionItemPrice}"
+						VerticalOptions="FillAndExpand" />
+				</StackLayout>
+				<customControls:MultilineTextTransparentButton
+					FirstLineText="SUBSCRIBE NOW"
+					HeightRequest="40"
+                    WidthRequest="300"
+					TapCommand="{Binding PurchaseItemCommand}"
+					TapCommandParameter="3"
+					VerticalOptions="Center"
+					HorizontalOptions="Center"/>
+				<!--  TODO: Temporary fix for Apple review, needs adjustments. Adjust size. Handle for Android  -->
+				<ScrollView IsVisible="{Binding SubscriptionModel.IsTermsTextVisible}">
+					<customControls:LabelWithShadowEffect
+						Margin="3,0"
+						FontSize="10"
+						HorizontalTextAlignment="Center"
+						LineBreakMode="WordWrap"
+						Text="Payment will be charged to iTunes Account at confirmation of purchase. Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period. Account will be charged for renewal within 24-hours prior to the end of the current period, and identify the cost of the renewal. Subscriptions may be managed by the user and auto-renewal may be turned off by going to the user's Account Settings after purchase. Any unused portion of a free trial period, if offered, will be forfeited when the user purchases a subscription to that publication, where applicable."
+						TextColor="White"
+						VerticalTextAlignment="Center" />
+                    <ScrollView.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NavigateToTermsPageCommand}" />
+                    </ScrollView.GestureRecognizers>
+				</ScrollView>
+
+				<customControls:LabelWithShadowEffect
+					Margin="0"
+					HorizontalOptions="FillAndExpand"
+					HorizontalTextAlignment="Center"
+					Style="{StaticResource PageLabelStyle}"
+					Text="Terms of Use &amp; Privacy Policy"
+					VerticalOptions="CenterAndExpand"
+					VerticalTextAlignment="Start">
+					<customControls:LabelWithShadowEffect.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding NavigateToTermsPageCommand}" />
+					</customControls:LabelWithShadowEffect.GestureRecognizers>
+				</customControls:LabelWithShadowEffect>
+			</StackLayout>       
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

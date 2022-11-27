@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pages:PopupPage
+    x:Class="SloperMobile.UserControls.RankingFiltersUC"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Controls="clr-namespace:SloperMobile.CustomControls;assembly=SloperMobile"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
+
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+            DurationIn="400"
+            DurationOut="200"
+            EasingIn="SinIn"
+            EasingOut="SinOut"
+            HasBackgroundAnimation="true"
+            PositionIn="Center"
+            PositionOut="Center" />
+    </pages:PopupPage.Animation>
+
+    <!--  External frame  -->
+    <Grid
+        Margin="16"
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+        <!--  Internal frame  -->
+
+        <StackLayout
+            Margin="16"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand"
+            BackgroundColor="{StaticResource TransparentWhite}"
+            Padding="30"
+            Spacing="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <StackLayout Margin="10,10,10,0" Orientation="Horizontal">
+                    <Label
+                        VerticalOptions="CenterAndExpand"
+                        FontSize="Small"
+                        Text="Gender"
+                        TextColor="{Binding GenderColor}" />
+                    <Label
+                        VerticalOptions="CenterAndExpand"
+                        FontSize="Small"
+                        Text="{Binding Gender}"
+                        TextColor="Black" />
+                    <Switch
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        IsEnabled="{Binding IsGenderEnable}"
+                        IsToggled="{Binding IsGenderToggled}" />
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Row="1"
+                    Margin="10,0"
+                    Orientation="Horizontal">
+                    <Label
+                        VerticalOptions="CenterAndExpand"
+                        FontSize="Small"
+                        Text="Age"
+                        TextColor="{Binding AgeColor}" />
+                    <Label
+                        VerticalOptions="CenterAndExpand"
+                        FontSize="Small"
+                        Text="{Binding Age}"
+                        TextColor="Black" />
+                    <Switch
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        IsEnabled="{Binding IsAgeEnable}"
+                        IsToggled="{Binding IsAgeToggled}" />
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Row="2"
+                    Margin="10,0"
+                    Orientation="Horizontal">
+                    <Label
+                        VerticalOptions="CenterAndExpand"
+                        FontSize="Small"
+                        Text="Height"
+                        TextColor="{Binding HeightColor}" />
+                    <Label
+                        VerticalOptions="CenterAndExpand"
+                        FontSize="Small"
+                        Text="{Binding Height}"
+                        TextColor="Black" />
+                    <Switch
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        IsEnabled="{Binding IsHeightEnable}"
+                        IsToggled="{Binding IsHeightToggled}" />
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Row="3"
+                    Margin="10,0"
+                    Orientation="Horizontal">
+                    <Label
+                        VerticalOptions="CenterAndExpand"
+                        FontSize="Small"
+                        Text="Weight"
+                        TextColor="{Binding WeightColor}" />
+                    <Label
+                        VerticalOptions="CenterAndExpand"
+                        FontSize="Small"
+                        Text="{Binding Weight}"
+                        TextColor="Black" />
+                    <Switch
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"
+                        IsEnabled="{Binding IsWeightEnable}"
+                        IsToggled="{Binding IsWeightToggled}" />
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Row="4"
+                    Margin="10,0"
+                    Orientation="Horizontal">
+                    <Label
+                        VerticalOptions="CenterAndExpand"
+                        FontSize="Small"
+                        Text="Years Climbing"
+                        TextColor="{Binding YearClimbingColor}" />
+                    <Label
+                        VerticalOptions="CenterAndExpand"
+                        FontSize="Small"
+                        Text="{Binding YearsClimbing}"
+                        TextColor="Black" />
+                    <Switch
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        IsEnabled="{Binding IsYearsClimbingEnable}"
+                        IsToggled="{Binding IsYearsClimbingToggled}" />
+                </StackLayout>
+
+                <Button
+                    Grid.Row="5"
+                    Margin="10,16,10,0"
+                    BorderRadius="0"
+                    Command="{Binding ApplyFilterCommand}"
+                    Style="{DynamicResource GeneralButtonStyle}"
+                    Text="APPLY FILTER"
+                    TextColor="White" />
+
+                <StackLayout Grid.Row="6" IsVisible="{Binding IsWarningVisible}">
+                    <Label
+                        Margin="10,16,10,0"
+                        HorizontalOptions="Center"
+                        FontSize="Small"
+                        HorizontalTextAlignment="Center"
+                        TextColor="Red">
+                        <Label.Text>To filter by all categories&#10;you must complete your profile</Label.Text>
+                    </Label>
+                    <Button
+                        Margin="10,0,10,10"
+                        BorderRadius="0"
+                        Command="{Binding EditProfileCommand}"
+                        Style="{DynamicResource GeneralButtonStyle}"
+                        Text="EDIT PROFILE"
+                        TextColor="White" />
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+
+
+        <!--  Close Button  -->
+        <ContentView HorizontalOptions="End" VerticalOptions="Start">
+            <ContentView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnClose" />
+            </ContentView.GestureRecognizers>
+            <Image
+                x:Name="CloseImage"
+                WidthRequest="32"
+                HeightRequest="32"
+                Aspect="AspectFit"
+                Source="close_circle_button" />
+        </ContentView>
+    </Grid>
+</pages:PopupPage>

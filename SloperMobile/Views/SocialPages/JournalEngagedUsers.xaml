@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SloperMobile.Views.SocialPages.JournalEngagedUsers"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             CloseWhenBackgroundIsClicked="False"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:customcontrols="clr-namespace:SloperMobile.CustomControls;assembly=SloperMobile"
+	         xmlns:ffimageLoading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	         xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8" />
+    </pages:PopupPage.Animation>
+    <Grid
+		Margin="0"
+        BackgroundColor="WhiteSmoke"
+		HorizontalOptions="StartAndExpand"
+		VerticalOptions="Fill">
+        <!--  Internal frame  -->
+        <Frame
+			Margin="10"
+			Padding="0"
+			BorderColor="Silver"
+            CornerRadius="0"
+            BackgroundColor="White"
+			HorizontalOptions="StartAndExpand"
+			VerticalOptions="Fill">
+
+            <StackLayout Margin="0,30,0,0">
+                <customcontrols:InfiniteListView
+			        x:Name="listViewusers"
+			        HasUnevenRows="true"
+			        HorizontalOptions="FillAndExpand"
+			        IsPullToRefreshEnabled="False"
+			        ItemsSource="{Binding UserList}"
+			        SeparatorVisibility="None"
+			        VerticalOptions="FillAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="0.5" />
+                                    </Grid.RowDefinitions>
+
+                                    <StackLayout
+								        Grid.Row="0"
+								        Margin="15,15,15,0"
+								        HorizontalOptions="FillAndExpand"
+								        Orientation="Horizontal"
+								        VerticalOptions="FillAndExpand">
+                                        <StackLayout Orientation="Horizontal">
+                                            <ffimageLoading:CachedImage
+								        	Margin="5"
+								        	Aspect="AspectFill"	 									
+								        	HeightRequest="50"
+								        	Source="{Binding ProfileImageUrl}"
+								        	VerticalOptions="Center"
+								        	WidthRequest="50">
+                                                <ffimageLoading:CachedImage.Transformations>
+                                                    <fftransformations:CircleTransformation />
+                                                </ffimageLoading:CachedImage.Transformations>
+                                            </ffimageLoading:CachedImage>
+                                            <Label
+								        	    FontSize="16"
+								        	    HeightRequest="20"
+								        	    HorizontalOptions="StartAndExpand"
+                                                VerticalOptions="CenterAndExpand"
+                                                VerticalTextAlignment="Center"
+								        	    Text="{Binding DisplayName}"
+								        	    TextColor="Black"/>
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding BindingContext.ProfileCommand, Source={x:Reference listViewusers}}" CommandParameter="{Binding .}" />
+                                            </StackLayout.GestureRecognizers>
+                                        </StackLayout>
+                                        <Button
+                                            Margin="0,0,5,0"
+                                            HorizontalOptions="EndAndExpand"
+							                BackgroundColor="{Binding BackColor}"
+							                BorderColor="{StaticResource AppOrange}"
+							                BorderWidth="1"
+                                            IsVisible="{Binding IsFollowingBtnVisible}"
+							                Command="{Binding BindingContext.FollowCommand, Source={x:Reference listViewusers}}"
+                                            CommandParameter="{Binding .}"
+							                FontSize="Micro"
+							                HeightRequest="25"
+                                            WidthRequest="100"
+							                Text="{Binding FollowText}"
+							                TextColor="{Binding ForeColor}"
+							                VerticalOptions="Center" />
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </customcontrols:InfiniteListView>
+            </StackLayout>
+        </Frame>
+
+        <!--  Close Button  -->
+        <ContentView HorizontalOptions="End" VerticalOptions="Start" Margin="0,25,25,0">
+            <ContentView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnClose" />
+            </ContentView.GestureRecognizers>
+            <Image
+				x:Name="CloseImage"
+				Aspect="AspectFit"
+				HeightRequest="22"
+				Source="icon_x_close_black"
+				WidthRequest="23" />
+        </ContentView>
+    </Grid>
+</pages:PopupPage>

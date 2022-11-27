@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="SloperMobile.Views.NewsPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:Controls="clr-namespace:SloperMobile.CustomControls;assembly=SloperMobile"
+	xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+	xmlns:customcontrols="clr-namespace:SloperMobile.CustomControls;assembly=SloperMobile"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    prism:ViewModelLocator.AutowireViewModel="True"
+	ControlTemplate="{StaticResource HeaderFooterPageTemplate}"
+	NavigationPage.HasNavigationBar="False"
+	Style="{DynamicResource AppBackgroundColor}">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<Style x:Key="HederLabelStyle" TargetType="Label">
+				<Setter Property="TextColor" Value="White" />
+				<Setter Property="FontSize" Value="12" />
+			</Style>
+			<Style x:Key="ListLabelStyle" TargetType="Label">
+				<Setter Property="TextColor" Value="White" />
+				<Setter Property="FontSize" Value="12" />
+			</Style>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<ContentPage.Content>
+		<Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="auto" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<UC:HeaderUC HeightRequest="40" />
+			<customcontrols:InfiniteListView
+				x:Name="listViewNews"
+				Grid.Row="1"
+				BackgroundColor="Black"
+				HasUnevenRows="true"
+				HorizontalOptions="FillAndExpand"
+				ItemsSource="{Binding NewsList, Mode=TwoWay}"
+				SeparatorVisibility="None"
+				VerticalOptions="FillAndExpand">
+				<customcontrols:InfiniteListView.Footer>
+					<Label />
+				</customcontrols:InfiniteListView.Footer>
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<Grid Padding="0,0,0,5">
+								<Grid.GestureRecognizers>
+									<TapGestureRecognizer Command="{Binding Path=BindingContext.NewsTapCommand, Source={x:Reference listViewNews}}" CommandParameter="{Binding .}" />
+								</Grid.GestureRecognizers>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*" />
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="auto" />
+								</Grid.RowDefinitions>
+								<Image
+									Grid.Row="0"
+									Grid.Column="0"
+									Aspect="AspectFill"
+									HeightRequest="{Binding BindingContext.SectorImageHeight, Source={x:Reference listViewNews}}"
+									Source="{Binding news_image}" />
+								<Image
+									Grid.Row="0"
+									Grid.Column="0"
+									Margin="0,0,0,10"
+									Aspect="Fill"
+									HeightRequest="50"
+									Source="bg_gradient_trans_black"
+									VerticalOptions="End" />
+								<Label
+									Grid.Row="0"
+									Grid.Column="0"
+									Margin="10,0,0,80"
+									FontSize="Large"
+									HorizontalOptions="Start"
+									Text="{Binding title}"
+									TextColor="White"
+									VerticalOptions="End">
+									<Label.Effects>
+										<customcontrols:ShadowEffect Color="#191919">
+											<customcontrols:ShadowEffect.DistanceX>
+												<OnPlatform
+													x:TypeArguments="x:Single"
+													Android="4"
+													iOS="1" />
+											</customcontrols:ShadowEffect.DistanceX>
+											<customcontrols:ShadowEffect.DistanceY>
+												<OnPlatform
+													x:TypeArguments="x:Single"
+													Android="4"
+													iOS="1" />
+											</customcontrols:ShadowEffect.DistanceY>
+											<customcontrols:ShadowEffect.Radius>
+												<OnPlatform
+													x:TypeArguments="x:Single"
+													Android="7"
+													iOS="1.3" />
+											</customcontrols:ShadowEffect.Radius>
+										</customcontrols:ShadowEffect>
+									</Label.Effects>
+								</Label>
+								<Label
+									Grid.Row="0"
+									Grid.Column="0"
+									Margin="10,0,0,62"
+									FontSize="Medium"
+									HorizontalOptions="Start"
+									Text="{Binding sub_title}"
+									TextColor="White"
+									VerticalOptions="End">
+									<Label.Effects>
+										<customcontrols:ShadowEffect Color="#191919">
+											<customcontrols:ShadowEffect.DistanceX>
+												<OnPlatform
+													x:TypeArguments="x:Single"
+													Android="4"
+													iOS="1" />
+											</customcontrols:ShadowEffect.DistanceX>
+											<customcontrols:ShadowEffect.DistanceY>
+												<OnPlatform
+													x:TypeArguments="x:Single"
+													Android="4"
+													iOS="1" />
+											</customcontrols:ShadowEffect.DistanceY>
+											<customcontrols:ShadowEffect.Radius>
+												<OnPlatform
+													x:TypeArguments="x:Single"
+													Android="7"
+													iOS="1.3" />
+											</customcontrols:ShadowEffect.Radius>
+										</customcontrols:ShadowEffect>
+									</Label.Effects>
+								</Label>
+								<Label
+									Grid.Row="0"
+									Grid.Column="0"
+									Margin="0,0,10,35"
+									FontSize="Micro"
+									HorizontalOptions="End"
+									Text="{Binding date, StringFormat='{0:MMMM dd, yyyy}'}"
+									TextColor="White"
+									VerticalOptions="End" />
+								<Label
+									Grid.Row="0"
+									Grid.Column="0"
+									Margin="0,0,10,20"
+									FontSize="Small"
+									HorizontalOptions="End"
+									Text="{Binding message}"
+									TextColor="#FF8E2D"
+									VerticalOptions="End" />
+							</Grid>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</customcontrols:InfiniteListView>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,844 @@
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SloperMobile.dll.config
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SloperMobile.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SloperMobile.pdb
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Acr.UserDialogs.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Acr.UserDialogs.Interface.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Autofac.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\ExifLib.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Forms.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Platform.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Transformations.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Microsoft.AppCenter.Analytics.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Microsoft.AppCenter.Crashes.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Microsoft.AppCenter.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Newtonsoft.Json.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Connectivity.Abstractions.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Connectivity.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.DeviceInfo.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Geolocator.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.InAppBilling.Abstractions.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.InAppBilling.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.LocalNotifications.Abstractions.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.LocalNotifications.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Media.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Permissions.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Settings.Abstractions.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Settings.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Polly.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Prism.Autofac.Forms.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Prism.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Prism.Forms.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Rg.Plugins.Popup.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SegmentedControl.FormsPlugin.Abstractions.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SkiaSharp.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SkiaSharp.Views.Forms.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Splat.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLite-net.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLiteNetExtensions.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLiteNetExtensionsAsync.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLitePCLRaw.batteries_green.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLitePCLRaw.core.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.Buttons.XForms.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.Core.XForms.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.DataSource.Portable.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.GridCommon.Portable.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.Licensing.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfCalendar.XForms.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfChart.XForms.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfGauge.XForms.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfListView.XForms.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfPullToRefresh.XForms.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfRating.XForms.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfTabView.XForms.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\System.ValueTuple.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.CarouselView.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Core.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.GoogleMaps.Bindings.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.GoogleMaps.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Platform.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Xaml.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Core.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Forms.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Ioc.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Platform.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Serialization.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Serialization.JsonNET.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Autofac.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.InAppBilling.Abstractions.pdb
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.InAppBilling.Abstractions.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Settings.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Settings.Abstractions.pdb
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Settings.Abstractions.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Prism.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Prism.Autofac.Forms.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Prism.Forms.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Rg.Plugins.Popup.pdb
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SkiaSharp.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLite-net.pdb
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLite-net.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Core.pdb
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Core.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Xaml.pdb
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Xaml.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Core.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Forms.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Ioc.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Platform.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Serialization.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Serialization.JsonNET.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Acr.UserDialogs.pdb
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Acr.UserDialogs.Interface.pdb
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfChart.XForms.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfGauge.XForms.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLiteNetExtensions.pdb
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLiteNetExtensionsAsync.pdb
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.pdb
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Platform.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Forms.pdb
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Forms.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Transformations.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Newtonsoft.Json.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Permissions.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Media.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Geolocator.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Connectivity.Abstractions.pdb
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Connectivity.Abstractions.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Connectivity.pdb
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Connectivity.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\System.ValueTuple.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfCalendar.XForms.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfPullToRefresh.XForms.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.Core.XForms.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.DataSource.Portable.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.GridCommon.Portable.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfListView.XForms.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.InAppBilling.pdb
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.InAppBilling.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfTabView.XForms.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Polly.pdb
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Polly.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfRating.XForms.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.LocalNotifications.Abstractions.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.LocalNotifications.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.Buttons.XForms.xml
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\SloperMobile.csprojAssemblyReference.cache
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\App.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\TermsPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\MyPages\MyChangePasswordPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\CragPages\CragSectorMapDetailPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\ProgressPopup.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\CustomControls\ImageButton.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\CragPages\ContentViews\RemoveCragPopup.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\NetworkErrorPopup.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ProfilePage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ContentView\ProfileHeader.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ContentView\ProfileRankingView.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ContentView\ProfilePointsView.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ContentView\ProfileCalendarView.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ContentView\ProfileSendsView.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ContentView\ProfileTickListView.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\Approach\ApproachMapPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\Approach\POISelectionPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\CragPages\SectorMapListPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\SectorPlaceholderPopup.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SearchPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\ConfirmationPopup\ConfirmationPopup.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SubscriptionPages\PremiumSubscriptionPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\UserPages\UserLoginPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\MasterDetailPages\MainMasterDetailPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\CheckForUpdatesPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\UserPages\UserRegistrationPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\HomePage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PageHeaderControls\HeaderUC.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\FooterUC.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\CragPages\CragSectorsPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\NewsPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\MyPages\MyProfilePage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SectorPages\SectorRoutesPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SplashPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\AscentPages\AscentProcessPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\LogAscentControls\AscentType.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\LogAscentControls\AscentRating.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\LogAscentControls\AscentClimbingAngle.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\LogAscentControls\AscentHoldType.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\LogAscentControls\AscentRouteStyle.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\LogAscentControls\AscentDate.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\AscentPages\AscentSummaryPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\GoogleMapPinPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\CragPages\CragDetailsPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\UserPages\UserResetPasswordPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SectorPages\SectorTopoDetailsPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SectorPages\SectorToposPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\MasterDetailPages\MasterNavigationPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ReportedIssuePages\ReportIssuePage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueToReport.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueTypeToReport.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueBoltsToReports.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueBoltsPopupPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueCommentToReport.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueDetailToReport.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueSnapToReport.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueToReportSummary.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ReportedIssuePages\ReportedIssueListPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ReportedIssuePages\ReportedIssueSummaryPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\CragDetailsPhotoPopup.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\RankingFiltersPopup.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\MyPages\MyPreferencesPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueNoticePopupPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\MenuTabbedControls\HeaderMenuControl.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ReportedIssuePages\ReportedIssueImagePage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\FacebookSignIn.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\MicrosoftLiveSignIn.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\TwitterSignIn.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\GooglePlusSignIn.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SubscriptionPages\UnlockPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SocialPages\MemberProfilePage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SocialPages\JournalFeedPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SocialPages\JournalCommentPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SubscriptionPages\SubscriptionPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\CustomControls\MultilineTextTransparentButton.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\SubscriptionPopup.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\GuideBooks\GuideBookDetailPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\GuideBooks\GuideBookPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SocialPages\JournalEngagedUsers.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\GuideBooks\ManageDownloadsPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\UserPages\UserChangePasswordPage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\UserPages\UserPasscodePage.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\ShowWrapTextPopoup.xaml.g.cs
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\SloperMobile.csproj.CoreCompileInputs.cache
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\XamlC.stamp
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\SloperMobile.csproj.CopyComplete
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\SloperMobile.dll
+D:\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\SloperMobile.pdb
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\SloperMobile.csprojAssemblyReference.cache
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\App.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\TermsPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\MyPages\MyChangePasswordPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\CragPages\CragSectorMapDetailPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\ProgressPopup.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\CustomControls\ImageButton.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\CragPages\ContentViews\RemoveCragPopup.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\NetworkErrorPopup.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ProfilePage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ContentView\ProfileHeader.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ContentView\ProfileRankingView.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ContentView\ProfilePointsView.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ContentView\ProfileCalendarView.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ContentView\ProfileSendsView.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ContentView\ProfileTickListView.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\Approach\ApproachMapPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\Approach\POISelectionPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\CragPages\SectorMapListPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\SectorPlaceholderPopup.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SearchPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SubscriptionPages\PremiumSubscriptionPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\UserPages\UserLoginPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\MasterDetailPages\MainMasterDetailPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\CheckForUpdatesPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\UserPages\UserRegistrationPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\HomePage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PageHeaderControls\HeaderUC.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\FooterUC.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\CragPages\CragSectorsPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\NewsPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\MyPages\MyProfilePage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SectorPages\SectorRoutesPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SplashPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\AscentPages\AscentProcessPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\LogAscentControls\AscentType.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\LogAscentControls\AscentRating.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\LogAscentControls\AscentClimbingAngle.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\LogAscentControls\AscentHoldType.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\LogAscentControls\AscentRouteStyle.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\LogAscentControls\AscentDate.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\AscentPages\AscentSummaryPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\GoogleMapPinPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\CragPages\CragDetailsPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\UserPages\UserResetPasswordPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SectorPages\SectorTopoDetailsPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SectorPages\SectorToposPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\MasterDetailPages\MasterNavigationPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ReportedIssuePages\ReportIssuePage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueToReport.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueTypeToReport.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueBoltsToReports.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueBoltsPopupPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueCommentToReport.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueDetailToReport.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueSnapToReport.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueToReportSummary.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ReportedIssuePages\ReportedIssueListPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ReportedIssuePages\ReportedIssueSummaryPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\CragDetailsPhotoPopup.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\RankingFiltersPopup.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\MyPages\MyPreferencesPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueNoticePopupPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\MenuTabbedControls\HeaderMenuControl.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ReportedIssuePages\ReportedIssueImagePage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\FacebookSignIn.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\MicrosoftLiveSignIn.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\TwitterSignIn.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\GooglePlusSignIn.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SubscriptionPages\UnlockPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SocialPages\MemberProfilePage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SocialPages\JournalFeedPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SocialPages\JournalCommentPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SubscriptionPages\SubscriptionPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\CustomControls\MultilineTextTransparentButton.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\SubscriptionPopup.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\GuideBooks\GuideBookDetailPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\GuideBooks\GuideBookPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SocialPages\JournalEngagedUsers.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\GuideBooks\ManageDownloadsPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\UserPages\UserChangePasswordPage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\UserPages\UserPasscodePage.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\ShowWrapTextPopoup.xaml.g.cs
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\SloperMobile.csproj.CoreCompileInputs.cache
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\SloperMobile.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\SloperMobile.pdb
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SloperMobile.dll.config
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SloperMobile.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SloperMobile.pdb
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Acr.UserDialogs.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Acr.UserDialogs.Interface.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Autofac.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\ExifLib.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Forms.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Platform.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Transformations.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Microsoft.AppCenter.Analytics.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Microsoft.AppCenter.Crashes.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Microsoft.AppCenter.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Newtonsoft.Json.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Connectivity.Abstractions.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Connectivity.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.DeviceInfo.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Geolocator.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.InAppBilling.Abstractions.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.InAppBilling.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Media.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Permissions.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Settings.Abstractions.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Settings.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Polly.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Prism.Autofac.Forms.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Prism.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Prism.Forms.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Rg.Plugins.Popup.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SegmentedControl.FormsPlugin.Abstractions.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SkiaSharp.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SkiaSharp.Views.Forms.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Splat.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLite-net.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLiteNetExtensions.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLiteNetExtensionsAsync.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLitePCLRaw.batteries_green.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLitePCLRaw.core.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.Core.XForms.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.DataSource.Portable.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.GridCommon.Portable.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.Licensing.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfCalendar.XForms.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfChart.XForms.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfGauge.XForms.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfListView.XForms.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfPullToRefresh.XForms.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfRating.XForms.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfTabView.XForms.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\System.ValueTuple.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.CarouselView.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Core.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.GoogleMaps.Bindings.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.GoogleMaps.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Platform.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Xaml.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Core.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Forms.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Ioc.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Platform.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Serialization.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Serialization.JsonNET.dll
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Autofac.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.InAppBilling.Abstractions.pdb
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.InAppBilling.Abstractions.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Settings.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Settings.Abstractions.pdb
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Settings.Abstractions.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Prism.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Prism.Autofac.Forms.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Prism.Forms.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Rg.Plugins.Popup.pdb
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SkiaSharp.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLite-net.pdb
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLite-net.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Core.pdb
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Core.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Xaml.pdb
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Xaml.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Core.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Forms.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Ioc.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Platform.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Serialization.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Serialization.JsonNET.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Acr.UserDialogs.pdb
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Acr.UserDialogs.Interface.pdb
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfChart.XForms.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfGauge.XForms.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLiteNetExtensions.pdb
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLiteNetExtensionsAsync.pdb
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.pdb
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Platform.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Forms.pdb
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Forms.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Transformations.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Newtonsoft.Json.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Permissions.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Media.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Geolocator.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Connectivity.Abstractions.pdb
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Connectivity.Abstractions.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Connectivity.pdb
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Connectivity.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\System.ValueTuple.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfCalendar.XForms.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfPullToRefresh.XForms.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.Core.XForms.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.DataSource.Portable.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.GridCommon.Portable.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfListView.XForms.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.InAppBilling.pdb
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.InAppBilling.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfTabView.XForms.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Polly.pdb
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Polly.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfRating.XForms.xml
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\XamlC.stamp
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\SloperMobile.csproj.CopyComplete
+D:\Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\WelcomeOverviewPages\OverviewSlidesPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SloperMobile.dll.config
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SloperMobile.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SloperMobile.pdb
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Acr.UserDialogs.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Acr.UserDialogs.Interface.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Autofac.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\ExifLib.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Forms.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Platform.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Transformations.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Microsoft.AppCenter.Analytics.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Microsoft.AppCenter.Crashes.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Microsoft.AppCenter.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Newtonsoft.Json.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Connectivity.Abstractions.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Connectivity.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.DeviceInfo.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Geolocator.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.InAppBilling.Abstractions.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.InAppBilling.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Media.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Permissions.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Settings.Abstractions.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Settings.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Polly.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Prism.Autofac.Forms.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Prism.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Prism.Forms.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Rg.Plugins.Popup.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SegmentedControl.FormsPlugin.Abstractions.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SkiaSharp.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SkiaSharp.Views.Forms.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Splat.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLite-net.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLiteNetExtensions.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLiteNetExtensionsAsync.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLitePCLRaw.batteries_green.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLitePCLRaw.core.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.Core.XForms.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.DataSource.Portable.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.GridCommon.Portable.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.Licensing.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfCalendar.XForms.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfChart.XForms.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfGauge.XForms.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfListView.XForms.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfPullToRefresh.XForms.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfRating.XForms.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfTabView.XForms.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\System.ValueTuple.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.CarouselView.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Core.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.GoogleMaps.Bindings.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.GoogleMaps.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Platform.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Xaml.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Core.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Forms.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Ioc.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Platform.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Serialization.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Serialization.JsonNET.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Autofac.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.InAppBilling.Abstractions.pdb
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.InAppBilling.Abstractions.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Settings.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Settings.Abstractions.pdb
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Settings.Abstractions.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Prism.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Prism.Autofac.Forms.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Prism.Forms.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Rg.Plugins.Popup.pdb
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SkiaSharp.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLite-net.pdb
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLite-net.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Core.pdb
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Core.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Xaml.pdb
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Xaml.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Core.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Forms.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Ioc.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Platform.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Serialization.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Serialization.JsonNET.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Acr.UserDialogs.pdb
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Acr.UserDialogs.Interface.pdb
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfChart.XForms.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfGauge.XForms.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLiteNetExtensions.pdb
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLiteNetExtensionsAsync.pdb
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.pdb
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Platform.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Forms.pdb
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Forms.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Transformations.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Newtonsoft.Json.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Permissions.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Media.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Geolocator.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Connectivity.Abstractions.pdb
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Connectivity.Abstractions.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Connectivity.pdb
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Connectivity.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\System.ValueTuple.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfCalendar.XForms.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfPullToRefresh.XForms.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.Core.XForms.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.DataSource.Portable.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.GridCommon.Portable.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfListView.XForms.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.InAppBilling.pdb
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.InAppBilling.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfTabView.XForms.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Polly.pdb
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Polly.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfRating.XForms.xml
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\SloperMobile.csprojAssemblyReference.cache
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\App.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\TermsPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\MyPages\MyChangePasswordPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\CragPages\CragSectorMapDetailPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\ProgressPopup.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\CustomControls\ImageButton.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\CragPages\ContentViews\RemoveCragPopup.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\NetworkErrorPopup.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ProfilePage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ContentView\ProfileHeader.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ContentView\ProfileRankingView.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ContentView\ProfilePointsView.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ContentView\ProfileCalendarView.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ContentView\ProfileSendsView.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ContentView\ProfileTickListView.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\Approach\ApproachMapPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\Approach\POISelectionPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\CragPages\SectorMapListPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\SectorPlaceholderPopup.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SearchPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SubscriptionPages\PremiumSubscriptionPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\WelcomeOverviewPages\OverviewSlidesPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\UserPages\UserLoginPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\MasterDetailPages\MainMasterDetailPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\CheckForUpdatesPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\UserPages\UserRegistrationPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\HomePage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PageHeaderControls\HeaderUC.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\FooterUC.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\CragPages\CragSectorsPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\NewsPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\MyPages\MyProfilePage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SectorPages\SectorRoutesPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SplashPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\AscentPages\AscentProcessPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\LogAscentControls\AscentType.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\LogAscentControls\AscentRating.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\LogAscentControls\AscentClimbingAngle.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\LogAscentControls\AscentHoldType.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\LogAscentControls\AscentRouteStyle.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\LogAscentControls\AscentDate.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\AscentPages\AscentSummaryPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\GoogleMapPinPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\CragPages\CragDetailsPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\UserPages\UserResetPasswordPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SectorPages\SectorTopoDetailsPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SectorPages\SectorToposPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\MasterDetailPages\MasterNavigationPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ReportedIssuePages\ReportIssuePage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueToReport.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueTypeToReport.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueBoltsToReports.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueBoltsPopupPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueCommentToReport.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueDetailToReport.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueSnapToReport.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueToReportSummary.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ReportedIssuePages\ReportedIssueListPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ReportedIssuePages\ReportedIssueSummaryPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\CragDetailsPhotoPopup.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\RankingFiltersPopup.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\MyPages\MyPreferencesPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueNoticePopupPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\MenuTabbedControls\HeaderMenuControl.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ReportedIssuePages\ReportedIssueImagePage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\FacebookSignIn.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\MicrosoftLiveSignIn.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\TwitterSignIn.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\GooglePlusSignIn.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SubscriptionPages\UnlockPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SocialPages\MemberProfilePage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SocialPages\JournalFeedPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SocialPages\JournalCommentPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SubscriptionPages\SubscriptionPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\CustomControls\MultilineTextTransparentButton.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\SubscriptionPopup.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\GuideBooks\GuideBookDetailPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\GuideBooks\GuideBookPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SocialPages\JournalEngagedUsers.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\GuideBooks\ManageDownloadsPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\UserPages\UserChangePasswordPage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\UserPages\UserPasscodePage.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\ShowWrapTextPopoup.xaml.g.cs
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\XamlC.stamp
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\SloperMobile.csproj.CopyComplete
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\SloperMobile.dll
+D:\Backup from old PC\BackUp Prashant Mane\D drive\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\SloperMobile.pdb
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\SloperMobile.csproj.AssemblyReference.cache
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\App.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\TermsPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\MyPages\MyChangePasswordPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\CragPages\CragSectorMapDetailPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\ProgressPopup.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\CustomControls\ImageButton.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\CragPages\ContentViews\RemoveCragPopup.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\NetworkErrorPopup.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ProfilePage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ContentView\ProfileHeader.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ContentView\ProfileRankingView.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ContentView\ProfilePointsView.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ContentView\ProfileCalendarView.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ContentView\ProfileSendsView.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ProfilePages\ContentView\ProfileTickListView.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\Approach\ApproachMapPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\Approach\POISelectionPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\CragPages\SectorMapListPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\SectorPlaceholderPopup.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SearchPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SubscriptionPages\PremiumSubscriptionPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\WelcomeOverviewPages\OverviewSlidesPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\UserPages\UserLoginPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\MasterDetailPages\MainMasterDetailPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\CheckForUpdatesPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\UserPages\UserRegistrationPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\HomePage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PageHeaderControls\HeaderUC.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\FooterUC.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\CragPages\CragSectorsPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\NewsPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\MyPages\MyProfilePage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SectorPages\SectorRoutesPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SplashPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\AscentPages\AscentProcessPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\LogAscentControls\AscentType.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\LogAscentControls\AscentRating.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\LogAscentControls\AscentClimbingAngle.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\LogAscentControls\AscentHoldType.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\LogAscentControls\AscentRouteStyle.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\LogAscentControls\AscentDate.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\AscentPages\AscentSummaryPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\GoogleMapPinPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\CragPages\CragDetailsPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\UserPages\UserResetPasswordPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SectorPages\SectorTopoDetailsPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SectorPages\SectorToposPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\MasterDetailPages\MasterNavigationPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ReportedIssuePages\ReportIssuePage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueToReport.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueTypeToReport.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueBoltsToReports.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueBoltsPopupPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueCommentToReport.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueDetailToReport.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueSnapToReport.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueToReportSummary.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ReportedIssuePages\ReportedIssueListPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ReportedIssuePages\ReportedIssueSummaryPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\CragDetailsPhotoPopup.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\RankingFiltersPopup.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\MyPages\MyPreferencesPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\ReportIssue\IssueNoticePopupPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\MenuTabbedControls\HeaderMenuControl.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\ReportedIssuePages\ReportedIssueImagePage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\FacebookSignIn.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\MicrosoftLiveSignIn.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\TwitterSignIn.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\GooglePlusSignIn.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SubscriptionPages\UnlockPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SocialPages\MemberProfilePage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SocialPages\JournalFeedPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SocialPages\JournalCommentPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SubscriptionPages\SubscriptionPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\CustomControls\MultilineTextTransparentButton.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\SubscriptionPopup.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\GuideBooks\GuideBookDetailPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\GuideBooks\GuideBookPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\SocialPages\JournalEngagedUsers.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\GuideBooks\ManageDownloadsPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\UserPages\UserChangePasswordPage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\Views\UserPages\UserPasscodePage.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\UserControls\PopupControls\ShowWrapTextPopoup.xaml.g.cs
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\SloperMobile.csproj.CoreCompileInputs.cache
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\SloperMobile.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\SloperMobile.pdb
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SloperMobile.dll.config
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SloperMobile.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SloperMobile.pdb
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Acr.UserDialogs.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Acr.UserDialogs.Interface.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Autofac.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\ExifLib.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Forms.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Platform.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Transformations.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Microsoft.AppCenter.Analytics.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Microsoft.AppCenter.Crashes.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Microsoft.AppCenter.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Newtonsoft.Json.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Connectivity.Abstractions.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Connectivity.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.DeviceInfo.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Geolocator.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.InAppBilling.Abstractions.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.InAppBilling.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Media.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Permissions.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Settings.Abstractions.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Settings.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Polly.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Prism.Autofac.Forms.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Prism.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Prism.Forms.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Rg.Plugins.Popup.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SegmentedControl.FormsPlugin.Abstractions.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SkiaSharp.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SkiaSharp.Views.Forms.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Splat.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLite-net.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLiteNetExtensions.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLiteNetExtensionsAsync.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLitePCLRaw.batteries_green.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLitePCLRaw.core.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.Core.XForms.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.DataSource.Portable.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.GridCommon.Portable.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.Licensing.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfCalendar.XForms.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfChart.XForms.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfGauge.XForms.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfListView.XForms.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfPullToRefresh.XForms.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfRating.XForms.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfTabView.XForms.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\System.ValueTuple.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Core.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.GoogleMaps.Bindings.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.GoogleMaps.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Platform.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Xaml.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Core.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Forms.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Ioc.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Platform.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Serialization.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Serialization.JsonNET.dll
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Autofac.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.InAppBilling.Abstractions.pdb
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.InAppBilling.Abstractions.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Settings.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Settings.Abstractions.pdb
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Settings.Abstractions.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Prism.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Prism.Autofac.Forms.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Prism.Forms.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Rg.Plugins.Popup.pdb
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SkiaSharp.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLite-net.pdb
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLite-net.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Core.pdb
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Core.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Xaml.pdb
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Xamarin.Forms.Xaml.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Core.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Forms.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Ioc.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Platform.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Serialization.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\XLabs.Serialization.JsonNET.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Acr.UserDialogs.pdb
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Acr.UserDialogs.Interface.pdb
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfChart.XForms.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfGauge.XForms.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLiteNetExtensions.pdb
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\SQLiteNetExtensionsAsync.pdb
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.pdb
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Platform.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Forms.pdb
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Forms.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\FFImageLoading.Transformations.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Newtonsoft.Json.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Permissions.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Media.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Geolocator.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Connectivity.Abstractions.pdb
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Connectivity.Abstractions.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Connectivity.pdb
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.Connectivity.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\System.ValueTuple.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfCalendar.XForms.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfPullToRefresh.XForms.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.Core.XForms.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.DataSource.Portable.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.GridCommon.Portable.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfListView.XForms.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.InAppBilling.pdb
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Plugin.InAppBilling.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfTabView.XForms.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Polly.pdb
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Polly.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\bin\Debug\Syncfusion.SfRating.XForms.xml
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\XamlC.stamp
+D:\#Prashant\Work Project\xamarincorecode\xamarincorecode\SloperMobile\SloperMobile\obj\Debug\SloperMobile.csproj.CopyComplete

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+	x:Class="SloperMobile.TermsPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+	prism:ViewModelLocator.AutowireViewModel="True"
+    NavigationPage.HasNavigationBar="False"
+	ControlTemplate="{StaticResource HeaderFooterPageTemplate}"
+	Style="{DynamicResource AppBackgroundColor}">
+	<StackLayout>
+		<ScrollView Padding="10,0,10,0" VerticalOptions="Start">
+			<StackLayout Spacing="0,0,0,0">
+				<BoxView
+					HeightRequest="1"
+					HorizontalOptions="Fill"
+					VerticalOptions="CenterAndExpand"
+					Color="#676767" />
+				<Label
+                    FontSize="Medium"
+                    HeightRequest="30"
+                    HorizontalOptions="Center"
+                    Text="Disclaimer"
+					TextColor="White"
+					VerticalOptions="Fill"
+					VerticalTextAlignment="Center" />
+				<BoxView
+					HeightRequest="1"
+					HorizontalOptions="Fill"
+					VerticalOptions="CenterAndExpand"
+					Color="#676767" />
+				<Label
+					FontSize="Small"
+                    Text="{Binding DisclaimerContent}"
+					TextColor="White"
+					VerticalOptions="Start" />
+				<BoxView
+					HeightRequest="1"
+					HorizontalOptions="Fill"
+					VerticalOptions="CenterAndExpand"
+					Color="#676767" />
+				<Label
+					FontSize="Medium"
+					HeightRequest="30"
+					HorizontalOptions="Center"
+                    Text="Acknowledgements &amp; Copyright"
+					TextColor="White"
+					VerticalOptions="Fill"
+					VerticalTextAlignment="Center" />
+				<BoxView
+					HeightRequest="1"
+					HorizontalOptions="Fill"
+					VerticalOptions="CenterAndExpand"
+					Color="#676767" />
+				<Label
+					FontSize="Small"
+                    Text="{Binding CopyrightContent}"
+					TextColor="White"
+					VerticalOptions="Start" />
+				<BoxView
+					HeightRequest="1"
+					HorizontalOptions="Fill"
+					VerticalOptions="CenterAndExpand"
+					Color="#676767" />
+				<Label
+					FontSize="Medium"
+					HeightRequest="30"
+					HorizontalOptions="Center"
+                    Text="Privacy"
+					TextColor="White"
+					VerticalOptions="Fill"
+					VerticalTextAlignment="Center" />
+				<BoxView
+					HeightRequest="1"
+					HorizontalOptions="Fill"
+					VerticalOptions="CenterAndExpand"
+					Color="#676767" />
+				<Label
+                    Text="{Binding PrivacyContent}"
+					FontSize="Small"
+					TextColor="White"
+					VerticalOptions="Start" />
+			</StackLayout>
+		</ScrollView>
+	</StackLayout>
+</ContentPage>

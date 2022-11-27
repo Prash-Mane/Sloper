@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:uControls="clr-namespace:SloperMobile.UserControls.CustomControls;assembly=SloperMobile"
+    xmlns:controls="clr-namespace:SloperMobile.CustomControls"
+    xmlns:bindings="clr-namespace:Xamarin.Forms.GoogleMaps.Bindings;assembly=Xamarin.Forms.GoogleMaps.Bindings"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:gMaps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+    xmlns:effects="clr-namespace:SloperMobile.Effects"
+    x:Class="SloperMobile.Views.ApproachMapPage"
+    ControlTemplate="{StaticResource HeaderFooterPageTemplate}"
+    NavigationPage.HasNavigationBar="False"
+    Style="{DynamicResource AppBackgroundColor}">
+    <ContentPage.Content>
+        <Grid>
+            <uControls:ExtendedMap
+                x:Name="gMap"
+                MapType="Satellite"
+                MyLocationEnabled="true"
+                VerticalOptions="Fill"
+                HorizontalOptions="Fill">
+                <uControls:ExtendedMap.Behaviors>
+                    <bindings:BindingPinsBehavior Value="{Binding Pins}"/>
+                    <bindings:UpdateRegionBehavior Region="{Binding Region}"/>
+                    <bindings:BindingPolylinesBehavior Value="{Binding Polylines}"/>
+                    <bindings:PinClickedToCommandBehavior Command="{Binding PinClickedCommand}"/>
+                    <bindings:InfoWindowClickedToCommandBehavior Command="{Binding CalloutClickedCommand}"/>
+                    <bindings:MapClickedToCommandBehavior Command="{Binding MapClickedCommand}"/>
+                </uControls:ExtendedMap.Behaviors>
+            </uControls:ExtendedMap>
+            
+            <Grid
+                HeightRequest="40"
+                HorizontalOptions="Fill"
+                VerticalOptions="End"
+                BackgroundColor="Transparent">
+                
+               <controls:BlurContentView
+                    Grid.ColumnSpan="5"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"
+                    Margin="0,0,0,-1"
+                    ios:VisualElement.BlurEffect="Dark"/>
+
+                <controls:ImageButton 
+                    BackgroundColor="Transparent"
+                    HeightRequest="38"
+                    WidthRequest="38"
+                    ImageSize="24"
+                    ImageSource="close"
+                    HorizontalOptions="Start"
+                    VerticalOptions="CenterAndExpand"
+                    IsVisible="{Binding IsCancelRecordVisible}"
+                    TapCommand="{Binding CancelRecordCommand}"  />
+                
+                <controls:ImageButton 
+                    Grid.Column="2"
+                    BackgroundColor="Transparent"
+                    HeightRequest="38"
+                    WidthRequest="38"
+                    ImageSize="34"
+                    ImageSource="{Binding RecordBtnImg}"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    TapCommand="{Binding RecordClickedCommand}"/>
+                
+                <Button
+                    Grid.Column="4"
+                    WidthRequest="150"
+                    HeightRequest="40"
+                    BackgroundColor="Transparent"
+                    TextColor="White"
+                    Text="Reports"
+                    HorizontalOptions="End"
+                    VerticalOptions="Start"
+                    Command="{Binding ShowRecordsClicked}"
+                />
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

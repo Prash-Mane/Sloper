@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    x:Class="SloperMobile.Views.UserPages.UserPasscodePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+	ios:Page.UseSafeArea="true"
+	prism:ViewModelLocator.AutowireViewModel="True"
+	Style="{DynamicResource AppBackgroundColor}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="PinEntry" TargetType="Entry">
+                <Setter Property="Keyboard" Value="Numeric"/>
+                <!--<Setter Property="IsPassword" Value="True"/>-->
+                <Setter Property="WidthRequest" Value="50"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="Margin" Value="8,0"/>
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
+            <Style x:Key="BottomBar" TargetType="BoxView">
+                <Setter Property="HeightRequest" Value="2"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="WidthRequest" Value="50"/>
+                <Setter Property="VerticalOptions" Value="Start"/>
+                <Setter Property="Margin" Value="0"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid Margin="40,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*" />
+            <RowDefinition Height="65*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+        <Image
+			Grid.Row="0"
+			HorizontalOptions="Center"
+			Source="logo_170w"
+			VerticalOptions="EndAndExpand" />
+        <StackLayout
+			Grid.Row="1"
+			HorizontalOptions="Fill"
+			Orientation="Vertical"
+			Spacing="10"
+			VerticalOptions="CenterAndExpand">
+            <Label
+				FontSize="Small"
+				HorizontalOptions="CenterAndExpand"
+				Text="Check your email"
+				TextColor="White" />
+            <Label
+				Margin="0,-5,0,0"
+				FontSize="Small"
+				HorizontalOptions="CenterAndExpand"
+				Text="Enter the Passcode"
+				TextColor="White" />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout Orientation="Vertical">
+                    <Entry
+                    Keyboard="Numeric"
+				    Style="{StaticResource PinEntry}"
+                    MaxLength="1"
+                    x:Name="Pin1"
+				    Text="{Binding Pin1, Mode=TwoWay}" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Entry
+                    Keyboard="Numeric"
+				    Style="{StaticResource PinEntry}"
+                    MaxLength="1"
+                    x:Name="Pin2"
+				    Text="{Binding Pin2, Mode=TwoWay}" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Entry
+                    Keyboard="Numeric"
+				    Style="{StaticResource PinEntry}"
+                    MaxLength="1"
+                    x:Name="Pin3"
+				    Text="{Binding Pin3, Mode=TwoWay}" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Entry
+                    Keyboard="Numeric"
+				    Style="{StaticResource PinEntry}"
+                    MaxLength="1"
+                    x:Name="Pin4"
+				    Text="{Binding Pin4, Mode=TwoWay}" />
+                </StackLayout>
+            </StackLayout>
+            
+            <Button
+                Command="{Binding PasscodeCommand}"
+                Style="{StaticResource GeneralButtonStyle}"
+                Text="CONTINUE"
+                BorderWidth="1.3"
+                BackgroundColor="Transparent"
+                BorderColor="{StaticResource AppOrange}"
+                FontSize="14"/>
+        </StackLayout>
+        <Label
+			Grid.Row="2"
+			FontSize="Small"
+			HorizontalOptions="Center"
+			Text="My bad, I just remembered my password!"
+			TextColor="White"
+			VerticalOptions="Start">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding NavigateToLoginCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+    </Grid>
+</ContentPage>

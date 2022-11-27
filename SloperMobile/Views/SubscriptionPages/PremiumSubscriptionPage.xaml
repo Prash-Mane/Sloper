@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="SloperMobile.PremiumSubscriptionPage"
+             xmlns:controls="clr-namespace:SloperMobile.UserControls.CustomControls;assembly=SloperMobile"
+             xmlns:customControls="clr-namespace:SloperMobile.UserControls.CustomControls;assembly=SloperMobile"
+             xmlns:effect="clr-namespace:SloperMobile.Effects;assembly=SloperMobile"
+             xmlns:ffImageLoading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:userControls="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:data="clr-namespace:SloperMobile.DataBase.DataTables;assembly=SloperMobile"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             NavigationPage.HasNavigationBar="False"
+             ControlTemplate="{StaticResource HeaderFooterPageTemplate}"
+             Style="{DynamicResource AppBackgroundColor}">
+     <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="CachedImageStyle" TargetType="ffImageLoading:CachedImage">
+                <Setter Property="ClassId" Value="resizeByHeight"/>
+                <Setter Property="LoadingPlaceholder" Value="transparent"/> 
+                <Setter Property="ErrorPlaceholder" Value="transparent"/> 
+                <Setter Property="FadeAnimationForCachedImages" Value="True"/>
+            </Style>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="#CC000000" />
+                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="BorderColor" Value="#FF8E2D" />
+                <Setter Property="CornerRadius" Value="0" />
+            </Style>
+            <Style x:Key="FrameButtonStyle" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="#CC000000" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="BorderColor" Value="#FF8E2D" />
+                <Setter Property="CornerRadius" Value="0" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid
+            Padding="0"
+            RowSpacing="0">
+            <Grid.RowDefinitions>
+                 <RowDefinition Height="Auto"/>
+                 <RowDefinition Height="Auto"/>
+                 <RowDefinition Height="Auto"/>
+                 <RowDefinition Height="Auto"/>
+                 <RowDefinition Height="Auto"/>
+                 <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ffImageLoading:CachedImage
+                HeightRequest="130"
+                WidthRequest="200"
+                Grid.Row="0"
+                Margin="0,20,0,0"
+                Aspect="AspectFit"
+                HorizontalOptions="CenterAndExpand"
+                Source="icon_sloper_premium.png"
+                VerticalOptions="CenterAndExpand" />
+            <controls:HorizontalScrollView
+                Grid.Row="1"
+                Orientation="Horizontal"
+                Margin="0"
+                Padding="0"
+                Spacing="0"
+                ItemsSource="{Binding GuideBooksImage}">
+                <controls:HorizontalScrollView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                           <ffImageLoading:CachedImage
+                                Style="{StaticResource CachedImageStyle}"
+                                Source="{Binding .}"
+                                HeightRequest="170"
+                                WidthRequest="105"
+                                Margin="0"/>
+                       </ViewCell>
+                    </DataTemplate>
+                </controls:HorizontalScrollView.ItemTemplate>
+                </controls:HorizontalScrollView>
+            
+             <StackLayout
+                Grid.Row="2"
+                Orientation="Vertical"
+                Spacing="4"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand">
+                 <customControls:LabelWithShadowEffect
+                            Margin="0"
+                            FontAttributes="Bold"
+                            FontSize="28"
+                            FontFamily = "Roboto-Bold"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Style="{StaticResource PageLabelStyle}"
+                            Text="ONE MONTH FREE TRIAL" />        
+                <BoxView BackgroundColor="White" HeightRequest="0.5" WidthRequest="200"/>
+            </StackLayout>
+            <StackLayout
+                Grid.Row="3"
+                HorizontalOptions="Center"
+                Orientation="Vertical"
+                HeightRequest="100"
+                VerticalOptions="Center"
+                Spacing="2"
+                Margin="10">
+                <customControls:LabelWithShadowEffect
+                    Margin="0"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource PageLabelStyle}"
+                    Text="UNLIMITED ACCESS"
+                    VerticalOptions="EndAndExpand" />
+                <customControls:LabelWithShadowEffect
+                    Margin="0"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource PageLabelStyle}"
+                    Text="SECTOR IMAGES"
+                    VerticalOptions="EndAndExpand" />
+                <customControls:LabelWithShadowEffect
+                    Margin="0"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource PageLabelStyle}"
+                    Text="DETAILED TOPO MAPS"
+                    VerticalOptions="EndAndExpand" />
+                 <customControls:LabelWithShadowEffect
+                    Margin="0"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource PageLabelStyle}"
+                    Text="ROUTE DESCRIPTIONS"
+                    VerticalOptions="EndAndExpand" />
+                 <customControls:LabelWithShadowEffect
+                    Margin="0"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource PageLabelStyle}"
+                    Text="INSTANT UPDATES"
+                    VerticalOptions="EndAndExpand" />
+            </StackLayout>
+            
+            <StackLayout 
+                Grid.Row="4"
+                VerticalOptions="Center"
+                HorizontalOptions="Center">
+                <Frame 
+                    HeightRequest="40"
+                    WidthRequest="300"
+                    Style="{StaticResource FrameButtonStyle}"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding PurchaseCommand}" CommandParameter="{x:Static data:SubscriptionRange.Yearly}" />       
+                    </Frame.GestureRecognizers>
+                            
+                    <StackLayout
+                        VerticalOptions="Center"
+                        HorizontalOptions="FillAndExpand"
+                        Padding="5,0"
+                        Spacing="0">
+                                
+                        <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="CenterAndExpand">
+                           <Label Text="YEAR ROUND CRUSHER" 
+                               VerticalTextAlignment="End"
+                               TextColor="#FF8E2D"
+                               FontSize="Medium"/>
+                           
+                           <Label Text="{Binding MonthlyPriceForYearly, StringFormat='${0:0.00}/MTH'}" 
+                               HorizontalOptions="EndAndExpand"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="End"
+                               TextColor="White"
+                               FontSize="Medium"/>             
+                        </StackLayout> 
+                                
+                        <Label Text="{Binding YearlyPrice, StringFormat='Billed Annually at ${0:0.00} after Trial -60% Savings'}" 
+                               VerticalTextAlignment="Center"
+                               TextColor="Silver"
+                               FontSize="10"
+                               HorizontalOptions="Center"/>
+                     </StackLayout>         
+                            
+                 </Frame> 
+                 <Frame 
+                    HeightRequest="40"
+                    WidthRequest="300"
+                    Style="{StaticResource FrameButtonStyle}"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding PurchaseCommand}" CommandParameter="{x:Static data:SubscriptionRange.Monthly}" />       
+                    </Frame.GestureRecognizers>
+                   <StackLayout  
+                        VerticalOptions="Center"
+                        HorizontalOptions="FillAndExpand"
+                        Padding="5,0"
+                        Spacing="0">
+                                
+                        <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="CenterAndExpand">
+                           <Label Text="SEASONAL SENDER" 
+                               VerticalTextAlignment="End"
+                               TextColor="#FF8E2D"
+                               FontSize="Medium"/>
+                           
+                           <Label Text="{Binding MonthlyPrice, StringFormat='${0:0.00}/MTH'}" 
+                               HorizontalOptions="EndAndExpand"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="End"
+                               TextColor="White"
+                               FontSize="Medium"/>  
+                        </StackLayout> 
+                                
+                        <Label Text="Billed Monthly after Trial" 
+                               TextColor="Silver"
+                               FontSize="10"
+                               HorizontalOptions="Center"/>
+                                
+                    </StackLayout> 
+                </Frame> 
+            </StackLayout>
+            
+            <StackLayout Grid.Row="5">
+                <Label
+                    Margin="10,10,10,0"
+                    FontSize="9"
+                    LineBreakMode="WordWrap"
+                    Text="Payment will be charged to iTunes Account at confirmation of purchase. Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period. Account will be charged for renewal within 24-hours prior to the end of the current period, and identify the cost of the renewal. Subscriptions may be managed by the user and auto-renewal may be turned off by going to the user's Account Settings after purchase. Any unused portion of a free trial period, if offered, will be forfeited when the user purchases a subscription to that publication, where applicable."
+                    TextColor="White"/>
+                <Label
+                    Grid.Row="5"
+                    Margin="0"
+                    HorizontalOptions="FillAndExpand"
+                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource PageLabelStyle}"
+                    Text="Terms of Use | Privacy Policy"
+                    VerticalOptions="EndAndExpand"
+                    VerticalTextAlignment="End">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NavigateToTermsPageCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </Grid> 
+   </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="SloperMobile.Views.UserPages.UserRegistrationPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    xmlns:customControls="clr-namespace:SloperMobile.UserControls.CustomControls;assembly=SloperMobile"
+	prism:ViewModelLocator.AutowireViewModel="True"
+	Style="{DynamicResource AppBackgroundColor}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="RegistrationEntryStyle" TargetType="Entry"
+                   BasedOn="{StaticResource GeneralTxtStyle}">
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <Grid VerticalOptions="FillAndExpand"
+              Padding="50, 40"
+              RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="85*"/>
+                <RowDefinition Height="15*"/>
+            </Grid.RowDefinitions>
+            <StackLayout
+                VerticalOptions="Center"
+                Spacing="10">
+                <Image
+                    HorizontalOptions="CenterAndExpand"
+                    Source="logo_215w"
+                    VerticalOptions="Center" />
+                <customControls:RectangleEntry
+                    Placeholder="FIRST NAME"
+                    Style="{StaticResource RegistrationEntryStyle}"
+                    Text="{Binding RegistrationReq.FirstName}" />
+                <customControls:RectangleEntry
+                    Placeholder="LAST NAME"
+                    Style="{StaticResource RegistrationEntryStyle}"
+                    Text="{Binding RegistrationReq.LastName}" />
+                <customControls:RectangleEntry
+                    x:Name="txtlogin"
+                    Placeholder="EMAIL"
+                    Style="{StaticResource RegistrationEntryStyle}"
+                    Text="{Binding RegistrationReq.UserName}" />
+                <customControls:RectangleEntry
+                    x:Name="txtPassWord"
+                    IsPassword="True"
+                    Placeholder="PASSWORD"
+                    Style="{StaticResource RegistrationEntryStyle}"
+                    Text="{Binding RegistrationReq.Password}" />
+                <customControls:RectangleEntry
+                    x:Name="txtConfirmPassWord"
+                    IsPassword="True"
+                    Placeholder="CONFIRM PASSWORD"
+                    Style="{StaticResource RegistrationEntryStyle}"
+                    Text="{Binding ConfirmPassword}" />
+                <Button
+                    Command="{Binding RegistrationCommand}"
+                    Style="{StaticResource GeneralButtonStyle}"
+                    Text="CREATE ACCOUNT"
+                    BackgroundColor="Transparent"
+                    BorderWidth="1.3"
+                    FontSize="14"
+                    BorderColor="{StaticResource AppOrange}"/>  
+            </StackLayout>
+            <Grid Grid.Row="1">
+                 <Label
+                    Text="By creating an account you agree to the terms of use"
+                    FontSize="11"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    VerticalOptions="Center"
+                    Style="{StaticResource GeneralLabelStyle}"/>
+                
+                <Label
+                    Grid.Row="1"
+                    HorizontalOptions="Center"
+                    FontSize="13"
+                    Style="{StaticResource GeneralLabelStyle}"
+                    Text="Oops, I already have an account!"
+                    VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding LoginCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>             
+            </Grid>
+         
+            <ActivityIndicator
+                    Grid.RowSpan="2"
+                    HeightRequest="30"
+                    HorizontalOptions="CenterAndExpand"
+                    IsRunning="{Binding IsRunningTasks}"
+                    IsVisible="{Binding IsRunningTasks}"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="30"
+                    Color="White" />
+        </Grid>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+    x:Class="SloperMobile.SectorMapListPage"
+    ControlTemplate="{StaticResource HeaderFooterPageTemplate}"
+    NavigationPage.HasNavigationBar="False"
+    x:Name="root"
+    Style="{DynamicResource AppBackgroundColor}">
+    <ContentPage.Content>
+        <ListView
+            HorizontalOptions="FillAndExpand"
+            ItemsSource="{Binding CragMaps}"
+            SeparatorVisibility="None"
+            HasUnevenRows="true"
+            BackgroundColor="Transparent"
+            VerticalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <UC:CragBoxesView
+                            MapAspect="FitWidth"
+                            CragMap="{Binding .}"
+                            IsMapNameVisible="true"
+                            MapCommand="{Binding Path=BindingContext.MapCommand, Source={x:Reference root}}" />
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

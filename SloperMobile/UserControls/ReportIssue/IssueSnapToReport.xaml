@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="SloperMobile.UserControls.ReportIssue.IssueSnapToReport"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile">
+    <ContentView.Content>
+        <Grid
+            Margin="20,0"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            Padding="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="20*" />
+                <RowDefinition Height="35*" />
+                <RowDefinition Height="15*" />
+            </Grid.RowDefinitions>
+            
+            <Label
+                Grid.Row="0"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontSize="24"
+                Text="Give us the details!"
+                TextColor="White" />
+            <Label
+                Grid.Row="1"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                FontSize="20"
+                Text="Snap a Picture?"
+                TextColor="White" />
+            <Image
+                Grid.Row="2"
+                HorizontalOptions="Center"
+                VerticalOptions="Start"
+                Aspect="AspectFill"
+                Source="icon_photo_44w.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CameraClickCommand}" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Image
+                Grid.Row="3"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Aspect="AspectFit"
+                Source="{Binding IssueImage}" />
+            <Grid Grid.Row="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Label
+                    Grid.Row="0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontSize="20"
+                    Text="Comments"
+                    TextColor="White" />
+                <Image
+                    Grid.Row="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Start"
+                    Source="icon_comment_44w.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CommentClickCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <StackLayout
+                    Grid.Row="2"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="Center">
+                    <Label
+                        VerticalOptions="Center"
+                        FontSize="Small"
+                        LineBreakMode="WordWrap"
+                        Text="{Binding CommentText, Mode=TwoWay}"
+                        TextColor="White" />
+                </StackLayout>
+            </Grid>
+            <Button
+                Grid.Row="5"
+                Margin="0,0,0,0"
+                HorizontalOptions="Fill"
+                VerticalOptions="Start"
+                BorderRadius="0"
+                Command="{Binding SnapNopeCommand}"
+                Style="{StaticResource GeneralButtonStyle}"
+                Text="{Binding SnapCommandText, Mode=TwoWay}"
+                TextColor="White" />
+        </Grid>
+    </ContentView.Content>
+</ContentView>

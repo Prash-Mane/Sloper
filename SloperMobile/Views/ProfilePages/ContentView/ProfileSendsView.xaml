@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="SloperMobile.ProfileSendsView"   
+             xmlns:Controls="clr-namespace:SloperMobile.CustomControls;assembly=SloperMobile"
+    xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+    xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms">
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="0.3*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout
+            x:Name="gauge_layout"
+            Grid.Row="1"
+            Margin="5,10,5,-10"
+            HorizontalOptions="Fill"
+            Orientation="Horizontal"
+            Spacing="2"
+            VerticalOptions="StartAndExpand">
+            <StackLayout.Padding>
+                <OnPlatform
+                    x:TypeArguments="Thickness"
+                    Android="-3"
+                    iOS="1" />
+            </StackLayout.Padding>
+            <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+                <StackLayout
+                    Margin="0"
+                    HorizontalOptions="Center"
+                    Orientation="Vertical"
+                    Spacing="0"
+                    VerticalOptions="Center">
+                    <Label
+                        FontSize="15"
+                        HorizontalOptions="Center"
+                        Text="{Binding Onsight, StringFormat='{0}%'}"
+                        TextColor="White" />
+                    <Label
+                        FontSize="14"
+                        HorizontalOptions="Center"
+                        Text="Onsights"
+                        TextColor="White" />
+                </StackLayout>
+                <Image
+                    HorizontalOptions="Center"
+                    Source="icon_gauge_mountains"
+                    WidthRequest="32"
+                    HeightRequest="32"
+                    VerticalOptions="End" />
+                <gauge:SfCircularGauge HorizontalOptions="Fill" VerticalOptions="Fill">
+                    <gauge:SfCircularGauge.Scales>
+                        <gauge:Scale
+                            EndValue="100"
+                            RadiusFactor="1"
+                            RimColor="#fff"
+                            RimThickness="{Binding RimThickness}"
+                            ShowLabels="False"
+                            ShowTicks="False"
+                            StartAngle="135"
+                            StartValue="0"
+                            SweepAngle="270">
+                            <gauge:Scale.Pointers>
+                                <gauge:RangePointer
+                                    Thickness="{Binding GaugeThickness}"
+                                    Offset="1"
+                                    Color="#FF8E2D"
+                                    Value="{Binding Path=Onsight}" />
+                            </gauge:Scale.Pointers>
+                        </gauge:Scale>
+                    </gauge:SfCircularGauge.Scales>
+                </gauge:SfCircularGauge>
+            </Grid>
+            <Grid
+                Margin="{Binding CenterGaugeMargin}"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill">
+                <StackLayout
+                    Margin="0"
+                    HorizontalOptions="Center"
+                    Orientation="Vertical"
+                    Spacing="0"
+                    VerticalOptions="Center">
+                    <Label
+                        FontSize="15"
+                        HorizontalOptions="Center"
+                        Text="{Binding Redpoint, StringFormat='{0}%'}"
+                        TextColor="White" />
+                    <Label
+                        FontSize="14"
+                        HorizontalOptions="Center"
+                        Text="Redpoints"
+                        TextColor="White" />
+                </StackLayout>
+                <Image
+                    HorizontalOptions="Center"
+                    Source="icon_gauge_mountains"
+                    WidthRequest="32"
+                    HeightRequest="32"
+                    VerticalOptions="End" />
+                <gauge:SfCircularGauge HorizontalOptions="Fill" VerticalOptions="Fill">
+                    <gauge:SfCircularGauge.Scales>
+                        <gauge:Scale
+                            EndValue="100"
+                            RadiusFactor="1"
+                            RimColor="#fff"
+                            RimThickness="{Binding RimThickness}"
+                            ShowLabels="False"
+                            ShowTicks="False"
+                            StartAngle="135"
+                            StartValue="0"
+                            SweepAngle="270">
+                            <gauge:Scale.Pointers>
+                                <gauge:RangePointer
+                                    Thickness="{Binding GaugeThickness}"
+                                    Offset="1"
+                                    Color="#FF8E2D"
+                                    Value="{Binding Path=Redpoint}" />
+                            </gauge:Scale.Pointers>
+                        </gauge:Scale>
+                    </gauge:SfCircularGauge.Scales>
+                </gauge:SfCircularGauge>
+            </Grid>
+            <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+                <StackLayout
+                    Margin="0"
+                    HorizontalOptions="Center"
+                    Orientation="Vertical"
+                    Spacing="0"
+                    VerticalOptions="Center">
+                    <Label
+                        FontSize="15"
+                        HorizontalOptions="Center"
+                        Text="{Binding Projects}"
+                        TextColor="White" />
+                    <Label
+                        FontSize="14"
+                        HorizontalOptions="Center"
+                        Text="Projects"
+                        TextColor="White" />
+                </StackLayout>
+                <Image
+                    HorizontalOptions="Center"
+                    Source="icon_gauge_mountains"
+                    WidthRequest="32"
+                    HeightRequest="32"
+                    VerticalOptions="End" />
+                <gauge:SfCircularGauge HorizontalOptions="Fill" VerticalOptions="Fill">
+                    <gauge:SfCircularGauge.Scales>
+                        <gauge:Scale
+                            EndValue="100"
+                            RadiusFactor="1"
+                            RimColor="#fff"
+                            RimThickness="{Binding RimThickness}"
+                            ShowLabels="False"
+                            ShowTicks="False"
+                            StartAngle="135"
+                            StartValue="0"
+                            SweepAngle="270">
+                            <gauge:Scale.Pointers>
+                                <gauge:RangePointer
+                                    Thickness="{Binding GaugeThickness}"
+                                    Offset="1"
+                                    Color="#FF8E2D"
+                                    Value="{Binding Path=ProjectsGauge}" />
+                            </gauge:Scale.Pointers>
+                        </gauge:Scale>
+                    </gauge:SfCircularGauge.Scales>
+                </gauge:SfCircularGauge>
+            </Grid>
+        </StackLayout>
+        <Grid
+            x:Name="sends_layout"
+            Grid.Row="2"
+            Margin="5,15,5,0"
+            ColumnSpacing="0"
+            HorizontalOptions="FillAndExpand"
+            RowSpacing="0"
+            VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="1" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="0,0,5,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource ListHeaderStyle}"
+                    Text="DATE"
+                    VerticalOptions="StartAndExpand" />
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource ListHeaderStyle}"
+                    Text="CLIMB"
+                    VerticalOptions="StartAndExpand" />
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource ListHeaderStyle}"
+                    Text="GRADE"
+                    VerticalOptions="StartAndExpand" />
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource ListHeaderStyle}"
+                    Text="STYLE"
+                    VerticalOptions="StartAndExpand" />
+            </Grid>
+            <BoxView
+                Grid.Row="1"
+                BackgroundColor="#676767"
+                HeightRequest="1"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center" />
+            <sync:SfListView
+                x:Name="listView"
+                Grid.Row="2"
+                AutoFitMode="Height"
+                ItemHolding="listView_ItemHolding"
+                ItemTapped="listView_ItemTapped"
+                ItemsSource="{Binding SendsList}"
+                SelectionBackgroundColor="Transparent"
+                SwipeOffset="40"
+                SwipeThreshold="30">
+                <sync:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid
+                            x:Name="gridBase"
+                            RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="1" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label
+                                HorizontalTextAlignment="Center"
+                                Style="{StaticResource ListItemStyle}"
+                                Text="{Binding DateClimbed}"
+                                VerticalTextAlignment="Center" />
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                HorizontalTextAlignment="Center"
+                                Style="{StaticResource ListItemStyle}"
+                                Text="{Binding route_name}"
+                                VerticalTextAlignment="Center" />
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                HorizontalTextAlignment="Center"
+                                Style="{StaticResource ListItemStyle}"
+                                Text="{Binding Tech_Grade_Description}"
+                                VerticalOptions="Center"
+                                VerticalTextAlignment="Center" />
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="3"
+                                HorizontalTextAlignment="Center"
+                                Style="{StaticResource ListItemStyle}"
+                                Text="{Binding Ascent_Type_Description}"
+                                VerticalOptions="Center"
+                                VerticalTextAlignment="Center" />
+                            <BoxView
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="4"
+                                BackgroundColor="#3F3F3F"
+                                HeightRequest="1"
+                                HorizontalOptions="Fill"
+                                VerticalOptions="Center" />
+                        </Grid>
+                    </DataTemplate>
+                </sync:SfListView.ItemTemplate>
+            </sync:SfListView>
+            <StackLayout
+                Orientation="Vertical"
+                Grid.Row="2"
+                IsVisible="{Binding ShowEmptyOverlay}"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center">
+                <Label
+                    FontSize="Large"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="No Sends"
+                    TextColor="White"
+                    VerticalOptions="Start" />
+                <Label
+                    Margin="5"
+                    FontSize="Default"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    Text="Log your Redpoints, Onsights and Projects to watch your Send list grow!"
+                    TextColor="White"
+                    VerticalOptions="End" />
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentView>

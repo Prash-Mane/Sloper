@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="SloperMobile.Views.ReportedIssuePages.ReportedIssueSummaryPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+	xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	NavigationPage.HasNavigationBar="False"
+	Style="{StaticResource AppBackgroundColor}">
+	<Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="5*" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<UC:HeaderUC
+			Grid.Row="0"
+			BindingContext="{Binding .}"
+			HeightRequest="40"
+			HorizontalOptions="Fill"
+			VerticalOptions="Start" />
+		<Grid Grid.Row="1">
+			<Image
+				HeightRequest="50"
+				HorizontalOptions="Center"
+				Source="icon_route_warning"
+				VerticalOptions="Center"
+				WidthRequest="50" />
+		</Grid>
+		<StackLayout Grid.Row="2">
+			<Label
+				FontSize="20"
+				HorizontalOptions="Center"
+				Text="REPORTED ISSUE(S)"
+				TextColor="White"
+				VerticalOptions="Start" />
+			<Label
+				FontSize="Micro"
+				HorizontalOptions="Center"
+				Text="Advise not to climb!"
+				TextColor="White"
+				VerticalOptions="Start" />
+		</StackLayout>
+		<Grid
+			Grid.Row="3"
+			HorizontalOptions="Center"
+			VerticalOptions="StartAndExpand">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<StackLayout
+				Grid.Row="0"
+				HorizontalOptions="Center"
+				Orientation="Horizontal"
+				Spacing="15">
+				<Image
+					Aspect="AspectFit"
+					HorizontalOptions="Fill"
+					Source="{Binding Icon_SelectedCategory}"
+					VerticalOptions="Fill" />
+				<Image
+					Aspect="AspectFit"
+					HorizontalOptions="Fill"
+					Source="{Binding Icon_SelectedIssue}"
+					VerticalOptions="Fill" />
+				<Image
+					Aspect="AspectFit"
+					HorizontalOptions="Fill"
+					Source="{Binding Icon_SelectedDetail}"
+					VerticalOptions="Fill" />
+			</StackLayout>
+
+			<StackLayout
+				Grid.Row="1"
+				HorizontalOptions="Center"
+				Orientation="Horizontal">
+				<Label
+					FontSize="20"
+					HorizontalOptions="Center"
+					IsVisible="{Binding IsVisibleBoltText}"
+					Text="Bolt(s)#:"
+					TextColor="White"
+					VerticalOptions="End" />
+				<Label
+					FontSize="20"
+					HorizontalOptions="StartAndExpand"
+					IsVisible="{Binding IsVisibleBoltText}"
+					Text="{Binding SelectedBoltNumber, Mode=TwoWay}"
+					TextColor="White"
+					VerticalOptions="End" />
+			</StackLayout>
+			<forms:CachedImage
+				Grid.Row="2"
+				Margin="0,20,0,0"
+				Source="{Binding IssueImage}"
+				SuccessCommand="{Binding SuccessCommand}">
+				<forms:CachedImage.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding IssueImagePopupCommand}" />
+				</forms:CachedImage.GestureRecognizers>
+			</forms:CachedImage>
+		</Grid>
+		<Label
+			Grid.Row="4"
+			FontSize="Medium"
+			HorizontalOptions="Center"
+			IsVisible="{Binding IsDisplayComment}"
+			Text="Comments"
+			TextColor="White"
+			VerticalOptions="Center" />
+		<ScrollView
+			Grid.Row="5"
+			Margin="20,0,20,0"
+			HorizontalOptions="Fill"
+			VerticalOptions="Center">
+			<Label
+				FontSize="Micro"
+				HorizontalOptions="Center"
+				LineBreakMode="WordWrap"
+				Text="{Binding Path=CommentText}"
+				TextColor="White" />
+		</ScrollView>
+	</Grid>
+</ContentPage>

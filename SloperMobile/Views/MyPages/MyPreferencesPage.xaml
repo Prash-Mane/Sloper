@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="SloperMobile.Views.MyPages.MyPreferencesPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:Controls="clr-namespace:SloperMobile.CustomControls;assembly=SloperMobile"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+	prism:ViewModelLocator.AutowireViewModel="True"
+	NavigationPage.HasNavigationBar="False"
+	Style="{DynamicResource AppBackgroundColor}">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<Controls:NullableDecimalConverter x:Key="NullableDecimalConverter" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<ContentPage.Content>
+		<StackLayout>
+			<StackLayout 
+                HeightRequest="40"
+                Orientation="Horizontal"
+                Margin="0, 20, 0, 0">
+				<StackLayout>
+					<Image
+						Margin="0,5,0,0"
+						Aspect="AspectFit"
+						HeightRequest="25"
+						Source="arrowLeftWhite"
+						VerticalOptions="Start"
+						WidthRequest="25" />
+					<StackLayout.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding BackCommand}" />
+					</StackLayout.GestureRecognizers>
+				</StackLayout>
+				<Label
+					x:Name="btnDone"
+					Margin="0,0,10,0"
+					FontSize="Medium"
+					HorizontalOptions="EndAndExpand"
+					Text="SAVE"
+					TextColor="White"
+					VerticalOptions="CenterAndExpand">
+					<Label.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding UpdateProfileCommand}" />
+					</Label.GestureRecognizers>
+				</Label>
+			</StackLayout>
+			<StackLayout>
+				<Grid HorizontalOptions="Center">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="200" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="200" />
+						<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
+					<Image Aspect="AspectFit" Source="{Binding ProfilePicture, Mode=TwoWay}" />
+					<Label
+						Grid.Row="1"
+						HorizontalOptions="CenterAndExpand"
+						Text="Change Profile Picture"
+						TextColor="#FF8E2D" />
+					<Grid.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding OnEditPictureCommand}" />
+					</Grid.GestureRecognizers>
+				</Grid>
+			</StackLayout>
+			<ScrollView>
+				<StackLayout Margin="20,0" Padding="10">
+					<Label Style="{StaticResource FormLabelStyle}" Text="First Name" />
+					<Entry
+						Focused="DoneButtonHide"
+						Placeholder="First Name"
+						Style="{StaticResource GeneralTxtStyle}"
+						Text="{Binding FirstName, Mode=TwoWay}"
+						Unfocused="DoneButtonShow" />
+					<Label Style="{StaticResource FormLabelStyle}" Text="Last Name" />
+					<Entry
+						Focused="DoneButtonHide"
+						Placeholder="Last Name"
+						Style="{StaticResource GeneralTxtStyle}"
+						Text="{Binding LastName, Mode=TwoWay}"
+						Unfocused="DoneButtonShow" />
+					<Label Style="{StaticResource FormLabelStyle}" Text="Gender (Optional)" />
+					<Controls:BindablePicker
+						Title="Gender"
+						BackgroundColor="White"
+						Focused="DoneButtonHide"
+						HeightRequest="40"
+						ItemsSource="{Binding Genders}"
+						SelectedItem="{Binding SelectedGender, Mode=TwoWay}"
+						Unfocused="DoneButtonShow" />
+					<Label Style="{StaticResource FormLabelStyle}" Text="Date of Birth (Optional)" />
+					<Entry
+						x:Name="DateOfBirthEntry"
+						Focused="OnDateOfBirthFocused"
+						HeightRequest="40"
+						IsVisible="{Binding IsDateOfBirthEntryVisible, Mode=TwoWay}"
+						Placeholder="Date of Birth"
+						Style="{StaticResource GeneralTxtStyle}" />
+					<DatePicker
+						x:Name="DOBDatePicker"
+						BackgroundColor="White"
+						Date="{Binding DOB, Mode=TwoWay}"
+						Focused="DoneButtonHide"
+						Format="MMMM dd, yyyy"
+						HeightRequest="40"
+						IsVisible="{Binding IsDateOfBirthDatePickerVisible, Mode=TwoWay}"
+						Unfocused="DoneButtonShow" />
+					<Label Style="{StaticResource FormLabelStyle}" Text="Height (Optional)" />
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="1*" />
+							<ColumnDefinition Width="0.3*" />
+						</Grid.ColumnDefinitions>
+						<Entry
+							Focused="DoneButtonHide"
+							Keyboard="Numeric"
+							Placeholder="Height"
+							Style="{StaticResource GeneralTxtStyle}"
+							Text="{Binding Height, Mode=TwoWay, Converter={StaticResource NullableDecimalConverter}}"
+							Unfocused="DoneButtonShow" />
+						<Controls:BindablePicker
+							Title="UoM"
+							Grid.Column="1"
+							BackgroundColor="White"
+							Focused="DoneButtonHide"
+							HeightRequest="40"
+							ItemsSource="{Binding HeightUnits}"
+							SelectedItem="{Binding SelectedHeightUnits, Mode=TwoWay}"
+							Unfocused="DoneButtonShow" />
+					</Grid>
+					<Label Style="{StaticResource FormLabelStyle}" Text="Weight (Optional)" />
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="1*" />
+							<ColumnDefinition Width="0.3*" />
+						</Grid.ColumnDefinitions>
+						<Entry
+							Focused="DoneButtonHide"
+							Keyboard="Numeric"
+							Placeholder="Weight"
+							Style="{StaticResource GeneralTxtStyle}"
+							Text="{Binding Weight, Mode=TwoWay, Converter={StaticResource NullableDecimalConverter}}"
+							Unfocused="DoneButtonShow" />
+						<Controls:BindablePicker
+							Title="UoM"
+							Grid.Column="1"
+							BackgroundColor="White"
+							Focused="DoneButtonHide"
+							HeightRequest="40"
+							ItemsSource="{Binding WeightUnits}"
+							SelectedItem="{Binding SelectedWeightUnits, Mode=TwoWay}"
+							Unfocused="DoneButtonShow" />
+					</Grid>
+					<Label Style="{StaticResource FormLabelStyle}" Text="First Year Climbing" />
+					<Controls:BindablePicker
+						Title="First Year Climbing"
+						BackgroundColor="White"
+						Focused="DoneButtonHide"
+						HeightRequest="40"
+						ItemsSource="{Binding FirstYearClimb}"
+						SelectedItem="{Binding SelectedFirstYearClimb, Mode=TwoWay}"
+						Unfocused="DoneButtonShow" />
+					<Label Style="{StaticResource FormLabelStyle}" Text="Route Length Unit of Measure" />
+					<Controls:BindablePicker
+						Title="Route UoM"
+						BackgroundColor="White"
+						Focused="DoneButtonHide"
+						HeightRequest="40"
+						ItemsSource="{Binding UnitOfMeasure}"
+						SelectedItem="{Binding SelectedUnitOfMeasure, Mode=TwoWay}"
+						
+						Unfocused="DoneButtonShow" />
+                    
+                    <Label Style="{StaticResource FormLabelStyle}" Text="Temperature Unit of Measure" />
+                    <Controls:BindablePicker
+                        Title="Temperature UoM"
+                        BackgroundColor="White"
+                        Focused="DoneButtonHide"
+                        HeightRequest="40"
+                        ItemsSource="{Binding TemperatureUnits}"
+                        SelectedItem="{Binding SelectedTemperatureUnits, Mode=TwoWay}"
+                        
+                        Unfocused="DoneButtonShow" />
+                    
+					<Label Style="{StaticResource FormLabelStyle}" Text="Participate in the Climbing Community" />
+					<Controls:BindablePicker
+						Title="Participate"
+						BackgroundColor="White"
+						Focused="DoneButtonHide"
+						HeightRequest="40"
+						ItemsSource="{Binding PrivacyClimbingCommunity}"
+						SelectedItem="{Binding SelectedPrivacyClimbingCommunity, Mode=TwoWay}"
+						
+						Unfocused="DoneButtonShow" />
+                    <!--Style="FormBindable"-->
+				</StackLayout>
+			</ScrollView>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

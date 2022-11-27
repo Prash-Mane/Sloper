@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="SloperMobile.Views.GoogleMapPinPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+    xmlns:controls="clr-namespace:SloperMobile.CustomControls"
+	xmlns:extendedMap="clr-namespace:SloperMobile.UserControls.CustomControls;assembly=SloperMobile"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+	prism:ViewModelLocator.AutowireViewModel="True"
+	ControlTemplate="{StaticResource HeaderFooterPageTemplate}"
+	Style="{DynamicResource AppBackgroundColor}">
+    <ContentPage.Resources>
+        <controls:ImageButton
+            x:Key="RightHeaderView"
+            Style="{StaticResource ToolbarItem}"
+            ImageSource="{Binding BulbImage}"
+            TapCommand="{Binding LegendCommand}" />
+    </ContentPage.Resources>
+	<Grid
+		x:Name="mapHolder"
+		Padding="0"
+		HorizontalOptions="FillAndExpand"
+		RowSpacing="0"
+		VerticalOptions="FillAndExpand">
+
+		<extendedMap:ExtendedMap
+			x:Name="map"
+			Margin="0"
+			MyLocationEnabled="true"
+            HorizontalOptions="Fill"
+			VerticalOptions="Fill"/>
+
+		<StackLayout
+			BackgroundColor="#99000000"
+			IsEnabled="false"
+			IsVisible="{Binding IsLegendVisible}"
+            Padding="0,110,0,0">
+			<StackLayout
+				HeightRequest="50"
+				Orientation="Horizontal">
+				<AbsoluteLayout
+					Margin="5"
+					HorizontalOptions="Start"
+					VerticalOptions="Fill">
+					<Image AbsoluteLayout.LayoutBounds="20,0,40,40" Source="icon_pin_yellow_faded_30h.png" />
+					<Image AbsoluteLayout.LayoutBounds="0,0,40,40" Source="icon_pin_yellow_30h.png" />
+				</AbsoluteLayout>
+				<Label
+					FontSize="17"
+					HorizontalOptions="FillAndExpand"
+					HorizontalTextAlignment="Start"
+					Text="Premium: Out of Season"
+					TextColor="White"
+					VerticalOptions="Fill"
+					VerticalTextAlignment="Center" />
+			</StackLayout>
+			<StackLayout
+				Margin="0,5,0,0"
+				HeightRequest="50"
+				Orientation="Horizontal">
+				<AbsoluteLayout
+					Margin="5"
+					HorizontalOptions="Start"
+					VerticalOptions="Fill">
+					<Image AbsoluteLayout.LayoutBounds="20,0,40,40" Source="icon_pin_green_faded_30h.png" />
+					<Image AbsoluteLayout.LayoutBounds="0,0,40,40" Source="icon_pin_green_30h.png" />
+				</AbsoluteLayout>
+				<Label
+					FontSize="17"
+					HorizontalOptions="FillAndExpand"
+					HorizontalTextAlignment="Start"
+					Text="Premium: In Season"
+					TextColor="White"
+					VerticalOptions="Fill"
+					VerticalTextAlignment="Center" />
+			</StackLayout>
+			<StackLayout
+				Margin="0,5,0,0"
+				HeightRequest="50"
+				Orientation="Horizontal">
+				<AbsoluteLayout
+					Margin="5"
+					HorizontalOptions="Start"
+					VerticalOptions="Fill">
+					<Image AbsoluteLayout.LayoutBounds="20,0,40,40" Source="icon_pin_red_faded_30h.png" />
+					<Image AbsoluteLayout.LayoutBounds="0,0,40,40" Source="icon_pin_red_30h.png" />
+				</AbsoluteLayout>
+				<Label
+					FontSize="17"
+					HorizontalOptions="FillAndExpand"
+					HorizontalTextAlignment="Start"
+					Text="Premium: Closed"
+					TextColor="White"
+					VerticalOptions="Fill"
+					VerticalTextAlignment="Center" />
+			</StackLayout>
+			<StackLayout
+				Margin="0,5,0,0"
+				HeightRequest="50"
+				Orientation="Horizontal">
+				<AbsoluteLayout
+					Margin="5"
+					HorizontalOptions="Start"
+					VerticalOptions="Fill">
+					<Image AbsoluteLayout.LayoutBounds="20,0,40,40" Source="icon_pin_black_faded_30h.png" />
+					<Image AbsoluteLayout.LayoutBounds="0,0,40,40" Source="icon_pin_black_30h.png" />
+				</AbsoluteLayout>
+				<Label
+					FontSize="17"
+					HorizontalOptions="FillAndExpand"
+					HorizontalTextAlignment="Start"
+					Text="Basic: Non-Subscribed"
+					TextColor="White"
+					VerticalOptions="Fill"
+					VerticalTextAlignment="Center" />
+			</StackLayout>
+			<Label
+				Margin="5"
+				FontSize="17"
+				HeightRequest="50"
+				HorizontalOptions="FillAndExpand"
+				HorizontalTextAlignment="Start"
+				Text="*Faded Icon = Crag is NOT downloaded to device"
+				TextColor="White"
+				VerticalOptions="Fill"
+				VerticalTextAlignment="Center" />
+		</StackLayout>
+<!--		<Image
+			Margin="0,30,5,0"
+			HeightRequest="40"
+			HorizontalOptions="End"
+            VerticalOptions="Start"
+			Source="{Binding BulbImage}"
+			WidthRequest="40">
+			<Image.GestureRecognizers>
+				<TapGestureRecognizer Command="{Binding LegendCommand}" />
+			</Image.GestureRecognizers>
+		</Image>-->
+
+		<Frame
+			x:Name="initialFrame"
+			Margin="0,0,0,-5"
+			BackgroundColor="#77000000"
+			CornerRadius="0"
+			HorizontalOptions="FillAndExpand"
+			IsVisible="{Binding Is_InstructionInit}"
+			VerticalOptions="FillAndExpand">
+			<Frame.Content>
+                <StackLayout
+                        VerticalOptions="Center">
+                        <Label
+                            FontSize="24"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="On the map behind this screen are some of your favorite locations to climb. This is also where you can download or remove all of the routes and topos from those locations."
+                            TextColor="White" />
+
+                        <Label
+                            Margin="0,5,0,0"
+                            FontSize="24"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="Important: Make sure you download the crags you plan to visit prior to leaving good connectivity or Wifi."
+                            TextColor="White" />
+                        <Button
+                            Margin="0,50,0,0"
+                            Command="{Binding OnGoCommand}"
+                            HorizontalOptions="CenterAndExpand"
+                            Style="{StaticResource GeneralButtonStyle}"
+                            Text="GOT IT!"
+                            VerticalOptions="End"
+                            WidthRequest="110" />
+                    </StackLayout>
+			</Frame.Content>
+		</Frame>
+	</Grid>
+</ContentPage>

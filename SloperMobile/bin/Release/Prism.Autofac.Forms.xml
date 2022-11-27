@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Prism.Autofac.Forms</name>
+    </assembly>
+    <members>
+        <member name="T:Prism.Autofac.IAutofacContainerExtension">
+            <summary>
+            Provides customization extensions for Autofac Applications 
+            </summary>
+        </member>
+        <member name="P:Prism.Autofac.IAutofacContainerExtension.Builder">
+            <summary>
+            Gets the <see cref="T:Autofac.ContainerBuilder"/> used to register the services for the application
+            </summary>
+        </member>
+        <member name="T:Prism.Autofac.PrismApplication">
+            <summary>
+            Application base class using Autofac
+            </summary>
+        </member>
+        <member name="M:Prism.Autofac.PrismApplication.CreateContainerExtension">
+            <summary>
+            Creates the <see cref="T:Prism.Autofac.IAutofacContainerExtension"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Prism.Autofac.PrismIocExtensions.GetBuilder(Prism.Ioc.IContainerRegistry)">
+            <summary>
+            Gets the <see cref="T:Autofac.ContainerBuilder"/> used to register services.
+            </summary>
+            <param name="registry"></param>
+            <returns>The current <see cref="T:Autofac.ContainerBuilder"/></returns>
+        </member>
+    </members>
+</doc>

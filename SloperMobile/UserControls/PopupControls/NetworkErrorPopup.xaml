@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pages:PopupPage
+	x:Class="SloperMobile.UserControls.PopupControls.NetworkErrorPopup"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    BackgroundColor="Black"
+    HasSystemPadding="false">
+	<Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*" />
+            <RowDefinition Height="20*" />
+            <RowDefinition Height="20*" />
+        </Grid.RowDefinitions>
+        <Image
+            Grid.Row="0"
+            Aspect="AspectFit"
+            HorizontalOptions="Center"
+            Source="logo_215w"
+            VerticalOptions="Center" />
+        <Label
+            Grid.Row="1"
+            Margin="40"
+            FontSize="Medium"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            Text="You're offline, please connect to the internet and try again."
+            TextColor="White"
+            VerticalOptions="Center" />
+        <Button
+            Grid.Row="2"
+            Margin="30"
+            Clicked="OnContinue"
+            HorizontalOptions="Fill"
+            Style="{StaticResource GeneralButtonStyle}"
+            Text="CONTINUE"
+            VerticalOptions="End" />
+    </Grid>
+</pages:PopupPage>

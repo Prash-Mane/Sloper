@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="SloperMobile.Views.SubscriptionPages.UnlockPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:customControls="clr-namespace:SloperMobile.UserControls.CustomControls;assembly=SloperMobile"
+	xmlns:effect="clr-namespace:SloperMobile.Effects;assembly=SloperMobile"
+	xmlns:ffImageLoading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms"
+	xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+	xmlns:userControls="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+	xmlns:viewModel="clr-namespace:SloperMobile.ViewModel;assembly=SloperMobile" xmlns:forms1="http://xamarin.com/schemas/2014/forms"
+    ControlTemplate="{StaticResource HeaderFooterPageTemplate}"
+	Style="{DynamicResource AppBackgroundColor}">
+	<ContentPage.Content>
+		<Grid
+			RowSpacing="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="2*" />
+				<RowDefinition Height="4.5*" />
+				<RowDefinition Height="30" />
+				<RowDefinition Height="1.5*" />
+			</Grid.RowDefinitions>
+			<ffImageLoading:CachedImage
+				Grid.Row="0"
+				Grid.RowSpan="3"
+				Grid.Column="0"
+				Margin="0"
+				Aspect="AspectFill"
+				FadeAnimationDuration="2000"
+				FadeAnimationEnabled="True"
+				FadeAnimationForCachedImages="True"
+				Source="{Binding BackGroundImage}">
+				<ffImageLoading:CachedImage.Transformations>
+					<transformations:GrayscaleTransformation />
+				</ffImageLoading:CachedImage.Transformations>
+			</ffImageLoading:CachedImage>
+			<ffImageLoading:CachedImage
+				Grid.Row="0"
+				Grid.RowSpan="3"
+				Margin="0"
+				Aspect="AspectFill"
+				FadeAnimationDuration="2000"
+				FadeAnimationEnabled="True"
+				FadeAnimationForCachedImages="True"
+				Source="fade_top_trans_bottom_black.png" />
+<!--			<userControls:BackHeaderUC
+				Grid.Row="0"
+				Grid.Column="0"
+				Grid.ColumnSpan="2" />-->
+			<ffImageLoading:CachedImage
+				Grid.Row="0"
+				Margin="0,70,0,0"
+				Aspect="AspectFill"
+				HorizontalOptions="CenterAndExpand"
+				Source="icon_sloper_premium.png"
+				VerticalOptions="CenterAndExpand" />
+			<forms1:CarouselView
+				Grid.Row="1"
+				Margin="0"
+				HorizontalOptions="FillAndExpand"
+				ItemsSource="{Binding CarouselPages}"
+				Position="{Binding SelectedItemPosition}"
+				VerticalOptions="FillAndExpand">
+				<forms1:CarouselView.ItemTemplate>
+					<DataTemplate>
+						<Grid RowSpacing="10" VerticalOptions="FillAndExpand">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="2*" />
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
+							<StackLayout
+								Grid.Row="0"
+								Margin="80,0"
+								HorizontalOptions="FillAndExpand"
+								IsVisible="{Binding IsRouteData}"
+								VerticalOptions="FillAndExpand">
+								<customControls:LabelWithShadowEffect
+									FontSize="22"
+									HorizontalOptions="CenterAndExpand"
+									HorizontalTextAlignment="Center"
+									Style="{StaticResource PageLabelStyle}"
+									Text="PRESCO - 5.11C"
+									TextColor="{StaticResource AppOrange}"
+									VerticalTextAlignment="Center" />
+								<customControls:LabelWithShadowEffect
+									FontSize="Micro"
+									HorizontalOptions="CenterAndExpand"
+									HorizontalTextAlignment="Center"
+									Style="{StaticResource PageLabelStyle}"
+									Text="Start in a left facing that leads to a roof. Tackle the roof with incredible holds and great climbing to the Anchors." />
+								<customControls:LabelWithShadowEffect
+									FontSize="Micro"
+									HorizontalOptions="CenterAndExpand"
+									HorizontalTextAlignment="Center"
+									Style="{StaticResource PageLabelStyle}"
+									Text="10 bolts - 28m" />
+								<rating:SfRating
+									HorizontalOptions="CenterAndExpand"
+									ItemCount="5"
+									ItemSize="25"
+									Precision="Exact"
+									ReadOnly="True"
+									VerticalOptions="CenterAndExpand"
+									Value="4">
+									<rating:SfRating.RatingSettings>
+										<rating:SfRatingSettings
+											HorizontalOptions="CenterAndExpand"
+											RatedFill="{StaticResource AppOrange}"
+											RatedStroke="{StaticResource AppOrange}"
+											RatedStrokeWidth="1"
+											UnRatedStroke="#FF8E2D"
+											UnRatedStrokeWidth="1"
+											VerticalOptions="StartAndExpand" />
+									</rating:SfRating.RatingSettings>
+								</rating:SfRating>
+								<StackLayout
+                                    Margin="-50,0"
+									Padding="0"
+									HorizontalOptions="Center"
+									Orientation="Horizontal"
+									Spacing="5"
+									VerticalOptions="FillAndExpand">
+									<ffImageLoading:CachedImage
+										Aspect="AspectFit"
+										HeightRequest="50"
+										HorizontalOptions="Center"
+										Source="icon_hold_type_1_slopers_border_100x100.png"
+										VerticalOptions="CenterAndExpand" />
+									<ffImageLoading:CachedImage
+										Aspect="AspectFit"
+										HeightRequest="50"
+										HorizontalOptions="Center"
+										Source="icon_route_style_1_technical_border_100x100.png"
+										VerticalOptions="CenterAndExpand" />
+									<ffImageLoading:CachedImage
+										Aspect="AspectFit"
+										HeightRequest="50"
+										HorizontalOptions="Center"
+										Source="icon_route_style_2_sequential_border_100x100.png"
+										VerticalOptions="CenterAndExpand" />
+									<ffImageLoading:CachedImage
+										Aspect="AspectFit"
+										HeightRequest="50"
+										HorizontalOptions="Center"
+										Source="icon_route_style_4_powerful_border_100x100.png"
+										VerticalOptions="CenterAndExpand" />
+								</StackLayout>
+								<Grid Padding="0" VerticalOptions="EndAndExpand">
+									<Button
+										Grid.Row="0"
+										Grid.Column="0"
+										BackgroundColor="{StaticResource AppOrange}"
+										BorderRadius="0"
+										FontSize="Small"
+										HeightRequest="40"
+										Opacity="0.8"
+										Text="TICK LIST"
+										TextColor="White" />
+									<Button
+										Grid.Row="0"
+										Grid.Column="1"
+										BackgroundColor="{StaticResource AppOrange}"
+										BorderRadius="0"
+										FontSize="Small"
+										HeightRequest="40"
+										Opacity="0.8"
+										Text="SEND"
+										TextColor="White" />
+								</Grid>
+							</StackLayout>
+							<StackLayout
+								Grid.Row="1"
+								Margin="10,0"
+								HorizontalOptions="FillAndExpand"
+								VerticalOptions="FillAndExpand">
+								<ffImageLoading:CachedImage
+									HorizontalOptions="FillAndExpand"
+									Source="{Binding ItemImage}"
+									VerticalOptions="EndAndExpand" />
+								<customControls:LabelWithShadowEffect
+									HorizontalOptions="CenterAndExpand"
+									HorizontalTextAlignment="Center"
+									IsVisible="{Binding IsAnnotationVisible}"
+									LineBreakMode="WordWrap"
+									Style="{StaticResource GeneralLabelStyle}"
+									Text="{Binding Annotation}"
+									VerticalOptions="Fill" />
+							</StackLayout>
+						</Grid>
+					</DataTemplate>
+				</forms1:CarouselView.ItemTemplate>
+			</forms1:CarouselView>
+			<viewModel:CarouselIndicatorsViewModel
+				Grid.Row="2"
+				Padding="0"
+				IndicatorHeight="20"
+				IndicatorWidth="8"
+				IsVisible="True"
+				ItemsSource="{Binding CarouselPages}"
+				Position="{Binding SelectedItemPosition}"
+				SelectedIndicator="selected_circle.png"
+				UnselectedIndicator="unselected_circle.png"
+				VerticalOptions="CenterAndExpand" />
+            <StackLayout
+                Grid.Row="3"
+                Margin="5,0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center">
+                <!--Without child StackLayout container, those buttons are sized full height, not just center-->
+                <StackLayout
+                    Spacing="5"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"
+                    Orientation="Horizontal">
+                    <customControls:MultilineTextTransparentButton
+                        IsVisible="{Binding IsCragVisible}"
+                        FirstLineText="CRAG GUIDE"
+                        SecondLineText="{Binding CragPrice}"
+                        TapCommand="{Binding NavigateToUnlockCommand}"
+                        TapCommandParameter="3"
+                        VerticalOptions="Center"
+                        HorizontalOptions="FillAndExpand"/>
+                    <customControls:MultilineTextTransparentButton
+                        IsVisible="{Binding IsGBVisible}"
+                        FirstLineText="GUIDEBOOK"
+                        SecondLineText="{Binding GuideBookPrice}"
+                        TapCommand="{Binding NavigateToUnlockCommand}"
+                        TapCommandParameter="2"
+                        VerticalOptions="Center" 
+                        HorizontalOptions="FillAndExpand"/>
+                    <customControls:MultilineTextTransparentButton
+                        IsVisible="{Binding IsAppVisible}"
+                        FirstLineText="SLOPER APP"
+                        SecondLineText="{Binding AppPrice}"
+                        TapCommand="{Binding NavigateToUnlockCommand}"
+                        TapCommandParameter="1"
+                        VerticalOptions="Center"
+                        HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+            </StackLayout>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

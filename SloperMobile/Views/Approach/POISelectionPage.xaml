@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="SloperMobile.POISelectionPage"
+    NavigationPage.HasNavigationBar="False"
+    Style="{DynamicResource AppBackgroundColor}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="lblHeader" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="LineBreakMode" Value="TailTruncation" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid
+            HorizontalOptions="Fill"
+            VerticalOptions="Fill">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button
+                HeightRequest="24"
+                WidthRequest="24"
+                HorizontalOptions="End"
+                VerticalOptions="Start"
+                Margin="0,30,10,0"
+                Image="close"
+                Command="{Binding CloseCommand}"/>
+            
+            <StackLayout
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                Spacing="0"
+                Margin="40,0"
+                HeightRequest="40">
+                <Label
+                    Style="{StaticResource lblHeader}"
+                    FontSize="Medium"
+                    TextColor="{StaticResource AppOrange}"
+                    Text="{Binding Path=PageHeaderText}" />
+                <Label
+                    Margin="0,-3,0,0"
+                    Style="{StaticResource lblHeader}"
+                    FontSize="Small"
+                    TextColor="White"
+                    Text="{Binding Path=PageSubHeaderText}" />
+            </StackLayout>
+            
+            <ListView
+                Grid.Row="1"
+                RowHeight="40"
+                BackgroundColor="Transparent"
+                ItemsSource="{Binding ListItems}"
+                SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame 
+                                Margin="25, 4"
+                                BackgroundColor="Transparent"
+                                BorderColor="White"
+                                Padding="0">
+                             <Label 
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="CenterAndExpand"
+                                TextColor="White"
+                                Text="{Binding .}"/>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

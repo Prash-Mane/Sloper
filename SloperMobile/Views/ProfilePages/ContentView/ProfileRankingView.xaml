@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:UC="clr-namespace:SloperMobile.UserControls;assembly=SloperMobile"
+    xmlns:controls="clr-namespace:SloperMobile.CustomControls;assembly=SloperMobile"
+    xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+ x:Class="SloperMobile.ProfileRankingView">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="lblTopHeader" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="Font" Value="Medium" />
+            </Style>
+            <Style x:Key="lblsubTopHeader" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="Font" Value="Small" />
+            </Style>
+            <Style x:Key="CircularGaugeScaleStyle" TargetType="gauge:Scale">
+                <Setter Property="EndValue" Value="100" />
+
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="0.3*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout
+            x:Name="gauge_layout"
+            Grid.Row="1"
+            Margin="5,10,5,-10"
+            HorizontalOptions="Fill"
+            Orientation="Horizontal"
+            Spacing="2"
+            VerticalOptions="StartAndExpand">
+            <StackLayout.Padding>
+                <OnPlatform
+                    x:TypeArguments="Thickness"
+                    Android="-3"
+                    iOS="1" />
+            </StackLayout.Padding>
+            <!--  month  -->
+            <Grid
+                HorizontalOptions="Fill"
+                Opacity="{Binding MonthlyGaugeOpacity, Mode=TwoWay}"
+                VerticalOptions="Fill">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding MonthlyGaugeTappedCommand}" />
+                </Grid.GestureRecognizers>
+                <StackLayout
+                    Margin="0"
+                    HorizontalOptions="Center"
+                    Orientation="Vertical"
+                    Spacing="0"
+                    VerticalOptions="Center">
+                    <Label
+                        FontSize="15"
+                        HorizontalOptions="Center"
+                        Text="{Binding MonthlyUserRank}"
+                        TextColor="White" />
+                    <Label
+                        FontSize="14"
+                        HorizontalOptions="Center"
+                        Text="Month"
+                        TextColor="White" />
+                </StackLayout>
+                <Image
+                    HorizontalOptions="Center"
+                    Source="icon_gauge_mountains"
+                    WidthRequest="32"
+                    HeightRequest="32"
+                    VerticalOptions="End" />
+                <gauge:SfCircularGauge HorizontalOptions="Fill" VerticalOptions="Fill">
+                    <gauge:SfCircularGauge.Scales>
+                        <gauge:Scale
+                            EndValue="100"
+                            RadiusFactor="1"
+                            RimColor="#fff"
+                            RimThickness="{Binding RimThickness}"
+                            ShowLabels="False"
+                            ShowTicks="False"
+                            StartAngle="135"
+                            StartValue="0"
+                            SweepAngle="270">
+                            <gauge:Scale.Pointers>
+                                <gauge:RangePointer
+                                    Thickness="{Binding GaugeThickness}"
+                                    Offset="1"
+                                    Color="#FF8E2D"
+                                    Value="{Binding MonthlyRankPercentage}" />
+                            </gauge:Scale.Pointers>
+                        </gauge:Scale>
+                    </gauge:SfCircularGauge.Scales>
+                </gauge:SfCircularGauge>
+            </Grid>
+            <!--  year  -->
+            <Grid
+                HorizontalOptions="Fill"
+                Opacity="{Binding YearlyGaugeOpacity, Mode=TwoWay}"
+                VerticalOptions="Fill">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding YearlyGaugeTappedCommand}" />
+                </Grid.GestureRecognizers>
+                <StackLayout
+                    Margin="0"
+                    HorizontalOptions="Center"
+                    Orientation="Vertical"
+                    Spacing="0"
+                    VerticalOptions="Center">
+                    <Label
+                        FontSize="15"
+                        HorizontalOptions="Center"
+                        Text="{Binding YearlyUserRank}"
+                        TextColor="White" />
+                    <Label
+                        FontSize="14"
+                        HorizontalOptions="Center"
+                        Text="Year"
+                        TextColor="White" />
+                </StackLayout>
+                <Image
+                    HorizontalOptions="Center"
+                    Source="icon_gauge_mountains"
+                    WidthRequest="32"
+                    HeightRequest="32"
+                    VerticalOptions="End" />
+                <gauge:SfCircularGauge HorizontalOptions="Fill" VerticalOptions="Fill">
+                    <gauge:SfCircularGauge.Scales>
+                        <gauge:Scale
+                            EndValue="100"
+                            RadiusFactor="1"
+                            
+                            RimColor="#fff"
+                            RimThickness="{Binding RimThickness}"
+                            ShowLabels="False"
+                            ShowTicks="False"
+                            StartAngle="135"
+                            StartValue="0"
+                            SweepAngle="270">
+                            <gauge:Scale.Pointers>
+                                <gauge:RangePointer
+                                    Thickness="{Binding GaugeThickness}"
+                                    Offset="1"
+                                    Color="#FF8E2D"
+                                    Value="{Binding YearlyRankPercentage}" />
+                            </gauge:Scale.Pointers>
+                        </gauge:Scale>
+                    </gauge:SfCircularGauge.Scales>
+                </gauge:SfCircularGauge>
+            </Grid>
+            <!--  all  -->
+            <Grid
+                HorizontalOptions="Fill"
+                Opacity="{Binding AllGaugeOpacity, Mode=TwoWay}"
+                VerticalOptions="Fill">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding AllGaugeTappedCommand}" />
+                </Grid.GestureRecognizers>
+                <StackLayout
+                    Margin="0"
+                    HorizontalOptions="Center"
+                    Orientation="Vertical"
+                    Spacing="0"
+                    VerticalOptions="Center">
+                    <Label
+                        FontSize="15"
+                        HorizontalOptions="Center"
+                        Text="{Binding AllUserRank}"
+                        TextColor="White" />
+                    <Label
+                        FontSize="14"
+                        HorizontalOptions="Center"
+                        Text="All-Time"
+                        TextColor="White" />
+                </StackLayout>
+                <Image
+                    HorizontalOptions="Center"
+                    Source="icon_gauge_mountains"
+                    WidthRequest="32"
+                    HeightRequest="32"
+                    VerticalOptions="End" />
+                <gauge:SfCircularGauge HorizontalOptions="Fill" VerticalOptions="Fill">
+                    <gauge:SfCircularGauge.Scales>
+                        <gauge:Scale
+                            EndValue="100"
+                            RadiusFactor="1"
+                            RimColor="#fff"
+                            RimThickness="{Binding RimThickness}"
+                            ShowLabels="False"
+                            ShowTicks="False"
+                            StartAngle="135"
+                            StartValue="0"
+                            SweepAngle="270">
+                            <gauge:Scale.Pointers>
+                                <gauge:RangePointer
+                                    Thickness="{Binding GaugeThickness}"
+                                    Offset="1"
+                                    Color="#FF8E2D"
+                                    Value="{Binding AllRankPercentage}" />
+                            </gauge:Scale.Pointers>
+                        </gauge:Scale>
+                    </gauge:SfCircularGauge.Scales>
+                </gauge:SfCircularGauge>
+            </Grid>
+        </StackLayout>
+        <StackLayout Grid.Row="2" Margin="0,5,4,0">
+            <Grid
+                Margin="0"
+                ColumnSpacing="0"
+                RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="15" />
+                    <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <StackLayout Orientation="Vertical" Spacing="0">
+                    <Label
+                        HorizontalTextAlignment="Center"
+                        Style="{StaticResource lblTopHeader}"
+                        Text="{Binding CragName, Mode=TwoWay}" />
+                    <Label
+                        Margin="0,-3,0,0"
+                        HorizontalTextAlignment="Center"
+                        Style="{StaticResource lblsubTopHeader}"
+                        Text="{Binding AreaName, Mode=TwoWay}" />
+                </StackLayout>
+                <Label
+                    Grid.Row="1"
+                    FontSize="12"
+                    HeightRequest="{Binding FilterByHeight, Mode=TwoWay}"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    Text="{Binding FilteredBy, Mode=TwoWay}"
+                    TextColor="White"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center" />
+                <Grid
+                    Grid.Row="2"
+                    Margin="5,0"
+                    RowSpacing="0"
+                    IsVisible="{Binding IsHeaderVisible, Mode=TwoWay}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="29" />
+                        <RowDefinition Height="1" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15*" />
+                        <ColumnDefinition Width="70*" />
+                        <ColumnDefinition Width="15*" />
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        FontSize="12"
+                        HorizontalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        Text="RANK"
+                        TextColor="White"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center" />
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        FontSize="12"
+                        Text="NAME"
+                        TextColor="White"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center" />
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        FontSize="12"
+                        HorizontalOptions="End"
+                        HorizontalTextAlignment="End"
+                        Text="POINTS"
+                        TextColor="White"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center" />
+                    <BoxView
+                        Grid.Row="1"
+                        Grid.ColumnSpan="3"
+                        BackgroundColor="#676767"/>
+                </Grid>
+            </Grid>
+            <Label
+                FontSize="Medium"
+                HorizontalOptions="CenterAndExpand"
+                IsVisible="{Binding IsStatusVisible}"
+                Text="No Rankings Found"
+                TextColor="White"
+                VerticalOptions="CenterAndExpand" />
+            <controls:InfiniteListView
+                Grid.Row="1"
+                Margin="0"
+                BackgroundColor="Transparent"
+                RowHeight="41"
+                IsVisible="{Binding !IsStatusVisible}"
+                ItemsSource="{Binding Rankings}"
+                SelectedItem="{Binding SelectedMember, Mode=TwoWay}"
+                SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Grid Margin="5,0" RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="40" />
+                                        <RowDefinition Height="1" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="15*" />
+                                        <ColumnDefinition Width="70*" />
+                                        <ColumnDefinition Width="15*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label
+                                        FontSize="12"
+                                        HorizontalOptions="Center"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding Rank}"
+                                        TextColor="{Binding HighlightTextColor}"
+                                        VerticalTextAlignment="Center" />
+                                    <Label
+                                        Grid.Column="1"
+                                        FontSize="12"
+                                        Text="{Binding Name}"
+                                        TextColor="{Binding HighlightTextColor}"
+                                        VerticalOptions="Center"
+                                        VerticalTextAlignment="Center" />
+                                    <Label
+                                        Grid.Column="2"
+                                        Margin="0,0,4,0"
+                                        FontSize="12"
+                                        HorizontalOptions="End"
+                                        HorizontalTextAlignment="End"
+                                        Text="{Binding Points}"
+                                        TextColor="{Binding HighlightTextColor}"
+                                        VerticalOptions="Center"
+                                        VerticalTextAlignment="Center" />
+                                    <BoxView
+                                        Grid.Row="1"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="3"
+                                        BackgroundColor="#3F3F3F"
+                                        HeightRequest="1"
+                                        HorizontalOptions="Fill"
+                                        VerticalOptions="Fill" />
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </controls:InfiniteListView>
+        </StackLayout>
+    </Grid>
+</ContentView>

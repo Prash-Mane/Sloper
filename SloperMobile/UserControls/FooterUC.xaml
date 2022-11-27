@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Grid
+	x:Class="SloperMobile.UserControls.FooterUC"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:SloperMobile.CustomControls"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    RowSpacing="0"
+    ColumnSpacing="0">
+    
+	<Grid.RowDefinitions>
+        <RowDefinition Height="1" />
+		<RowDefinition Height="50" />
+	</Grid.RowDefinitions>
+    
+	<Grid.ColumnDefinitions>
+		<ColumnDefinition Width="*" />
+		<ColumnDefinition Width="*" />
+		<ColumnDefinition Width="*" />
+		<ColumnDefinition Width="*" />
+		<ColumnDefinition Width="*" />
+	</Grid.ColumnDefinitions>
+
+    <!-- remove margin and check if blank line at the boottom is gone -->
+    <controls:BlurContentView
+        Grid.Row="1"
+        Grid.ColumnSpan="5"
+        Margin="0,0,0,-1"
+        ios:VisualElement.BlurEffect="Dark"/>
+
+    <BoxView
+        Grid.ColumnSpan="5"
+        BackgroundColor="{StaticResource AppOrange}" />
+    
+    <controls:ImageButton
+        Grid.Row="1"
+        Grid.Column="0"
+        HeightRequest="50"
+        WidthRequest="50"
+        ImageSize="25"
+        ImageSource="navNews"
+        TapCommand="{Binding FooterCommand}"
+        CommandParameter="JournalFeedPage" />
+
+    <controls:ImageButton
+        Grid.Row="1"
+        Grid.Column="1"
+        HeightRequest="50"
+        WidthRequest="50"
+        ImageSize="25"
+        ImageSource="navProfile"
+        TapCommand="{Binding FooterCommand}"
+        CommandParameter="MemberProfilePage" />
+
+    <controls:ImageButton
+        Grid.Row="1"
+        Grid.Column="2"
+        HeightRequest="50"
+        WidthRequest="50"
+        ImageSize="25"
+        ImageSource="navHome"
+        TapCommand="{Binding FooterCommand}"
+        CommandParameter="HomePage" />
+
+    <controls:ImageButton
+        Grid.Row="1"
+        Grid.Column="3"
+        HeightRequest="50"
+        WidthRequest="50"
+        ImageSize="25"
+        ImageSource="navGuidebooks"
+        TapCommand="{Binding FooterCommand}"
+        CommandParameter="GuideBookPage" />
+
+    <controls:ImageButton
+        Grid.Row="1"
+        Grid.Column="4"
+        HeightRequest="50"
+        WidthRequest="50"
+        ImageSize="25"
+        ImageSource="navSectors"
+        TapCommand="{Binding FooterCommand}"
+        CommandParameter="CragSectorsPage" />
+</Grid>
